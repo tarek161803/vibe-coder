@@ -5,21 +5,24 @@
 
 export const WORLD = {
   height: 420,
-  groundY: 350,
+  /** Where the player's feet and obstacles rest. */
+  groundY: 380,
+  /** Far edge of the road, where the city stands. Above groundY so the run happens *on* the road. */
+  horizonY: 356,
   minWidth: 640,
   maxWidth: 1200,
 } as const;
 
 export const PLAYER = {
   x: 72,
-  /** Size of one sprite pixel in world units. */
-  pixelScale: 3,
+  /** Size multiplier for the character drawing and its hitboxes. */
+  scale: 1.35,
   gravity: 2600,
   /** Gravity while holding "slide" in mid-air (fast fall). */
   fastFallGravity: 7200,
   jumpVelocity: 860,
   /** Upward velocity is capped to this once the jump button is released… */
-  jumpCutVelocity: 380,
+  jumpCutVelocity: 260,
   /** …but only after the jump has lasted at least this long (min hop height). */
   minJumpHold: 0.07,
   /** A jump pressed this many seconds before landing still triggers. */
@@ -33,23 +36,21 @@ export const SPEED = {
   max: 960,
   /** Units per second gained every second. */
   acceleration: 6.5,
-  /** Background scroll speed on the title screen. */
-  idle: 60,
 } as const;
 
 export const OBSTACLE = {
-  size: 44,
-  airSize: 40,
-  /** Gap between the ground and the bottom of a flying obstacle. */
-  airClearance: 38,
+  size: 36,
+  airSize: 34,
+  /** Gap between the ground and the bottom of a flying obstacle (clears a sliding player). */
+  airClearance: 58,
   /** Forgiveness: shrinks every obstacle hitbox on all sides. */
-  hitboxInset: 6,
+  hitboxInset: 5,
   /** Gap between patterns, in seconds of travel, at difficulty 0 and 1. */
   gapEasy: [0.95, 1.7],
   gapHard: [0.62, 1.05],
   firstSpawnDelay: 1.1,
-  /** Share of obstacles drawn from the hazard pool (bugs, merge conflicts…). */
-  hazardChance: 0.1,
+  /** Share of obstacles drawn from the hazard pool (bugs, merge conflicts…). Kept low: there are only a few hazards. */
+  hazardChance: 0.05,
 } as const;
 
 /** The score is tokens burned, counted in thousands (shown as "16K", "1.25M"). */

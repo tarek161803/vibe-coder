@@ -107,7 +107,7 @@ const entries: CatalogEntry[] = [
   {
     id: "semi-supervised-learning",
     name: "Semi-Supervised Learning",
-    abbr: "SSL",
+    abbr: "SS",
     category: "ML Concept",
     color: "#0d9488",
     description:
@@ -125,7 +125,7 @@ const entries: CatalogEntry[] = [
   {
     id: "self-supervised-learning",
     name: "Self-Supervised Learning",
-    abbr: "SSup",
+    abbr: "SS",
     category: "ML Concept",
     color: "#0e7490",
     description:
@@ -178,7 +178,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cnn",
     name: "CNN",
-    abbr: "CNN",
+    abbr: "CN",
     category: "Neural Network Type",
     color: "#dc2626",
     description:
@@ -195,7 +195,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rnn",
     name: "RNN",
-    abbr: "RNN",
+    abbr: "RN",
     category: "Neural Network Type",
     color: "#f59e0b",
     description:
@@ -212,7 +212,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lstm",
     name: "LSTM",
-    abbr: "LSTM",
+    abbr: "LS",
     category: "Neural Network Type",
     color: "#d97706",
     description:
@@ -229,7 +229,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gru",
     name: "GRU",
-    abbr: "GRU",
+    abbr: "GR",
     category: "Neural Network Type",
     color: "#b45309",
     description:
@@ -264,7 +264,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gans",
     name: "GANs",
-    abbr: "GAN",
+    abbr: "Ga",
     category: "Generative Model",
     color: "#c026d3",
     description:
@@ -281,7 +281,7 @@ const entries: CatalogEntry[] = [
   {
     id: "diffusion-models",
     name: "Diffusion Models",
-    abbr: "DIF",
+    abbr: "DM",
     category: "Generative Model",
     color: "#db2777",
     description:
@@ -316,7 +316,7 @@ const entries: CatalogEntry[] = [
   {
     id: "graph-neural-networks",
     name: "Graph Neural Networks",
-    abbr: "GNN",
+    abbr: "GN",
     category: "Neural Network Type",
     color: "#4f46e5",
     description:
@@ -385,7 +385,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jax",
     name: "JAX",
-    abbr: "JAX",
+    abbr: "JA",
     category: "ML Framework",
     color: "#5e97f6",
     description:
@@ -403,7 +403,7 @@ const entries: CatalogEntry[] = [
   {
     id: "scikit-learn",
     name: "Scikit-learn",
-    abbr: "SKL",
+    abbr: "SL",
     category: "ML Library",
     color: "#f7931e",
     description:
@@ -420,7 +420,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xgboost",
     name: "XGBoost",
-    abbr: "XGB",
+    abbr: "Xg",
     category: "ML Library",
     color: "#1a9fd9",
     description:
@@ -437,7 +437,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lightgbm",
     name: "LightGBM",
-    abbr: "LGBM",
+    abbr: "Li",
     category: "ML Library",
     color: "#22c55e",
     description:
@@ -455,7 +455,7 @@ const entries: CatalogEntry[] = [
   {
     id: "catboost",
     name: "CatBoost",
-    abbr: "CAT",
+    abbr: "Ca",
     category: "ML Library",
     color: "#ffcc00",
     description:
@@ -473,7 +473,7 @@ const entries: CatalogEntry[] = [
   {
     id: "onnx",
     name: "ONNX",
-    abbr: "ONNX",
+    abbr: "ON",
     category: "Model Format",
     color: "#4b5bd6",
     description:
@@ -508,7 +508,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ollama",
     name: "Ollama",
-    abbr: "OLM",
+    abbr: "Ol",
     category: "Local LLM Runner",
     color: "#6b7280",
     description:
@@ -525,7 +525,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vllm",
     name: "vLLM",
-    abbr: "vLLM",
+    abbr: "Vl",
     category: "LLM Inference Engine",
     color: "#30a2ff",
     description:
@@ -543,7 +543,7 @@ const entries: CatalogEntry[] = [
   {
     id: "llama-cpp",
     name: "llama.cpp",
-    abbr: "L.cpp",
+    abbr: "Ll",
     category: "LLM Inference Engine",
     color: "#ff8236",
     description:
@@ -561,7 +561,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lm-studio",
     name: "LM Studio",
-    abbr: "LMS",
+    abbr: "LS",
     category: "Local LLM App",
     color: "#6366f1",
     description:
@@ -579,7 +579,7 @@ const entries: CatalogEntry[] = [
   {
     id: "litellm",
     name: "LiteLLM",
-    abbr: "LLM",
+    abbr: "Li",
     category: "LLM Gateway",
     color: "#38bdf8",
     description:
@@ -597,7 +597,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tensorrt-llm",
     name: "TensorRT-LLM",
-    abbr: "TRT-L",
+    abbr: "TL",
     category: "LLM Inference Engine",
     color: "#76b900",
     description:
@@ -615,7 +615,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mlx",
     name: "MLX",
-    abbr: "MLX",
+    abbr: "ML",
     category: "ML Framework",
     color: "#a3a3a3",
     description:
@@ -686,7 +686,7 @@ const entries: CatalogEntry[] = [
   {
     id: "haystack",
     name: "Haystack",
-    abbr: "HAY",
+    abbr: "Ha",
     category: "LLM Framework",
     color: "#1ac5a0",
     description:
@@ -722,7 +722,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dspy",
     name: "DSPy",
-    abbr: "DSPy",
+    abbr: "Ds",
     category: "LLM Framework",
     color: "#2563eb",
     description:
@@ -740,7 +740,7 @@ const entries: CatalogEntry[] = [
   {
     id: "crewai",
     name: "CrewAI",
-    abbr: "Crew",
+    abbr: "Cr",
     category: "Agent Framework",
     color: "#ff5a50",
     description:
@@ -756,27 +756,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "autogen",
-    name: "AutoGen",
-    abbr: "AG",
-    category: "Agent Framework",
-    color: "#0078d4",
-    description:
-      "A framework from Microsoft Research for building applications where multiple AI agents talk to each other, and to humans, to solve tasks together.",
-    highlights: [
-      "Multi-agent conversations",
-      "Agents that write and run code",
-      "Research on agent collaboration",
-    ],
-    funFact:
-      "AutoGen popularized setups where AI agents chat with each other — for example, one agent writes code while another runs it and reports back the errors.",
-    url: "https://microsoft.github.io/autogen/",
-    spawnWeight: 0.5,
-  },
-  {
     id: "pydantic-ai",
     name: "Pydantic AI",
-    abbr: "PAI",
+    abbr: "PA",
     category: "Agent Framework",
     color: "#e92063",
     description:
@@ -794,7 +776,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nvidia-cuda",
     name: "NVIDIA CUDA",
-    abbr: "CUDA",
+    abbr: "NC",
     category: "GPU Computing Platform",
     color: "#76b900",
     description:
@@ -811,7 +793,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rocm",
     name: "ROCm",
-    abbr: "ROCm",
+    abbr: "Ro",
     category: "GPU Computing Platform",
     color: "#ed1c24",
     description:
@@ -829,7 +811,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nvidia-tensorrt",
     name: "NVIDIA TensorRT",
-    abbr: "TRT",
+    abbr: "NT",
     category: "Inference Optimizer",
     color: "#76b900",
     description:
@@ -847,7 +829,7 @@ const entries: CatalogEntry[] = [
   {
     id: "triton-inference-server",
     name: "Triton Inference Server",
-    abbr: "TIS",
+    abbr: "TI",
     category: "Model Serving",
     color: "#5c9e00",
     description:
@@ -865,7 +847,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ray",
     name: "Ray",
-    abbr: "Ray",
+    abbr: "Ra",
     category: "Distributed Computing",
     color: "#028cf0",
     description:
@@ -883,7 +865,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mlflow",
     name: "MLflow",
-    abbr: "MLF",
+    abbr: "Ml",
     category: "MLOps Platform",
     color: "#0194e2",
     description:
@@ -901,7 +883,7 @@ const entries: CatalogEntry[] = [
   {
     id: "weights-and-biases",
     name: "Weights & Biases",
-    abbr: "W&B",
+    abbr: "W&",
     category: "MLOps Platform",
     color: "#ffbe00",
     description:
@@ -937,7 +919,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bentoml",
     name: "BentoML",
-    abbr: "Bento",
+    abbr: "Be",
     category: "Model Serving",
     color: "#ec4899",
     description:
@@ -955,7 +937,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gpt",
     name: "GPT",
-    abbr: "GPT",
+    abbr: "GP",
     category: "Large Language Model",
     color: "#10a37f",
     description:
@@ -989,7 +971,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gemini",
     name: "Gemini",
-    abbr: "Gem",
+    abbr: "Ge",
     category: "Large Language Model",
     color: "#8e75b2",
     description:
@@ -1006,7 +988,7 @@ const entries: CatalogEntry[] = [
   {
     id: "llama",
     name: "Llama",
-    abbr: "LLaMA",
+    abbr: "Ll",
     category: "Large Language Model",
     color: "#0668e1",
     description:
@@ -1023,7 +1005,7 @@ const entries: CatalogEntry[] = [
   {
     id: "qwen",
     name: "Qwen",
-    abbr: "Qwen",
+    abbr: "Qw",
     category: "Large Language Model",
     color: "#615ced",
     description:
@@ -1041,7 +1023,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mistral",
     name: "Mistral",
-    abbr: "MIS",
+    abbr: "Mi",
     category: "Large Language Model",
     color: "#fa520f",
     description:
@@ -1075,7 +1057,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gemma",
     name: "Gemma",
-    abbr: "GMA",
+    abbr: "Ge",
     category: "Large Language Model",
     color: "#3186ff",
     description:
@@ -1093,7 +1075,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bert",
     name: "BERT",
-    abbr: "BERT",
+    abbr: "BE",
     category: "Language Model",
     color: "#f4b400",
     description:
@@ -1128,7 +1110,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rag",
     name: "RAG",
-    abbr: "RAG",
+    abbr: "RA",
     category: "AI Technique",
     color: "#0ea5e9",
     description:
@@ -1145,7 +1127,7 @@ const entries: CatalogEntry[] = [
   {
     id: "embeddings",
     name: "Embeddings",
-    abbr: "EMB",
+    abbr: "Em",
     category: "AI Concept",
     color: "#14b8a6",
     description:
@@ -1196,7 +1178,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lora",
     name: "LoRA",
-    abbr: "LoRA",
+    abbr: "Lo",
     category: "ML Technique",
     color: "#ec4899",
     description:
@@ -1230,7 +1212,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ai-agents",
     name: "AI Agents",
-    abbr: "AGT",
+    abbr: "AA",
     category: "AI Concept",
     color: "#8b5cf6",
     description:
@@ -1299,7 +1281,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mcp",
     name: "MCP",
-    abbr: "MCP",
+    abbr: "MC",
     category: "AI Protocol",
     color: "#cc785c",
     description:
@@ -1312,6 +1294,126 @@ const entries: CatalogEntry[] = [
     funFact:
       "Anthropic introduced MCP in November 2024, and it's often described as \"USB-C for AI\" — one standard plug instead of a custom cable for every tool.",
     url: "https://modelcontextprotocol.io",
+  },
+  {
+    id: "whisper",
+    name: "Whisper",
+    abbr: "Wh",
+    category: "Speech Recognition",
+    color: "#10a37f",
+    description:
+      "An open-source speech recognition model from OpenAI. It turns spoken audio into text in many languages and can also translate speech into English.",
+    highlights: [
+      "Transcribing audio and video",
+      "Generating subtitles",
+      "Translating speech to English",
+    ],
+    funFact:
+      "When OpenAI released Whisper in 2022, it said the model was trained on 680,000 hours of multilingual audio collected from the web.",
+    url: "https://github.com/openai/whisper",
+  },
+  {
+    id: "gradio",
+    name: "Gradio",
+    abbr: "GR",
+    category: "ML Demo UI",
+    color: "#f97316",
+    description:
+      "A Python library for quickly building web interfaces around machine learning models or any Python function. A few lines of code give you a shareable app with inputs like text boxes, images or audio.",
+    highlights: [
+      "Demos for ML models",
+      "Quick web UIs in Python",
+      "Hosting on Hugging Face Spaces",
+    ],
+    funFact:
+      "Gradio was acquired by Hugging Face in 2021, and it is one of the main ways people build apps on Hugging Face Spaces.",
+    url: "https://www.gradio.app",
+  },
+  {
+    id: "comfyui",
+    name: "ComfyUI",
+    abbr: "Co",
+    category: "AI Image Workflow UI",
+    color: "#ffd100",
+    description:
+      "A visual, node-based app for running image and video generation models like Stable Diffusion. You connect boxes for models, prompts and samplers into a graph that builds your output.",
+    highlights: [
+      "Stable Diffusion image generation",
+      "Reusable node-based workflows",
+      "Experimenting with AI models",
+    ],
+    funFact:
+      "ComfyUI was first released in 2023 by a developer known only by the pseudonym \"comfyanonymous\".",
+    url: "https://www.comfy.org",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "streamlit",
+    name: "Streamlit",
+    abbr: "ST",
+    category: "Python App Framework",
+    color: "#ff4b4b",
+    description:
+      "A Python library that turns plain Python scripts into interactive web apps. You add widgets like sliders and charts with a few function calls, without writing any HTML or JavaScript.",
+    highlights: [
+      "Data dashboards in Python",
+      "Demos for ML models",
+      "Quick internal tools",
+    ],
+    funFact:
+      "Streamlit reruns your whole Python script from top to bottom every time a user interacts with a widget. Snowflake acquired the company in 2022.",
+    url: "https://streamlit.io",
+  },
+  {
+    id: "vercel-ai-sdk",
+    name: "Vercel AI SDK",
+    abbr: "AI",
+    category: "AI Toolkit",
+    color: "#6e56cf",
+    description:
+      "A TypeScript toolkit for building AI-powered apps. It gives you one API for many model providers, plus helpers for streaming text, tool calling, and chat UIs in React and other frameworks.",
+    highlights: [
+      "Streaming chat UIs",
+      "Switching between LLM providers",
+      "Tool calling and AI agents",
+    ],
+    funFact:
+      "The npm package for the Vercel AI SDK has one of the shortest names around: it's simply called \"ai\".",
+    url: "https://ai-sdk.dev",
+  },
+  {
+    id: "stable-diffusion",
+    name: "Stable Diffusion",
+    abbr: "SD",
+    category: "Image Generation Model",
+    color: "#8b5cf6",
+    description:
+      "An AI model that creates images from text prompts. It starts with random noise and gradually removes it, step by step, until a picture matching your description appears.",
+    highlights: [
+      "Generating images from text",
+      "Editing and inpainting images",
+      "Running AI art models locally",
+    ],
+    funFact:
+      "Stable Diffusion was released in 2022 with publicly available weights, and because it works in a compressed latent space it could run on consumer graphics cards.",
+    url: "https://en.wikipedia.org/wiki/Stable_Diffusion",
+  },
+  {
+    id: "openai-api",
+    name: "OpenAI API",
+    abbr: "OA",
+    category: "AI Model API",
+    color: "#10a37f",
+    description:
+      "A web API for using OpenAI's AI models in your own apps. You send text, images or audio in a request and get back generated text, images, speech or embeddings.",
+    highlights: [
+      "Adding chatbots to apps",
+      "Generating and summarizing text",
+      "Embeddings for search",
+    ],
+    funFact:
+      "OpenAI launched its API in 2020, and its first offering gave developers access to the GPT-3 language model.",
+    url: "https://platform.openai.com/docs",
   },
 ];
 

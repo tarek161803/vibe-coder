@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "arduino",
     name: "Arduino",
-    abbr: "ARD",
+    abbr: "Ar",
     category: "Microcontroller Platform",
     color: "#00979d",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "raspberry-pi",
     name: "Raspberry Pi",
-    abbr: "RPi",
+    abbr: "RP",
     category: "Single-Board Computer",
     color: "#c51a4a",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "esp32",
     name: "ESP32",
-    abbr: "ESP32",
+    abbr: "ES",
     category: "Microcontroller",
     color: "#e7352c",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "esp8266",
     name: "ESP8266",
-    abbr: "8266",
+    abbr: "ES",
     category: "Microcontroller",
     color: "#d0352b",
     description:
@@ -74,7 +74,7 @@ const entries: CatalogEntry[] = [
   {
     id: "stm32",
     name: "STM32",
-    abbr: "STM",
+    abbr: "ST",
     category: "Microcontroller Family",
     color: "#03234b",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nvidia-jetson",
     name: "NVIDIA Jetson",
-    abbr: "JTSN",
+    abbr: "NJ",
     category: "Edge AI Computer",
     color: "#76b900",
     description:
@@ -128,7 +128,7 @@ const entries: CatalogEntry[] = [
   {
     id: "teensy",
     name: "Teensy",
-    abbr: "TNSY",
+    abbr: "Te",
     category: "Microcontroller Board",
     color: "#2e8b57",
     description:
@@ -146,7 +146,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nordic-nrf52",
     name: "Nordic nRF52",
-    abbr: "nRF",
+    abbr: "nR",
     category: "Wireless Microcontroller",
     color: "#00a9ce",
     description:
@@ -164,7 +164,7 @@ const entries: CatalogEntry[] = [
   {
     id: "freertos",
     name: "FreeRTOS",
-    abbr: "RTOS",
+    abbr: "Fr",
     category: "Real-Time OS",
     color: "#2f9e44",
     description:
@@ -181,7 +181,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zephyr",
     name: "Zephyr",
-    abbr: "ZEPH",
+    abbr: "Ze",
     category: "Real-Time OS",
     color: "#7929d2",
     description:
@@ -199,7 +199,7 @@ const entries: CatalogEntry[] = [
   {
     id: "riot-os",
     name: "RIOT OS",
-    abbr: "RIOT",
+    abbr: "RO",
     category: "IoT Operating System",
     color: "#bc1a29",
     description:
@@ -215,27 +215,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "mbed-os",
-    name: "Mbed OS",
-    abbr: "MBED",
-    category: "Embedded OS",
-    color: "#14a8b8",
-    description:
-      "An open-source embedded operating system from Arm for its Cortex-M microcontrollers. It provided drivers, networking and security for IoT devices.",
-    highlights: [
-      "Arm Cortex-M IoT firmware",
-      "Online compiler for quick starts",
-      "Connected sensor prototypes",
-    ],
-    funFact:
-      "Mbed was famous for its browser-based compiler — you could write firmware online and drag the file onto the board like a USB stick. Arm has since announced its end of life.",
-    url: "https://os.mbed.com",
-    spawnWeight: 0.5,
-  },
-  {
     id: "micropython",
     name: "MicroPython",
-    abbr: "μPy",
+    abbr: "Mi",
     category: "Embedded Language",
     color: "#3c8dbc",
     description:
@@ -287,7 +269,7 @@ const entries: CatalogEntry[] = [
   {
     id: "matter",
     name: "Matter",
-    abbr: "MTR",
+    abbr: "Ma",
     category: "Smart Home Standard",
     color: "#2563eb",
     description:
@@ -304,7 +286,7 @@ const entries: CatalogEntry[] = [
   {
     id: "thread",
     name: "Thread",
-    abbr: "THRD",
+    abbr: "Th",
     category: "Wireless Protocol",
     color: "#4d4dff",
     description:
@@ -322,7 +304,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bluetooth-le",
     name: "Bluetooth LE",
-    abbr: "BLE",
+    abbr: "BL",
     category: "Wireless Protocol",
     color: "#0082fc",
     description:
@@ -339,7 +321,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lorawan",
     name: "LoRaWAN",
-    abbr: "LoRa",
+    abbr: "Lo",
     category: "Wireless Protocol",
     color: "#1c75bc",
     description:
@@ -375,7 +357,7 @@ const entries: CatalogEntry[] = [
   {
     id: "can-bus",
     name: "CAN Bus",
-    abbr: "CAN",
+    abbr: "CB",
     category: "Vehicle Network",
     color: "#b91c1c",
     description:
@@ -393,7 +375,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws-iot",
     name: "AWS IoT",
-    abbr: "AIoT",
+    abbr: "AI",
     category: "IoT Cloud Platform",
     color: "#ff9900",
     description:
@@ -410,7 +392,7 @@ const entries: CatalogEntry[] = [
   {
     id: "azure-iot",
     name: "Azure IoT",
-    abbr: "AzIoT",
+    abbr: "AI",
     category: "IoT Cloud Platform",
     color: "#0078d4",
     description:
@@ -480,7 +462,7 @@ const entries: CatalogEntry[] = [
   {
     id: "arduino-cloud",
     name: "Arduino Cloud",
-    abbr: "ACLD",
+    abbr: "AC",
     category: "IoT Cloud Platform",
     color: "#008184",
     description:

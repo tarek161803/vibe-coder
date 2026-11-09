@@ -28,7 +28,7 @@ export interface CatalogEntry {
   /** Unique kebab-case id, e.g. "spring-boot". */
   id: string;
   name: string;
-  /** 1–5 character label for the text badge, e.g. "K8s", "C#", "PG". */
+  /** 1–2 character label for the text badge (shown when there's no logo), e.g. "C#", "PG", "LL". */
   abbr: string;
   /** Short category shown in the modal, e.g. "Web Framework". */
   category: string;

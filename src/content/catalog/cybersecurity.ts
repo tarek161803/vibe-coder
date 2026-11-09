@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "owasp",
     name: "OWASP",
-    abbr: "OWASP",
+    abbr: "OW",
     category: "Security Nonprofit",
     color: "#2a5db0",
     description:
@@ -20,26 +20,9 @@ const entries: CatalogEntry[] = [
     url: "https://owasp.org/",
   },
   {
-    id: "owasp-top-10",
-    name: "OWASP Top 10",
-    abbr: "T10",
-    category: "Security Awareness List",
-    color: "#c0392b",
-    description:
-      "A regularly updated list of the ten most critical security risks for web applications, such as broken access control and injection. It is a common starting point for learning web security.",
-    highlights: [
-      "Security training for developers",
-      "Checklists for code reviews",
-      "Referenced in audits and compliance",
-    ],
-    funFact:
-      "In the 2021 edition, Broken Access Control jumped to the #1 spot, pushing Injection — long the top risk — down to third place.",
-    url: "https://owasp.org/www-project-top-ten/",
-  },
-  {
     id: "sql-injection",
     name: "SQL Injection",
-    abbr: "SQLi",
+    abbr: "SI",
     category: "Web Vulnerability",
     color: "#e74c3c",
     description:
@@ -56,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xss",
     name: "XSS",
-    abbr: "XSS",
+    abbr: "XS",
     category: "Web Vulnerability",
     color: "#e67e22",
     description:
@@ -73,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "csrf",
     name: "CSRF",
-    abbr: "CSRF",
+    abbr: "CS",
     category: "Web Vulnerability",
     color: "#d35400",
     description:
@@ -90,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ssrf",
     name: "SSRF",
-    abbr: "SSRF",
+    abbr: "SS",
     category: "Web Vulnerability",
     color: "#a93226",
     description:
@@ -107,7 +90,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rce",
     name: "RCE",
-    abbr: "RCE",
+    abbr: "RC",
     category: "Vulnerability Class",
     color: "#b03a2e",
     description:
@@ -124,7 +107,7 @@ const entries: CatalogEntry[] = [
   {
     id: "csp",
     name: "CSP",
-    abbr: "CSP",
+    abbr: "CS",
     category: "Browser Security Header",
     color: "#16a085",
     description:
@@ -141,7 +124,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sast",
     name: "SAST",
-    abbr: "SAST",
+    abbr: "SA",
     category: "Security Testing",
     color: "#2980b9",
     description:
@@ -158,7 +141,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dast",
     name: "DAST",
-    abbr: "DAST",
+    abbr: "DA",
     category: "Security Testing",
     color: "#8e44ad",
     description:
@@ -175,7 +158,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sca",
     name: "SCA",
-    abbr: "SCA",
+    abbr: "SC",
     category: "Security Testing",
     color: "#27ae60",
     description:
@@ -192,7 +175,7 @@ const entries: CatalogEntry[] = [
   {
     id: "oauth2",
     name: "OAuth 2.0",
-    abbr: "OAuth",
+    abbr: "OA",
     category: "Authorization Protocol",
     color: "#eb5424",
     description:
@@ -209,7 +192,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openid-connect",
     name: "OpenID Connect",
-    abbr: "OIDC",
+    abbr: "OC",
     category: "Authentication Protocol",
     color: "#f78c40",
     description:
@@ -226,7 +209,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jwt",
     name: "JWT",
-    abbr: "JWT",
+    abbr: "JW",
     category: "Token Format",
     color: "#d63aff",
     description:
@@ -243,7 +226,7 @@ const entries: CatalogEntry[] = [
   {
     id: "saml",
     name: "SAML",
-    abbr: "SAML",
+    abbr: "SA",
     category: "SSO Standard",
     color: "#3b5998",
     description:
@@ -294,7 +277,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fido2",
     name: "FIDO2",
-    abbr: "FIDO",
+    abbr: "FI",
     category: "Authentication Standard",
     color: "#e2231a",
     description:
@@ -311,7 +294,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rbac",
     name: "RBAC",
-    abbr: "RBAC",
+    abbr: "RB",
     category: "Access Control Model",
     color: "#2e86de",
     description:
@@ -328,7 +311,7 @@ const entries: CatalogEntry[] = [
   {
     id: "abac",
     name: "ABAC",
-    abbr: "ABAC",
+    abbr: "AB",
     category: "Access Control Model",
     color: "#10ac84",
     description:
@@ -346,7 +329,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ldap",
     name: "LDAP",
-    abbr: "LDAP",
+    abbr: "LD",
     category: "Directory Protocol",
     color: "#2c7fb8",
     description:
@@ -380,7 +363,7 @@ const entries: CatalogEntry[] = [
   {
     id: "kali-linux",
     name: "Kali Linux",
-    abbr: "Kali",
+    abbr: "KL",
     category: "Security Linux Distro",
     color: "#367bf0",
     description:
@@ -414,7 +397,7 @@ const entries: CatalogEntry[] = [
   {
     id: "burp-suite",
     name: "Burp Suite",
-    abbr: "Burp",
+    abbr: "BS",
     category: "Web Security Testing",
     color: "#ff6633",
     description:
@@ -431,7 +414,7 @@ const entries: CatalogEntry[] = [
   {
     id: "metasploit",
     name: "Metasploit",
-    abbr: "MSF",
+    abbr: "Me",
     category: "Exploit Framework",
     color: "#2596cd",
     description:
@@ -448,7 +431,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nmap",
     name: "Nmap",
-    abbr: "Nmap",
+    abbr: "Nm",
     category: "Network Scanner",
     color: "#4682b4",
     description:
@@ -465,7 +448,7 @@ const entries: CatalogEntry[] = [
   {
     id: "owasp-zap",
     name: "OWASP ZAP",
-    abbr: "ZAP",
+    abbr: "OZ",
     category: "Web Security Scanner",
     color: "#00549e",
     description:
@@ -482,7 +465,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nessus",
     name: "Nessus",
-    abbr: "Nss",
+    abbr: "Ne",
     category: "Vulnerability Scanner",
     color: "#00a0b0",
     description:
@@ -499,7 +482,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openvas",
     name: "OpenVAS",
-    abbr: "OVAS",
+    abbr: "Op",
     category: "Vulnerability Scanner",
     color: "#66c430",
     description:
@@ -535,7 +518,7 @@ const entries: CatalogEntry[] = [
   {
     id: "john-the-ripper",
     name: "John the Ripper",
-    abbr: "JtR",
+    abbr: "JR",
     category: "Password Cracker",
     color: "#8b1e3f",
     description:
@@ -553,7 +536,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ghidra",
     name: "Ghidra",
-    abbr: "Ghd",
+    abbr: "Gh",
     category: "Reverse Engineering",
     color: "#d64545",
     description:
@@ -570,7 +553,7 @@ const entries: CatalogEntry[] = [
   {
     id: "snort",
     name: "Snort",
-    abbr: "Snrt",
+    abbr: "Sn",
     category: "Intrusion Detection",
     color: "#e5383b",
     description:
@@ -588,7 +571,7 @@ const entries: CatalogEntry[] = [
   {
     id: "suricata",
     name: "Suricata",
-    abbr: "Sur",
+    abbr: "Su",
     category: "Intrusion Detection",
     color: "#f28c28",
     description:
@@ -606,7 +589,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aes",
     name: "AES",
-    abbr: "AES",
+    abbr: "AE",
     category: "Encryption Algorithm",
     color: "#1e88e5",
     description:
@@ -623,7 +606,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rsa",
     name: "RSA",
-    abbr: "RSA",
+    abbr: "RS",
     category: "Public-Key Algorithm",
     color: "#c62828",
     description:
@@ -640,7 +623,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ecc",
     name: "ECC",
-    abbr: "ECC",
+    abbr: "EC",
     category: "Public-Key Cryptography",
     color: "#7b1fa2",
     description:
@@ -657,7 +640,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sha-256",
     name: "SHA-256",
-    abbr: "SHA2",
+    abbr: "S2",
     category: "Hash Function",
     color: "#00897b",
     description:
@@ -674,7 +657,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sha-3",
     name: "SHA-3",
-    abbr: "SHA3",
+    abbr: "S3",
     category: "Hash Function",
     color: "#00acc1",
     description:
@@ -692,7 +675,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hmac",
     name: "HMAC",
-    abbr: "HMAC",
+    abbr: "HM",
     category: "Message Authentication",
     color: "#5e35b1",
     description:
@@ -709,7 +692,7 @@ const entries: CatalogEntry[] = [
   {
     id: "siem",
     name: "SIEM",
-    abbr: "SIEM",
+    abbr: "SI",
     category: "Security Monitoring",
     color: "#3949ab",
     description:
@@ -726,7 +709,7 @@ const entries: CatalogEntry[] = [
   {
     id: "soar",
     name: "SOAR",
-    abbr: "SOAR",
+    abbr: "SO",
     category: "Security Automation",
     color: "#00897b",
     description:
@@ -744,7 +727,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ids",
     name: "IDS",
-    abbr: "IDS",
+    abbr: "ID",
     category: "Security System",
     color: "#f39c12",
     description:
@@ -761,7 +744,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ips",
     name: "IPS",
-    abbr: "IPS",
+    abbr: "IP",
     category: "Security System",
     color: "#e74c3c",
     description:
@@ -778,7 +761,7 @@ const entries: CatalogEntry[] = [
   {
     id: "waf",
     name: "WAF",
-    abbr: "WAF",
+    abbr: "WA",
     category: "Web Security Layer",
     color: "#f6821f",
     description:
@@ -795,7 +778,7 @@ const entries: CatalogEntry[] = [
   {
     id: "edr",
     name: "EDR",
-    abbr: "EDR",
+    abbr: "ED",
     category: "Endpoint Security",
     color: "#d32f2f",
     description:
@@ -812,7 +795,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xdr",
     name: "XDR",
-    abbr: "XDR",
+    abbr: "XD",
     category: "Threat Detection",
     color: "#6a1b9a",
     description:
@@ -830,7 +813,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pki",
     name: "PKI",
-    abbr: "PKI",
+    abbr: "PK",
     category: "Security Infrastructure",
     color: "#2e7d32",
     description:

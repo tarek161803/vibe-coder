@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tcp",
     name: "TCP",
-    abbr: "TCP",
+    abbr: "TC",
     category: "Network Protocol",
     color: "#2563eb",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "udp",
     name: "UDP",
-    abbr: "UDP",
+    abbr: "UD",
     category: "Network Protocol",
     color: "#0ea5e9",
     description:
@@ -37,26 +37,9 @@ const entries: CatalogEntry[] = [
     url: "https://en.wikipedia.org/wiki/User_Datagram_Protocol",
   },
   {
-    id: "ip",
-    name: "IP",
-    abbr: "IP",
-    category: "Network Protocol",
-    color: "#4f46e5",
-    description:
-      "The Internet Protocol gives every device an address and moves packets of data from one address to another across many networks. It is the basic delivery system of the internet.",
-    highlights: [
-      "Addressing every internet device",
-      "Routing packets between networks",
-      "Foundation under TCP and UDP",
-    ],
-    funFact:
-      "On January 1, 1983, the ARPANET switched over to TCP/IP all at once. That \"flag day\" is often called the birthday of the internet.",
-    url: "https://en.wikipedia.org/wiki/Internet_Protocol",
-  },
-  {
     id: "ipv4",
     name: "IPv4",
-    abbr: "IPv4",
+    abbr: "v4",
     category: "Network Protocol",
     color: "#6366f1",
     description:
@@ -73,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ipv6",
     name: "IPv6",
-    abbr: "IPv6",
+    abbr: "v6",
     category: "Network Protocol",
     color: "#7c3aed",
     description:
@@ -90,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "http",
     name: "HTTP",
-    abbr: "HTTP",
+    abbr: "HT",
     category: "Web Protocol",
     color: "#e44d26",
     description:
@@ -107,7 +90,7 @@ const entries: CatalogEntry[] = [
   {
     id: "https",
     name: "HTTPS",
-    abbr: "HTTPS",
+    abbr: "HS",
     category: "Web Protocol",
     color: "#16a34a",
     description:
@@ -158,7 +141,7 @@ const entries: CatalogEntry[] = [
   {
     id: "quic",
     name: "QUIC",
-    abbr: "QUIC",
+    abbr: "QU",
     category: "Transport Protocol",
     color: "#0891b2",
     description:
@@ -175,7 +158,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ftp",
     name: "FTP",
-    abbr: "FTP",
+    abbr: "FT",
     category: "File Transfer Protocol",
     color: "#64748b",
     description:
@@ -192,7 +175,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sftp",
     name: "SFTP",
-    abbr: "SFTP",
+    abbr: "SF",
     category: "File Transfer Protocol",
     color: "#0d9488",
     description:
@@ -209,7 +192,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ssh",
     name: "SSH",
-    abbr: "SSH",
+    abbr: "SS",
     category: "Network Protocol",
     color: "#1e88e5",
     description:
@@ -226,7 +209,7 @@ const entries: CatalogEntry[] = [
   {
     id: "smtp",
     name: "SMTP",
-    abbr: "SMTP",
+    abbr: "SM",
     category: "Email Protocol",
     color: "#dc2626",
     description:
@@ -243,7 +226,7 @@ const entries: CatalogEntry[] = [
   {
     id: "imap",
     name: "IMAP",
-    abbr: "IMAP",
+    abbr: "IM",
     category: "Email Protocol",
     color: "#b91c1c",
     description:
@@ -260,7 +243,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pop3",
     name: "POP3",
-    abbr: "POP3",
+    abbr: "P3",
     category: "Email Protocol",
     color: "#e11d48",
     description:
@@ -278,7 +261,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dns",
     name: "DNS",
-    abbr: "DNS",
+    abbr: "DN",
     category: "Network Protocol",
     color: "#0284c7",
     description:
@@ -295,7 +278,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dhcp",
     name: "DHCP",
-    abbr: "DHCP",
+    abbr: "DH",
     category: "Network Protocol",
     color: "#059669",
     description:
@@ -312,7 +295,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tls",
     name: "TLS",
-    abbr: "TLS",
+    abbr: "TL",
     category: "Security Protocol",
     color: "#15803d",
     description:
@@ -329,7 +312,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ssl",
     name: "SSL",
-    abbr: "SSL",
+    abbr: "SS",
     category: "Security Protocol",
     color: "#ca8a04",
     description:
@@ -346,7 +329,7 @@ const entries: CatalogEntry[] = [
   {
     id: "icmp",
     name: "ICMP",
-    abbr: "ICMP",
+    abbr: "IC",
     category: "Network Protocol",
     color: "#9333ea",
     description:
@@ -363,7 +346,7 @@ const entries: CatalogEntry[] = [
   {
     id: "snmp",
     name: "SNMP",
-    abbr: "SNMP",
+    abbr: "SN",
     category: "Network Protocol",
     color: "#7c2d12",
     description:
@@ -381,7 +364,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mqtt",
     name: "MQTT",
-    abbr: "MQTT",
+    abbr: "MQ",
     category: "IoT Protocol",
     color: "#660066",
     description:
@@ -398,7 +381,7 @@ const entries: CatalogEntry[] = [
   {
     id: "amqp",
     name: "AMQP",
-    abbr: "AMQP",
+    abbr: "AM",
     category: "Messaging Protocol",
     color: "#ff6600",
     description:
@@ -416,7 +399,7 @@ const entries: CatalogEntry[] = [
   {
     id: "coap",
     name: "CoAP",
-    abbr: "CoAP",
+    abbr: "CP",
     category: "IoT Protocol",
     color: "#0f766e",
     description:
@@ -434,7 +417,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ethernet",
     name: "Ethernet",
-    abbr: "ETH",
+    abbr: "Et",
     category: "Networking Standard",
     color: "#2563eb",
     description:
@@ -451,7 +434,7 @@ const entries: CatalogEntry[] = [
   {
     id: "wi-fi",
     name: "Wi-Fi",
-    abbr: "WiFi",
+    abbr: "Wi",
     category: "Wireless Standard",
     color: "#0ea5e9",
     description:
@@ -485,7 +468,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nfc",
     name: "NFC",
-    abbr: "NFC",
+    abbr: "NF",
     category: "Wireless Standard",
     color: "#14b8a6",
     description:
@@ -553,7 +536,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vpn",
     name: "VPN",
-    abbr: "VPN",
+    abbr: "VP",
     category: "Network Security",
     color: "#16a34a",
     description:
@@ -570,7 +553,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vlan",
     name: "VLAN",
-    abbr: "VLAN",
+    abbr: "VL",
     category: "Network Segmentation",
     color: "#0369a1",
     description:
@@ -588,7 +571,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sdn",
     name: "SDN",
-    abbr: "SDN",
+    abbr: "SD",
     category: "Network Architecture",
     color: "#4338ca",
     description:
@@ -606,7 +589,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cdn",
     name: "CDN",
-    abbr: "CDN",
+    abbr: "CD",
     category: "Network Concept",
     color: "#f97316",
     description:
@@ -623,7 +606,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bgp",
     name: "BGP",
-    abbr: "BGP",
+    abbr: "BG",
     category: "Routing Protocol",
     color: "#be123c",
     description:
@@ -640,7 +623,7 @@ const entries: CatalogEntry[] = [
   {
     id: "anycast",
     name: "Anycast",
-    abbr: "ANY",
+    abbr: "An",
     category: "Routing Technique",
     color: "#0891b2",
     description:
@@ -658,7 +641,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ipsec",
     name: "IPsec",
-    abbr: "IPsec",
+    abbr: "IS",
     category: "Security Protocol",
     color: "#047857",
     description:
@@ -693,7 +676,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openvpn",
     name: "OpenVPN",
-    abbr: "OVPN",
+    abbr: "Op",
     category: "VPN Software",
     color: "#ea7e20",
     description:
@@ -710,7 +693,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dnssec",
     name: "DNSSEC",
-    abbr: "DSEC",
+    abbr: "DS",
     category: "Security Protocol",
     color: "#1d4ed8",
     description:

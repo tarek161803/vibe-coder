@@ -23,7 +23,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-ignite",
     name: "Apache Ignite",
-    abbr: "IGN",
+    abbr: "AI",
     category: "In-Memory Database",
     color: "#e5323e",
     description:
@@ -41,7 +41,7 @@ const entries: CatalogEntry[] = [
   {
     id: "consul",
     name: "Consul",
-    abbr: "CSL",
+    abbr: "Co",
     category: "Service Networking",
     color: "#e03875",
     description:
@@ -58,7 +58,7 @@ const entries: CatalogEntry[] = [
   {
     id: "etcd",
     name: "etcd",
-    abbr: "etcd",
+    abbr: "Et",
     category: "Key-Value Store",
     color: "#419eda",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cap-theorem",
     name: "CAP Theorem",
-    abbr: "CAP",
+    abbr: "CT",
     category: "Distributed Concept",
     color: "#e17055",
     description:
@@ -109,7 +109,7 @@ const entries: CatalogEntry[] = [
   {
     id: "consensus-algorithms",
     name: "Consensus Algorithms",
-    abbr: "CONS",
+    abbr: "CA",
     category: "Distributed Concept",
     color: "#00a8a8",
     description:
@@ -126,7 +126,7 @@ const entries: CatalogEntry[] = [
   {
     id: "raft",
     name: "Raft",
-    abbr: "RAFT",
+    abbr: "RA",
     category: "Consensus Algorithm",
     color: "#2e86de",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "paxos",
     name: "Paxos",
-    abbr: "PAX",
+    abbr: "Pa",
     category: "Consensus Algorithm",
     color: "#1e3799",
     description:
@@ -161,7 +161,7 @@ const entries: CatalogEntry[] = [
   {
     id: "distributed-transactions",
     name: "Distributed Transactions",
-    abbr: "DTX",
+    abbr: "DT",
     category: "Distributed Concept",
     color: "#8e44ad",
     description:
@@ -212,7 +212,7 @@ const entries: CatalogEntry[] = [
   {
     id: "leader-election",
     name: "Leader Election",
-    abbr: "LEAD",
+    abbr: "LE",
     category: "Distributed Concept",
     color: "#fdcb6e",
     description:
@@ -230,7 +230,7 @@ const entries: CatalogEntry[] = [
   {
     id: "distributed-locking",
     name: "Distributed Locking",
-    abbr: "LOCK",
+    abbr: "DL",
     category: "Distributed Concept",
     color: "#636e72",
     description:
@@ -282,7 +282,7 @@ const entries: CatalogEntry[] = [
   {
     id: "retry-mechanisms",
     name: "Retry Mechanisms",
-    abbr: "RTRY",
+    abbr: "RM",
     category: "Resilience Pattern",
     color: "#fd9644",
     description:
@@ -299,7 +299,7 @@ const entries: CatalogEntry[] = [
   {
     id: "idempotency",
     name: "Idempotency",
-    abbr: "IDEM",
+    abbr: "Id",
     category: "API Design Concept",
     color: "#6c5ce7",
     description:
@@ -316,7 +316,7 @@ const entries: CatalogEntry[] = [
   {
     id: "saga-pattern",
     name: "Saga Pattern",
-    abbr: "SAGA",
+    abbr: "SP",
     category: "Microservices Pattern",
     color: "#a55eea",
     description:
@@ -334,7 +334,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-thrift",
     name: "Apache Thrift",
-    abbr: "THR",
+    abbr: "AT",
     category: "RPC Framework",
     color: "#c0392b",
     description:

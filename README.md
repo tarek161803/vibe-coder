@@ -55,8 +55,11 @@ src/
       obstacles.ts              Obstacle formations and the spawner
       particles.ts              Dust, crash burst, speed trail
     rendering/
-      background.ts             Parallax synthwave/code scenery
-      playerSprites.ts          Pixel-art character sprites
+      background.ts             Sky and stars; layers the clouds, city and road
+      clouds.ts                 A few soft night clouds drifting behind the city
+      skyline.ts                Developer city: server racks, code screens, neon signs, antennas
+      road.ts                   Neon perspective grid floor (the running surface)
+      character.ts              The vibe coder: vector drawing and animated poses
       logoAtlas.ts              Loads and caches obstacle logos for the canvas
   lib/
     progress.ts                 High score and discovered entries (localStorage)
@@ -75,12 +78,12 @@ npm run icons -- --report # see which names matched and which didn't
 ```
 
 If the name matches a [Simple Icons](https://simpleicons.org) title, the entry gets the real logo.
-If not, it gets a text badge built from its `abbr` (1–5 characters) and `color`. For names that
+If not, it gets a text badge built from its `abbr` (1–2 characters, so it stays readable while moving) and `color`. For names that
 differ, add to `ALIASES` in `scripts/generate-brand-icons.mts`. If the name matches a different
 product (for example GNU Make and the Make automation platform), add it to `BLOCKLIST` there.
 
 Core technologies live in `src/content/coreTechnologies.ts` and use `logo: brand("<id>")`.
-Hazards live in `src/content/hazards.ts` and use a text badge, `logo: badgeLogo("BUG", "#ef4444")`:
+Hazards live in `src/content/hazards.ts` and use a text badge, `logo: badgeLogo("BG", "#ef4444")`:
 
 ```ts
 {

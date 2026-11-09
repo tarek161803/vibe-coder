@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cpu",
     name: "CPU",
-    abbr: "CPU",
+    abbr: "CP",
     category: "Processor",
     color: "#0071c5",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gpu",
     name: "GPU",
-    abbr: "GPU",
+    abbr: "GP",
     category: "Processor",
     color: "#76b900",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tpu",
     name: "TPU",
-    abbr: "TPU",
+    abbr: "TP",
     category: "AI Accelerator",
     color: "#4285f4",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "npu",
     name: "NPU",
-    abbr: "NPU",
+    abbr: "NP",
     category: "AI Accelerator",
     color: "#8e44ad",
     description:
@@ -73,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ram",
     name: "RAM",
-    abbr: "RAM",
+    abbr: "RA",
     category: "Computer Memory",
     color: "#27ae60",
     description:
@@ -90,7 +90,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rom",
     name: "ROM",
-    abbr: "ROM",
+    abbr: "RO",
     category: "Computer Memory",
     color: "#d35400",
     description:
@@ -107,7 +107,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ssd",
     name: "SSD",
-    abbr: "SSD",
+    abbr: "SS",
     category: "Storage Device",
     color: "#2980b9",
     description:
@@ -124,7 +124,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hdd",
     name: "HDD",
-    abbr: "HDD",
+    abbr: "HD",
     category: "Storage Device",
     color: "#7f8c8d",
     description:
@@ -158,7 +158,7 @@ const entries: CatalogEntry[] = [
   {
     id: "motherboard",
     name: "Motherboard",
-    abbr: "MOBO",
+    abbr: "Mo",
     category: "PC Hardware",
     color: "#16a085",
     description:
@@ -175,7 +175,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nic",
     name: "NIC",
-    abbr: "NIC",
+    abbr: "NI",
     category: "Network Hardware",
     color: "#3498db",
     description:
@@ -192,7 +192,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fpga",
     name: "FPGA",
-    abbr: "FPGA",
+    abbr: "FP",
     category: "Programmable Chip",
     color: "#ed1c24",
     description:
@@ -209,7 +209,7 @@ const entries: CatalogEntry[] = [
   {
     id: "asic",
     name: "ASIC",
-    abbr: "ASIC",
+    abbr: "AS",
     category: "Custom Chip",
     color: "#c0392b",
     description:
@@ -226,7 +226,7 @@ const entries: CatalogEntry[] = [
   {
     id: "x86",
     name: "x86",
-    abbr: "x86",
+    abbr: "86",
     category: "Instruction Set",
     color: "#0068b5",
     description:
@@ -243,7 +243,7 @@ const entries: CatalogEntry[] = [
   {
     id: "x86-64",
     name: "x86-64",
-    abbr: "x64",
+    abbr: "64",
     category: "Instruction Set",
     color: "#00a4ef",
     description:
@@ -260,7 +260,7 @@ const entries: CatalogEntry[] = [
   {
     id: "arm",
     name: "ARM",
-    abbr: "ARM",
+    abbr: "AR",
     category: "Instruction Set",
     color: "#0091bd",
     description:
@@ -277,7 +277,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aarch64",
     name: "AArch64",
-    abbr: "A64",
+    abbr: "A6",
     category: "Instruction Set",
     color: "#00c1de",
     description:
@@ -312,7 +312,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mips",
     name: "MIPS",
-    abbr: "MIPS",
+    abbr: "MI",
     category: "Instruction Set",
     color: "#e4002b",
     description:
@@ -330,7 +330,7 @@ const entries: CatalogEntry[] = [
   {
     id: "powerpc",
     name: "PowerPC",
-    abbr: "PPC",
+    abbr: "Po",
     category: "Instruction Set",
     color: "#1f70c1",
     description:
@@ -348,7 +348,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sparc",
     name: "SPARC",
-    abbr: "SPARC",
+    abbr: "SP",
     category: "Instruction Set",
     color: "#e76f00",
     description:
@@ -366,7 +366,7 @@ const entries: CatalogEntry[] = [
   {
     id: "semiconductor-design",
     name: "Semiconductor Design",
-    abbr: "SEMI",
+    abbr: "SD",
     category: "Engineering Field",
     color: "#2c7be5",
     description:
@@ -384,7 +384,7 @@ const entries: CatalogEntry[] = [
   {
     id: "digital-logic",
     name: "Digital Logic",
-    abbr: "AND",
+    abbr: "DL",
     category: "Hardware Concept",
     color: "#9b59b6",
     description:
@@ -401,7 +401,7 @@ const entries: CatalogEntry[] = [
   {
     id: "boolean-algebra",
     name: "Boolean Algebra",
-    abbr: "BOOL",
+    abbr: "BA",
     category: "Math Concept",
     color: "#8e44ad",
     description:
@@ -418,7 +418,7 @@ const entries: CatalogEntry[] = [
   {
     id: "microarchitecture",
     name: "Microarchitecture",
-    abbr: "uArch",
+    abbr: "Mi",
     category: "Hardware Concept",
     color: "#2471a3",
     description:
@@ -436,7 +436,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pipelining",
     name: "Pipelining",
-    abbr: "PIPE",
+    abbr: "Pi",
     category: "CPU Technique",
     color: "#1abc9c",
     description:
@@ -471,7 +471,7 @@ const entries: CatalogEntry[] = [
   {
     id: "out-of-order-execution",
     name: "Out-of-Order Execution",
-    abbr: "OoO",
+    abbr: "OO",
     category: "CPU Technique",
     color: "#e74c3c",
     description:
@@ -489,7 +489,7 @@ const entries: CatalogEntry[] = [
   {
     id: "simd",
     name: "SIMD",
-    abbr: "SIMD",
+    abbr: "SI",
     category: "Parallel Computing",
     color: "#00b894",
     description:
@@ -523,7 +523,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gpu-computing",
     name: "GPU Computing",
-    abbr: "GPGPU",
+    abbr: "GP",
     category: "Parallel Computing",
     color: "#76b900",
     description:
@@ -540,7 +540,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fpga-programming",
     name: "FPGA Programming",
-    abbr: "FPGA",
+    abbr: "FP",
     category: "Hardware Development",
     color: "#c0392b",
     description:
@@ -558,7 +558,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vlsi-design",
     name: "VLSI Design",
-    abbr: "VLSI",
+    abbr: "VD",
     category: "Chip Design",
     color: "#0e7c86",
     description:
@@ -594,7 +594,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vhdl",
     name: "VHDL",
-    abbr: "VHDL",
+    abbr: "VH",
     category: "Hardware Description Lang",
     color: "#3d6db5",
     description:
@@ -630,7 +630,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vivado",
     name: "Vivado",
-    abbr: "VIV",
+    abbr: "Vi",
     category: "FPGA Design Suite",
     color: "#ed1c24",
     description:
@@ -648,7 +648,7 @@ const entries: CatalogEntry[] = [
   {
     id: "quartus",
     name: "Quartus",
-    abbr: "QII",
+    abbr: "Qu",
     category: "FPGA Design Suite",
     color: "#0071c5",
     description:
@@ -666,7 +666,7 @@ const entries: CatalogEntry[] = [
   {
     id: "modelsim",
     name: "ModelSim",
-    abbr: "MSIM",
+    abbr: "Mo",
     category: "HDL Simulator",
     color: "#009999",
     description:
@@ -684,7 +684,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cadence",
     name: "Cadence",
-    abbr: "CDN",
+    abbr: "Ca",
     category: "EDA Software",
     color: "#e2231a",
     description:
@@ -702,7 +702,7 @@ const entries: CatalogEntry[] = [
   {
     id: "synopsys",
     name: "Synopsys",
-    abbr: "SNPS",
+    abbr: "Sy",
     category: "EDA Software",
     color: "#5a2a82",
     description:

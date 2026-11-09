@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gcc",
     name: "GCC",
-    abbr: "GCC",
+    abbr: "GC",
     category: "Compiler",
     color: "#ffcf00",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "llvm",
     name: "LLVM",
-    abbr: "LLVM",
+    abbr: "LL",
     category: "Compiler Infrastructure",
     color: "#a3242a",
     description:
@@ -109,7 +109,7 @@ const entries: CatalogEntry[] = [
   {
     id: "graalvm",
     name: "GraalVM",
-    abbr: "GVM",
+    abbr: "Gr",
     category: "Runtime & Compiler",
     color: "#e44c26",
     description:
@@ -126,7 +126,7 @@ const entries: CatalogEntry[] = [
   {
     id: "typescript-compiler",
     name: "TypeScript Compiler",
-    abbr: "tsc",
+    abbr: "TC",
     category: "Compiler",
     color: "#3178c6",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rustc",
     name: "Rustc",
-    abbr: "RSC",
+    abbr: "Ru",
     category: "Compiler",
     color: "#ce422b",
     description:
@@ -160,7 +160,7 @@ const entries: CatalogEntry[] = [
   {
     id: "roslyn",
     name: "Roslyn",
-    abbr: "RSLN",
+    abbr: "Ro",
     category: "Compiler Platform",
     color: "#512bd4",
     description:
@@ -178,7 +178,7 @@ const entries: CatalogEntry[] = [
   {
     id: "antlr",
     name: "ANTLR",
-    abbr: "ANTLR",
+    abbr: "AN",
     category: "Parser Generator",
     color: "#e53935",
     description:
@@ -214,7 +214,7 @@ const entries: CatalogEntry[] = [
   {
     id: "flex",
     name: "Flex",
-    abbr: "FLEX",
+    abbr: "FL",
     category: "Lexer Generator",
     color: "#f4b400",
     description:
@@ -232,7 +232,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bison",
     name: "Bison",
-    abbr: "BSN",
+    abbr: "Bi",
     category: "Parser Generator",
     color: "#8d6e63",
     description:
@@ -250,7 +250,7 @@ const entries: CatalogEntry[] = [
   {
     id: "llvm-mlir",
     name: "LLVM MLIR",
-    abbr: "MLIR",
+    abbr: "LM",
     category: "Compiler Infrastructure",
     color: "#c62828",
     description:
@@ -268,7 +268,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lexical-analysis",
     name: "Lexical Analysis",
-    abbr: "LEX",
+    abbr: "LA",
     category: "Compiler Phase",
     color: "#0097a7",
     description:
@@ -285,7 +285,7 @@ const entries: CatalogEntry[] = [
   {
     id: "parsing",
     name: "Parsing",
-    abbr: "PARSE",
+    abbr: "Pa",
     category: "Compiler Phase",
     color: "#5e35b1",
     description:
@@ -302,7 +302,7 @@ const entries: CatalogEntry[] = [
   {
     id: "abstract-syntax-trees",
     name: "Abstract Syntax Trees",
-    abbr: "AST",
+    abbr: "AS",
     category: "Compiler Concept",
     color: "#2e7d32",
     description:
@@ -337,7 +337,7 @@ const entries: CatalogEntry[] = [
   {
     id: "semantic-analysis",
     name: "Semantic Analysis",
-    abbr: "SEM",
+    abbr: "SA",
     category: "Compiler Phase",
     color: "#6a1b9a",
     description:
@@ -372,7 +372,7 @@ const entries: CatalogEntry[] = [
   {
     id: "compiler-optimization",
     name: "Compiler Optimization",
-    abbr: "OPT",
+    abbr: "CO",
     category: "Compiler Phase",
     color: "#ef6c00",
     description:
@@ -389,7 +389,7 @@ const entries: CatalogEntry[] = [
   {
     id: "code-generation",
     name: "Code Generation",
-    abbr: "CGEN",
+    abbr: "CG",
     category: "Compiler Phase",
     color: "#00838f",
     description:
@@ -407,7 +407,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jit-compilation",
     name: "JIT Compilation",
-    abbr: "JIT",
+    abbr: "JC",
     category: "Execution Strategy",
     color: "#f57c00",
     description:
@@ -424,7 +424,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aot-compilation",
     name: "AOT Compilation",
-    abbr: "AOT",
+    abbr: "AC",
     category: "Execution Strategy",
     color: "#388e3c",
     description:

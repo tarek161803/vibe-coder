@@ -3,26 +3,9 @@ import type { CatalogEntry } from "../types";
 /** Robotics and Autonomous Systems */
 const entries: CatalogEntry[] = [
   {
-    id: "ros",
-    name: "ROS",
-    abbr: "ROS",
-    category: "Robotics Framework",
-    color: "#22314e",
-    description:
-      "The Robot Operating System: a set of open-source libraries and tools for building robot software. Programs run as separate nodes that send messages to each other.",
-    highlights: [
-      "Research robots in universities",
-      "Connecting sensors, motors and planners",
-      "Visualization with RViz",
-    ],
-    funFact:
-      "Despite the name, ROS isn't really an operating system — it runs on top of Linux. It grew out of work at Stanford and the robotics lab Willow Garage around 2007.",
-    url: "https://www.ros.org/",
-  },
-  {
     id: "ros-2",
     name: "ROS 2",
-    abbr: "ROS2",
+    abbr: "R2",
     category: "Robotics Framework",
     color: "#2b4c7e",
     description:
@@ -74,7 +57,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nvidia-isaac",
     name: "NVIDIA Isaac",
-    abbr: "ISAAC",
+    abbr: "NI",
     category: "Robotics Platform",
     color: "#76b900",
     description:
@@ -92,7 +75,7 @@ const entries: CatalogEntry[] = [
   {
     id: "open-rmf",
     name: "Open-RMF",
-    abbr: "RMF",
+    abbr: "OR",
     category: "Robot Fleet Framework",
     color: "#1e88e5",
     description:
@@ -110,7 +93,7 @@ const entries: CatalogEntry[] = [
   {
     id: "px4",
     name: "PX4",
-    abbr: "PX4",
+    abbr: "PX",
     category: "Drone Autopilot",
     color: "#2e7bcf",
     description:
@@ -141,24 +124,6 @@ const entries: CatalogEntry[] = [
     funFact:
       "ArduPilot began in the DIY Drones community on Arduino boards — hence the \"Ardu\" — and today it even has a version for underwater vehicles called ArduSub.",
     url: "https://ardupilot.org/",
-    spawnWeight: 0.5,
-  },
-  {
-    id: "tensorflow-robotics",
-    name: "TensorFlow Robotics",
-    abbr: "TFR",
-    category: "Robot Learning",
-    color: "#ff6f00",
-    description:
-      "Using the TensorFlow machine-learning library to teach robots skills, such as grasping or navigation. Libraries like TF-Agents help train robot policies with reinforcement learning.",
-    highlights: [
-      "Reinforcement learning with TF-Agents",
-      "Vision models for robot perception",
-      "Running models on robots with TF Lite",
-    ],
-    funFact:
-      "In 2016 Google researchers set up a room full of robot arms that practiced grasping objects in parallel, pooling their experience to learn faster than one robot could.",
-    url: "https://www.tensorflow.org/agents",
     spawnWeight: 0.5,
   },
   {
@@ -249,7 +214,7 @@ const entries: CatalogEntry[] = [
   {
     id: "localization",
     name: "Localization",
-    abbr: "LOC",
+    abbr: "Lo",
     category: "Robotics Concept",
     color: "#c0392b",
     description:
@@ -266,7 +231,7 @@ const entries: CatalogEntry[] = [
   {
     id: "kinematics",
     name: "Kinematics",
-    abbr: "KIN",
+    abbr: "Ki",
     category: "Robotics Math",
     color: "#2980b9",
     description:
@@ -283,7 +248,7 @@ const entries: CatalogEntry[] = [
   {
     id: "control-systems",
     name: "Control Systems",
-    abbr: "CTRL",
+    abbr: "CS",
     category: "Engineering Field",
     color: "#d35400",
     description:

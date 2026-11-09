@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "clerk",
     name: "Clerk",
-    abbr: "Clerk",
+    abbr: "Cl",
     category: "Auth Service",
     color: "#6c47ff",
     description:
@@ -91,7 +91,7 @@ const entries: CatalogEntry[] = [
   {
     id: "amazon-cognito",
     name: "Amazon Cognito",
-    abbr: "COG",
+    abbr: "AC",
     category: "Identity Service",
     color: "#dd344c",
     description:
@@ -108,7 +108,7 @@ const entries: CatalogEntry[] = [
   {
     id: "okta",
     name: "Okta",
-    abbr: "Okta",
+    abbr: "Ok",
     category: "Identity Platform",
     color: "#007dc1",
     description:
@@ -125,7 +125,7 @@ const entries: CatalogEntry[] = [
   {
     id: "microsoft-entra-id",
     name: "Microsoft Entra ID",
-    abbr: "Entra",
+    abbr: "ME",
     category: "Identity Service",
     color: "#0078d4",
     description:
@@ -176,7 +176,7 @@ const entries: CatalogEntry[] = [
   {
     id: "adyen",
     name: "Adyen",
-    abbr: "ADY",
+    abbr: "Ad",
     category: "Payments Platform",
     color: "#0abf53",
     description:
@@ -212,7 +212,7 @@ const entries: CatalogEntry[] = [
   {
     id: "paddle",
     name: "Paddle",
-    abbr: "PDL",
+    abbr: "Pa",
     category: "Merchant of Record",
     color: "#3f5ffb",
     description:
@@ -248,7 +248,7 @@ const entries: CatalogEntry[] = [
   {
     id: "google-play-billing",
     name: "Google Play Billing",
-    abbr: "GPB",
+    abbr: "GP",
     category: "In-App Billing API",
     color: "#01875f",
     description:
@@ -284,7 +284,7 @@ const entries: CatalogEntry[] = [
   {
     id: "razorpay",
     name: "Razorpay",
-    abbr: "RZP",
+    abbr: "Ra",
     category: "Payments Gateway",
     color: "#3395ff",
     description:
@@ -302,7 +302,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sslcommerz",
     name: "SSLCommerz",
-    abbr: "SSLC",
+    abbr: "Ss",
     category: "Payments Gateway",
     color: "#1f6fb2",
     description:
@@ -320,7 +320,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pci-dss",
     name: "PCI DSS",
-    abbr: "PCI",
+    abbr: "PD",
     category: "Security Standard",
     color: "#c62828",
     description:
@@ -337,7 +337,7 @@ const entries: CatalogEntry[] = [
   {
     id: "3d-secure",
     name: "3D Secure",
-    abbr: "3DS",
+    abbr: "3D",
     category: "Payment Security Protocol",
     color: "#1565c0",
     description:
@@ -354,7 +354,7 @@ const entries: CatalogEntry[] = [
   {
     id: "emv",
     name: "EMV",
-    abbr: "EMV",
+    abbr: "EM",
     category: "Payment Card Standard",
     color: "#d4a017",
     description:

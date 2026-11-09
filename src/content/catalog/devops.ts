@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "podman",
     name: "Podman",
-    abbr: "POD",
+    abbr: "Po",
     category: "Container Engine",
     color: "#892ca0",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "containerd",
     name: "containerd",
-    abbr: "CTRD",
+    abbr: "Co",
     category: "Container Runtime",
     color: "#0b99d1",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "buildah",
     name: "Buildah",
-    abbr: "BLD",
+    abbr: "Bu",
     category: "Container Build Tool",
     color: "#9a3c8f",
     description:
@@ -57,7 +57,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lxc",
     name: "LXC",
-    abbr: "LXC",
+    abbr: "LX",
     category: "Container Technology",
     color: "#ff8c00",
     description:
@@ -75,7 +75,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lxd",
     name: "LXD",
-    abbr: "LXD",
+    abbr: "LX",
     category: "Container Manager",
     color: "#e95420",
     description:
@@ -93,7 +93,7 @@ const entries: CatalogEntry[] = [
   {
     id: "docker-swarm",
     name: "Docker Swarm",
-    abbr: "SWRM",
+    abbr: "DS",
     category: "Container Orchestrator",
     color: "#2496ed",
     description:
@@ -110,7 +110,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nomad",
     name: "Nomad",
-    abbr: "NMD",
+    abbr: "No",
     category: "Workload Orchestrator",
     color: "#00ca8e",
     description:
@@ -127,7 +127,7 @@ const entries: CatalogEntry[] = [
   {
     id: "amazon-ecs",
     name: "Amazon ECS",
-    abbr: "ECS",
+    abbr: "AE",
     category: "Container Orchestrator",
     color: "#ff9900",
     description:
@@ -144,7 +144,7 @@ const entries: CatalogEntry[] = [
   {
     id: "amazon-eks",
     name: "Amazon EKS",
-    abbr: "EKS",
+    abbr: "AE",
     category: "Managed Kubernetes",
     color: "#ff9900",
     description:
@@ -161,7 +161,7 @@ const entries: CatalogEntry[] = [
   {
     id: "google-kubernetes-engine",
     name: "Google Kubernetes Engine",
-    abbr: "GKE",
+    abbr: "GK",
     category: "Managed Kubernetes",
     color: "#4285f4",
     description:
@@ -178,7 +178,7 @@ const entries: CatalogEntry[] = [
   {
     id: "azure-kubernetes-service",
     name: "Azure Kubernetes Service",
-    abbr: "AKS",
+    abbr: "AK",
     category: "Managed Kubernetes",
     color: "#0078d4",
     description:
@@ -212,7 +212,7 @@ const entries: CatalogEntry[] = [
   {
     id: "opentofu",
     name: "OpenTofu",
-    abbr: "TOFU",
+    abbr: "Op",
     category: "Infrastructure as Code",
     color: "#ffda18",
     description:
@@ -229,7 +229,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pulumi",
     name: "Pulumi",
-    abbr: "PLM",
+    abbr: "Pu",
     category: "Infrastructure as Code",
     color: "#8a3391",
     description:
@@ -246,7 +246,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws-cloudformation",
     name: "AWS CloudFormation",
-    abbr: "CFN",
+    abbr: "AC",
     category: "Infrastructure as Code",
     color: "#e7157b",
     description:
@@ -263,7 +263,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ansible",
     name: "Ansible",
-    abbr: "ANS",
+    abbr: "An",
     category: "Configuration Management",
     color: "#ee0000",
     description:
@@ -280,7 +280,7 @@ const entries: CatalogEntry[] = [
   {
     id: "chef",
     name: "Chef",
-    abbr: "CHEF",
+    abbr: "CH",
     category: "Configuration Management",
     color: "#f18b21",
     description:
@@ -297,7 +297,7 @@ const entries: CatalogEntry[] = [
   {
     id: "puppet",
     name: "Puppet",
-    abbr: "PUP",
+    abbr: "Pu",
     category: "Configuration Management",
     color: "#ffae1a",
     description:
@@ -314,7 +314,7 @@ const entries: CatalogEntry[] = [
   {
     id: "saltstack",
     name: "SaltStack",
-    abbr: "SALT",
+    abbr: "Sa",
     category: "Configuration Management",
     color: "#57bcad",
     description:
@@ -332,7 +332,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jenkins",
     name: "Jenkins",
-    abbr: "JNK",
+    abbr: "Je",
     category: "CI/CD Server",
     color: "#d24939",
     description:
@@ -349,7 +349,7 @@ const entries: CatalogEntry[] = [
   {
     id: "github-actions",
     name: "GitHub Actions",
-    abbr: "GHA",
+    abbr: "GA",
     category: "CI/CD Platform",
     color: "#2088ff",
     description:
@@ -366,7 +366,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gitlab-ci-cd",
     name: "GitLab CI/CD",
-    abbr: "GLCI",
+    abbr: "GC",
     category: "CI/CD Platform",
     color: "#fc6d26",
     description:
@@ -383,7 +383,7 @@ const entries: CatalogEntry[] = [
   {
     id: "circleci",
     name: "CircleCI",
-    abbr: "CCI",
+    abbr: "Ci",
     category: "CI/CD Platform",
     color: "#04aa51",
     description:
@@ -400,7 +400,7 @@ const entries: CatalogEntry[] = [
   {
     id: "travis-ci",
     name: "Travis CI",
-    abbr: "TRAV",
+    abbr: "TC",
     category: "CI/CD Platform",
     color: "#cd324a",
     description:
@@ -454,7 +454,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bitbucket-pipelines",
     name: "Bitbucket Pipelines",
-    abbr: "BBP",
+    abbr: "BP",
     category: "CI/CD Platform",
     color: "#0052cc",
     description:
@@ -472,7 +472,7 @@ const entries: CatalogEntry[] = [
   {
     id: "argo-cd",
     name: "Argo CD",
-    abbr: "ARGO",
+    abbr: "AC",
     category: "GitOps Tool",
     color: "#ef7b4d",
     description:
@@ -489,7 +489,7 @@ const entries: CatalogEntry[] = [
   {
     id: "flux-cd",
     name: "Flux CD",
-    abbr: "FLUX",
+    abbr: "FC",
     category: "GitOps Tool",
     color: "#5468ff",
     description:
@@ -506,7 +506,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tekton",
     name: "Tekton",
-    abbr: "TKN",
+    abbr: "Te",
     category: "CI/CD Framework",
     color: "#fd495c",
     description:
@@ -524,7 +524,7 @@ const entries: CatalogEntry[] = [
   {
     id: "grafana",
     name: "Grafana",
-    abbr: "GRAF",
+    abbr: "Gr",
     category: "Observability Dashboard",
     color: "#f46800",
     description:
@@ -575,7 +575,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sentry",
     name: "Sentry",
-    abbr: "SNTRY",
+    abbr: "Se",
     category: "Error Monitoring",
     color: "#6c5fc7",
     description:
@@ -592,7 +592,7 @@ const entries: CatalogEntry[] = [
   {
     id: "opentelemetry",
     name: "OpenTelemetry",
-    abbr: "OTel",
+    abbr: "Op",
     category: "Observability Standard",
     color: "#f5a800",
     description:
@@ -609,7 +609,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jaeger",
     name: "Jaeger",
-    abbr: "JGR",
+    abbr: "Ja",
     category: "Distributed Tracing",
     color: "#66cfe3",
     description:
@@ -627,7 +627,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zipkin",
     name: "Zipkin",
-    abbr: "ZIP",
+    abbr: "Zi",
     category: "Distributed Tracing",
     color: "#f05a28",
     description:
@@ -645,7 +645,7 @@ const entries: CatalogEntry[] = [
   {
     id: "loki",
     name: "Loki",
-    abbr: "LOKI",
+    abbr: "LO",
     category: "Log Aggregation",
     color: "#fbb03b",
     description:
@@ -662,7 +662,7 @@ const entries: CatalogEntry[] = [
   {
     id: "elk-stack",
     name: "ELK Stack",
-    abbr: "ELK",
+    abbr: "ES",
     category: "Logging Stack",
     color: "#00bfb3",
     description:
@@ -697,7 +697,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nginx",
     name: "Nginx",
-    abbr: "NGX",
+    abbr: "Ng",
     category: "Web Server",
     color: "#009639",
     description:
@@ -714,7 +714,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-http-server",
     name: "Apache HTTP Server",
-    abbr: "httpd",
+    abbr: "AH",
     category: "Web Server",
     color: "#d22128",
     description:
@@ -731,7 +731,7 @@ const entries: CatalogEntry[] = [
   {
     id: "caddy",
     name: "Caddy",
-    abbr: "CDY",
+    abbr: "Ca",
     category: "Web Server",
     color: "#22b638",
     description:
@@ -748,7 +748,7 @@ const entries: CatalogEntry[] = [
   {
     id: "traefik",
     name: "Traefik",
-    abbr: "TRFK",
+    abbr: "Tr",
     category: "Reverse Proxy",
     color: "#24a1c1",
     description:
@@ -765,7 +765,7 @@ const entries: CatalogEntry[] = [
   {
     id: "haproxy",
     name: "HAProxy",
-    abbr: "HAP",
+    abbr: "Ha",
     category: "Load Balancer",
     color: "#106da9",
     description:
@@ -782,7 +782,7 @@ const entries: CatalogEntry[] = [
   {
     id: "envoy",
     name: "Envoy",
-    abbr: "ENVY",
+    abbr: "En",
     category: "Service Proxy",
     color: "#ac6199",
     description:
@@ -835,7 +835,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vmware",
     name: "VMware",
-    abbr: "VMW",
+    abbr: "Vm",
     category: "Virtualization Platform",
     color: "#0091da",
     description:
@@ -852,7 +852,7 @@ const entries: CatalogEntry[] = [
   {
     id: "virtualbox",
     name: "VirtualBox",
-    abbr: "VBOX",
+    abbr: "Vi",
     category: "Hypervisor",
     color: "#2f61b4",
     description:
@@ -886,7 +886,7 @@ const entries: CatalogEntry[] = [
   {
     id: "kvm",
     name: "KVM",
-    abbr: "KVM",
+    abbr: "KV",
     category: "Hypervisor",
     color: "#ff6600",
     description:
@@ -903,7 +903,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xen",
     name: "Xen",
-    abbr: "XEN",
+    abbr: "XE",
     category: "Hypervisor",
     color: "#f39c12",
     description:
@@ -921,7 +921,7 @@ const entries: CatalogEntry[] = [
   {
     id: "proxmox",
     name: "Proxmox",
-    abbr: "PVE",
+    abbr: "Pr",
     category: "Virtualization Platform",
     color: "#e57000",
     description:
@@ -938,7 +938,7 @@ const entries: CatalogEntry[] = [
   {
     id: "qemu",
     name: "QEMU",
-    abbr: "QEMU",
+    abbr: "QE",
     category: "Emulator",
     color: "#f26522",
     description:
@@ -951,6 +951,164 @@ const entries: CatalogEntry[] = [
     funFact:
       "QEMU stands for \"Quick EMUlator\". It was created by Fabrice Bellard, who also started FFmpeg.",
     url: "https://www.qemu.org",
+  },
+  {
+    id: "helm",
+    name: "Helm",
+    abbr: "HE",
+    category: "Kubernetes Packaging",
+    color: "#0f1689",
+    description:
+      "The package manager for Kubernetes. It bundles all the configuration files an app needs into a reusable chart, which you can install, upgrade or roll back with one command and customize with values.",
+    highlights: [
+      "Installing apps on Kubernetes",
+      "Templating Kubernetes YAML",
+      "Upgrades and rollbacks",
+    ],
+    funFact:
+      "Helm 3 removed Tiller, the in-cluster server component Helm 2 required, which made it simpler and fixed a common security worry.",
+    url: "https://helm.sh",
+  },
+  {
+    id: "docker-compose",
+    name: "Docker Compose",
+    abbr: "DC",
+    category: "Container Orchestration",
+    color: "#2496ed",
+    description:
+      "A tool for defining and running multi-container apps with Docker. You describe your services, like a web app, a database and a cache, in one YAML file and start them all with docker compose up.",
+    highlights: [
+      "Local dev environments",
+      "Running app + database together",
+      "Repeatable multi-container setups",
+    ],
+    funFact:
+      "Docker Compose started life as Fig, a tool made by a small company called Orchard, which Docker acquired in 2014.",
+    url: "https://docs.docker.com/compose/",
+  },
+  {
+    id: "launchdarkly",
+    name: "LaunchDarkly",
+    abbr: "LD",
+    category: "Feature Flags",
+    color: "#405bff",
+    description:
+      "A hosted service for feature flags. You wrap new code in a flag, then turn it on or off for specific users or percentages of traffic from a dashboard, without redeploying your app.",
+    highlights: [
+      "Gradual feature rollouts",
+      "Instant kill switches",
+      "A/B tests and experiments",
+    ],
+    funFact:
+      "LaunchDarkly was founded in 2014 by Edith Harbaugh and John Kodumal and helped turn feature flags from a homegrown trick into a product category.",
+    url: "https://launchdarkly.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "istio",
+    name: "Istio",
+    abbr: "Is",
+    category: "Service Mesh",
+    color: "#466bb0",
+    description:
+      "A service mesh for Kubernetes that manages how microservices talk to each other. It adds encryption, traffic routing, retries and monitoring without changing your app code.",
+    highlights: [
+      "Securing service-to-service traffic",
+      "Canary releases and routing",
+      "Microservice observability",
+    ],
+    funFact:
+      "Istio means \"sail\" in Greek, fitting the nautical theme of Kubernetes, whose name means \"helmsman\". It launched in 2017 from Google, IBM and Lyft.",
+    url: "https://istio.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "hashicorp-vault",
+    name: "HashiCorp Vault",
+    abbr: "HV",
+    category: "Secrets Management",
+    color: "#ffd814",
+    description:
+      "A tool for storing and controlling access to secrets like passwords, API keys and certificates. It can also create short-lived credentials on demand and encrypt data for apps.",
+    highlights: [
+      "Storing API keys and passwords",
+      "Short-lived dynamic credentials",
+      "Encryption as a service",
+    ],
+    funFact:
+      "Vault starts \"sealed\". Its master key is split into pieces with Shamir's Secret Sharing, so several people must each provide a piece to unseal it.",
+    url: "https://developer.hashicorp.com/vault",
+  },
+  {
+    id: "linkerd",
+    name: "Linkerd",
+    abbr: "Li",
+    category: "Service Mesh",
+    color: "#2beda7",
+    description:
+      "A lightweight service mesh for Kubernetes. It adds encrypted traffic (mTLS), retries, and metrics between your services automatically, without changing your app code.",
+    highlights: [
+      "Automatic mTLS between services",
+      "Traffic metrics and observability",
+      "Retries and load balancing",
+    ],
+    funFact:
+      "Linkerd 2's tiny per-pod proxy is written in Rust, chosen for speed and memory safety.",
+    url: "https://linkerd.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "vagrant",
+    name: "Vagrant",
+    abbr: "Va",
+    category: "Dev Environments",
+    color: "#1868f2",
+    description:
+      "A tool for creating reproducible development environments in virtual machines. One Vagrantfile describes the machine, and anyone on the team can spin up the same setup.",
+    highlights: [
+      "Reproducible dev VMs",
+      "Testing provisioning scripts",
+      "Matching dev to production setups",
+    ],
+    funFact:
+      "Mitchell Hashimoto created Vagrant in 2010 as a side project, and it became the first product of the company he co-founded: HashiCorp.",
+    url: "https://developer.hashicorp.com/vagrant",
+  },
+  {
+    id: "kustomize",
+    name: "Kustomize",
+    abbr: "Ku",
+    category: "Kubernetes Config Tool",
+    color: "#326ce5",
+    description:
+      "A tool for customizing Kubernetes YAML files without templates. You keep a base configuration and layer small patches on top for each environment, like dev, staging or production.",
+    highlights: [
+      "Per-environment Kubernetes configs",
+      "Patching YAML without templates",
+      "GitOps deployments",
+    ],
+    funFact:
+      "Kustomize is built into kubectl, so you can apply a Kustomize setup with kubectl apply -k without installing anything extra.",
+    url: "https://kustomize.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "packer",
+    name: "Packer",
+    abbr: "Pa",
+    category: "Machine Image Builder",
+    color: "#02a8ef",
+    description:
+      "A HashiCorp tool that builds identical machine images from one config file. It can create images for AWS, Azure, Google Cloud, Docker and more, with your software already installed.",
+    highlights: [
+      "Building pre-baked server images",
+      "Same image across many clouds",
+      "Automating VM image creation",
+    ],
+    funFact:
+      "Packer was created by Mitchell Hashimoto, HashiCorp co-founder and the creator of Vagrant and Terraform.",
+    url: "https://developer.hashicorp.com/packer",
+    spawnWeight: 0.5,
   },
 ];
 

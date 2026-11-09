@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bioinformatics",
     name: "Bioinformatics",
-    abbr: "BIO",
+    abbr: "Bi",
     category: "Scientific Field",
     color: "#2e9e5b",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "blast",
     name: "BLAST",
-    abbr: "BLAST",
+    abbr: "BL",
     category: "Bioinformatics Tool",
     color: "#205493",
     description:
@@ -40,7 +40,7 @@ const entries: CatalogEntry[] = [
   {
     id: "biopython",
     name: "Biopython",
-    abbr: "BioPy",
+    abbr: "Bi",
     category: "Python Library",
     color: "#3776ab",
     description:
@@ -58,7 +58,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bioconductor",
     name: "Bioconductor",
-    abbr: "BIOC",
+    abbr: "Bi",
     category: "R Package Ecosystem",
     color: "#1a81c2",
     description:
@@ -110,7 +110,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cirq",
     name: "Cirq",
-    abbr: "Cirq",
+    abbr: "Ci",
     category: "Quantum SDK",
     color: "#4285f4",
     description:
@@ -164,7 +164,7 @@ const entries: CatalogEntry[] = [
   {
     id: "scientific-computing",
     name: "Scientific Computing",
-    abbr: "SCI",
+    abbr: "SC",
     category: "Computing Field",
     color: "#0277bd",
     description:
@@ -181,7 +181,7 @@ const entries: CatalogEntry[] = [
   {
     id: "matlab",
     name: "MATLAB",
-    abbr: "MAT",
+    abbr: "MA",
     category: "Numerical Computing",
     color: "#e16737",
     description:
@@ -215,7 +215,7 @@ const entries: CatalogEntry[] = [
   {
     id: "scipy",
     name: "SciPy",
-    abbr: "SciPy",
+    abbr: "Sc",
     category: "Python Library",
     color: "#0054a6",
     description:
@@ -232,7 +232,7 @@ const entries: CatalogEntry[] = [
   {
     id: "geographic-information-systems",
     name: "Geographic Information Systems",
-    abbr: "GIS",
+    abbr: "GI",
     category: "Spatial Data Field",
     color: "#2e7d32",
     description:
@@ -249,7 +249,7 @@ const entries: CatalogEntry[] = [
   {
     id: "postgis",
     name: "PostGIS",
-    abbr: "PGIS",
+    abbr: "Po",
     category: "Spatial Database",
     color: "#336791",
     description:
@@ -266,7 +266,7 @@ const entries: CatalogEntry[] = [
   {
     id: "qgis",
     name: "QGIS",
-    abbr: "QGIS",
+    abbr: "QG",
     category: "GIS Software",
     color: "#589632",
     description:
@@ -283,7 +283,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gdal",
     name: "GDAL",
-    abbr: "GDAL",
+    abbr: "GD",
     category: "Geospatial Library",
     color: "#5cae58",
     description:
@@ -301,7 +301,7 @@ const entries: CatalogEntry[] = [
   {
     id: "yolo",
     name: "YOLO",
-    abbr: "YOLO",
+    abbr: "YO",
     category: "Object Detection Model",
     color: "#00b4d8",
     description:
@@ -336,7 +336,7 @@ const entries: CatalogEntry[] = [
   {
     id: "natural-language-processing",
     name: "Natural Language Processing",
-    abbr: "NLP",
+    abbr: "NL",
     category: "AI Field",
     color: "#ff6f61",
     description:
@@ -353,7 +353,7 @@ const entries: CatalogEntry[] = [
   {
     id: "spacy",
     name: "spaCy",
-    abbr: "spaCy",
+    abbr: "Sp",
     category: "NLP Library",
     color: "#09a3d5",
     description:
@@ -370,7 +370,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nltk",
     name: "NLTK",
-    abbr: "NLTK",
+    abbr: "NL",
     category: "NLP Library",
     color: "#2b7a78",
     description:
@@ -387,7 +387,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tensorflow-recommenders",
     name: "TensorFlow Recommenders",
-    abbr: "TFRS",
+    abbr: "TR",
     category: "Recommender Library",
     color: "#ff6f00",
     description:
@@ -405,7 +405,7 @@ const entries: CatalogEntry[] = [
   {
     id: "surprise",
     name: "Surprise",
-    abbr: "SUR",
+    abbr: "Su",
     category: "Recommender Library",
     color: "#f4a261",
     description:
@@ -440,7 +440,7 @@ const entries: CatalogEntry[] = [
   {
     id: "autopsy",
     name: "Autopsy",
-    abbr: "AUT",
+    abbr: "Au",
     category: "Forensics Tool",
     color: "#5d4ea8",
     description:
@@ -458,7 +458,7 @@ const entries: CatalogEntry[] = [
   {
     id: "volatility",
     name: "Volatility",
-    abbr: "VOL",
+    abbr: "Vo",
     category: "Forensics Tool",
     color: "#b23a48",
     description:
@@ -476,7 +476,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sleuth-kit",
     name: "Sleuth Kit",
-    abbr: "TSK",
+    abbr: "SK",
     category: "Forensics Toolkit",
     color: "#6d4c41",
     description:
@@ -494,7 +494,7 @@ const entries: CatalogEntry[] = [
   {
     id: "high-performance-computing",
     name: "High-Performance Computing",
-    abbr: "HPC",
+    abbr: "HP",
     category: "Computing Field",
     color: "#1565c0",
     description:
@@ -511,7 +511,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mpi",
     name: "MPI",
-    abbr: "MPI",
+    abbr: "MP",
     category: "Parallel Computing API",
     color: "#00838f",
     description:
@@ -529,7 +529,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openmp",
     name: "OpenMP",
-    abbr: "OMP",
+    abbr: "Op",
     category: "Parallel Computing API",
     color: "#2a6f97",
     description:
@@ -547,7 +547,7 @@ const entries: CatalogEntry[] = [
   {
     id: "edge-computing",
     name: "Edge Computing",
-    abbr: "EDGE",
+    abbr: "EC",
     category: "Computing Paradigm",
     color: "#00a86b",
     description:
@@ -564,7 +564,7 @@ const entries: CatalogEntry[] = [
   {
     id: "k3s",
     name: "K3s",
-    abbr: "K3s",
+    abbr: "K3",
     category: "Kubernetes Distribution",
     color: "#ffc61c",
     description:
@@ -600,7 +600,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws-greengrass",
     name: "AWS Greengrass",
-    abbr: "AGG",
+    abbr: "AG",
     category: "IoT Edge Runtime",
     color: "#7aa116",
     description:
@@ -635,7 +635,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rdf",
     name: "RDF",
-    abbr: "RDF",
+    abbr: "RD",
     category: "Data Model Standard",
     color: "#0c479d",
     description:
@@ -653,7 +653,7 @@ const entries: CatalogEntry[] = [
   {
     id: "owl",
     name: "OWL",
-    abbr: "OWL",
+    abbr: "OW",
     category: "Ontology Language",
     color: "#a0522d",
     description:
@@ -671,7 +671,7 @@ const entries: CatalogEntry[] = [
   {
     id: "accessibility-technology",
     name: "Accessibility Technology",
-    abbr: "A11y",
+    abbr: "AT",
     category: "Assistive Tech Field",
     color: "#1976d2",
     description:
@@ -688,7 +688,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aria",
     name: "ARIA",
-    abbr: "ARIA",
+    abbr: "AR",
     category: "Web Accessibility Spec",
     color: "#005a9c",
     description:
@@ -757,7 +757,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vtk",
     name: "VTK",
-    abbr: "VTK",
+    abbr: "VT",
     category: "Visualization Library",
     color: "#d32f2f",
     description:
@@ -775,7 +775,7 @@ const entries: CatalogEntry[] = [
   {
     id: "visit",
     name: "VisIt",
-    abbr: "VisIt",
+    abbr: "Vi",
     category: "Visualization Tool",
     color: "#00796b",
     description:
@@ -828,7 +828,7 @@ const entries: CatalogEntry[] = [
   {
     id: "azure-digital-twins",
     name: "Azure Digital Twins",
-    abbr: "ADT",
+    abbr: "AD",
     category: "Digital Twin Service",
     color: "#0078d4",
     description:

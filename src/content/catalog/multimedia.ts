@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gstreamer",
     name: "GStreamer",
-    abbr: "GST",
+    abbr: "Gs",
     category: "Multimedia Framework",
     color: "#d0352b",
     description:
@@ -23,7 +23,7 @@ const entries: CatalogEntry[] = [
   {
     id: "web-audio-api",
     name: "Web Audio API",
-    abbr: "WAA",
+    abbr: "WA",
     category: "Browser Audio API",
     color: "#e66000",
     description:
@@ -40,7 +40,7 @@ const entries: CatalogEntry[] = [
   {
     id: "avfoundation",
     name: "AVFoundation",
-    abbr: "AVF",
+    abbr: "Av",
     category: "Apple Media Framework",
     color: "#0a84ff",
     description:
@@ -130,7 +130,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mp4",
     name: "MP4",
-    abbr: "MP4",
+    abbr: "M4",
     category: "Media Container Format",
     color: "#e94e1b",
     description:
@@ -147,7 +147,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webm",
     name: "WebM",
-    abbr: "WebM",
+    abbr: "WM",
     category: "Media Container Format",
     color: "#3d8f3d",
     description:
@@ -164,7 +164,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mkv",
     name: "MKV",
-    abbr: "MKV",
+    abbr: "MK",
     category: "Media Container Format",
     color: "#4a5bd8",
     description:
@@ -181,7 +181,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mov",
     name: "MOV",
-    abbr: "MOV",
+    abbr: "MO",
     category: "Media Container Format",
     color: "#8e8e93",
     description:
@@ -198,7 +198,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mp3",
     name: "MP3",
-    abbr: "MP3",
+    abbr: "M3",
     category: "Audio Codec",
     color: "#f39c12",
     description:
@@ -215,7 +215,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aac",
     name: "AAC",
-    abbr: "AAC",
+    abbr: "AA",
     category: "Audio Codec",
     color: "#c0392b",
     description:
@@ -232,7 +232,7 @@ const entries: CatalogEntry[] = [
   {
     id: "flac",
     name: "FLAC",
-    abbr: "FLAC",
+    abbr: "FL",
     category: "Lossless Audio Codec",
     color: "#e67e22",
     description:
@@ -249,7 +249,7 @@ const entries: CatalogEntry[] = [
   {
     id: "wav",
     name: "WAV",
-    abbr: "WAV",
+    abbr: "WA",
     category: "Audio File Format",
     color: "#1e88e5",
     description:
@@ -266,7 +266,7 @@ const entries: CatalogEntry[] = [
   {
     id: "opus",
     name: "Opus",
-    abbr: "Opus",
+    abbr: "Op",
     category: "Audio Codec",
     color: "#2c8c99",
     description:
@@ -283,7 +283,7 @@ const entries: CatalogEntry[] = [
   {
     id: "av1",
     name: "AV1",
-    abbr: "AV1",
+    abbr: "A1",
     category: "Video Codec",
     color: "#ed1c24",
     description:
@@ -300,7 +300,7 @@ const entries: CatalogEntry[] = [
   {
     id: "h264",
     name: "H.264",
-    abbr: "H264",
+    abbr: "H4",
     category: "Video Codec",
     color: "#5c6bc0",
     description:
@@ -317,7 +317,7 @@ const entries: CatalogEntry[] = [
   {
     id: "h265",
     name: "H.265",
-    abbr: "HEVC",
+    abbr: "H5",
     category: "Video Codec",
     color: "#7e57c2",
     description:
@@ -334,7 +334,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vp9",
     name: "VP9",
-    abbr: "VP9",
+    abbr: "V9",
     category: "Video Codec",
     color: "#43a047",
     description:
@@ -351,7 +351,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hls",
     name: "HLS",
-    abbr: "HLS",
+    abbr: "HL",
     category: "Streaming Protocol",
     color: "#ff3b30",
     description:
@@ -368,7 +368,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mpeg-dash",
     name: "MPEG-DASH",
-    abbr: "DASH",
+    abbr: "MD",
     category: "Streaming Protocol",
     color: "#00897b",
     description:
@@ -386,7 +386,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rtmp",
     name: "RTMP",
-    abbr: "RTMP",
+    abbr: "RT",
     category: "Streaming Protocol",
     color: "#cc0000",
     description:
@@ -403,7 +403,7 @@ const entries: CatalogEntry[] = [
   {
     id: "srt",
     name: "SRT",
-    abbr: "SRT",
+    abbr: "SR",
     category: "Streaming Protocol",
     color: "#0072bc",
     description:
@@ -417,6 +417,23 @@ const entries: CatalogEntry[] = [
       "SRT was created by Haivision and open-sourced in 2017. Don't mix it up with .srt subtitle files — same letters, totally different thing!",
     url: "https://www.srtalliance.org/",
     spawnWeight: 0.5,
+  },
+  {
+    id: "cloudinary",
+    name: "Cloudinary",
+    abbr: "Cl",
+    category: "Media Management",
+    color: "#3448c5",
+    description:
+      "A cloud service for storing, transforming and delivering images and videos. It can resize, crop, compress and convert media on the fly and serve it fast through a CDN.",
+    highlights: [
+      "Responsive image delivery",
+      "On-the-fly image resizing",
+      "Video hosting and optimization",
+    ],
+    funFact:
+      "With Cloudinary you can transform an image just by editing its URL, for example adding w_300 to resize it to 300 pixels wide.",
+    url: "https://cloudinary.com",
   },
 ];
 

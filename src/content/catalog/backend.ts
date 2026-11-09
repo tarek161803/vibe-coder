@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "deno",
     name: "Deno",
-    abbr: "Deno",
+    abbr: "De",
     category: "JavaScript Runtime",
     color: "#70b8a0",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bun",
     name: "Bun",
-    abbr: "Bun",
+    abbr: "Bu",
     category: "JavaScript Runtime",
     color: "#f472b6",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nestjs",
     name: "NestJS",
-    abbr: "Nest",
+    abbr: "Ne",
     category: "Web Framework",
     color: "#e0234e",
     description:
@@ -90,7 +90,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hono",
     name: "Hono",
-    abbr: "Hono",
+    abbr: "Ho",
     category: "Web Framework",
     color: "#ff5b11",
     description:
@@ -107,7 +107,7 @@ const entries: CatalogEntry[] = [
   {
     id: "koa",
     name: "Koa",
-    abbr: "Koa",
+    abbr: "Ko",
     category: "Web Framework",
     color: "#5c6bc0",
     description:
@@ -125,7 +125,7 @@ const entries: CatalogEntry[] = [
   {
     id: "adonisjs",
     name: "AdonisJS",
-    abbr: "Ado",
+    abbr: "Ad",
     category: "Web Framework",
     color: "#5a45ff",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fastapi",
     name: "FastAPI",
-    abbr: "Fast",
+    abbr: "Fa",
     category: "Web Framework",
     color: "#009688",
     description:
@@ -281,7 +281,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aspnet-core",
     name: "ASP.NET Core",
-    abbr: "ASP",
+    abbr: "AN",
     category: "Web Framework",
     color: "#512bd4",
     description:
@@ -298,7 +298,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ruby-on-rails",
     name: "Ruby on Rails",
-    abbr: "RoR",
+    abbr: "RR",
     category: "Web Framework",
     color: "#cc0000",
     description:
@@ -315,7 +315,7 @@ const entries: CatalogEntry[] = [
   {
     id: "phoenix",
     name: "Phoenix",
-    abbr: "Phx",
+    abbr: "Ph",
     category: "Web Framework",
     color: "#fd4f00",
     description:
@@ -333,7 +333,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gin",
     name: "Gin",
-    abbr: "Gin",
+    abbr: "Gi",
     category: "Web Framework",
     color: "#00add8",
     description:
@@ -350,7 +350,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fiber",
     name: "Fiber",
-    abbr: "Fib",
+    abbr: "Fi",
     category: "Web Framework",
     color: "#00acd7",
     description:
@@ -368,7 +368,7 @@ const entries: CatalogEntry[] = [
   {
     id: "echo",
     name: "Echo",
-    abbr: "Echo",
+    abbr: "Ec",
     category: "Web Framework",
     color: "#7b61ff",
     description:
@@ -386,7 +386,7 @@ const entries: CatalogEntry[] = [
   {
     id: "actix-web",
     name: "Actix Web",
-    abbr: "Actx",
+    abbr: "AW",
     category: "Web Framework",
     color: "#e97b28",
     description:
@@ -404,7 +404,7 @@ const entries: CatalogEntry[] = [
   {
     id: "axum",
     name: "Axum",
-    abbr: "Axum",
+    abbr: "Ax",
     category: "Web Framework",
     color: "#dea584",
     description:
@@ -422,7 +422,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rocket",
     name: "Rocket",
-    abbr: "Rkt",
+    abbr: "Ro",
     category: "Web Framework",
     color: "#d33847",
     description:
@@ -440,7 +440,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ktor",
     name: "Ktor",
-    abbr: "Ktor",
+    abbr: "Kt",
     category: "Web Framework",
     color: "#7f52ff",
     description:
@@ -458,7 +458,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vapor",
     name: "Vapor",
-    abbr: "Vpr",
+    abbr: "Va",
     category: "Web Framework",
     color: "#8e44ad",
     description:
@@ -476,7 +476,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hapijs",
     name: "Hapi.js",
-    abbr: "Hapi",
+    abbr: "Ha",
     category: "Web Framework",
     color: "#f7a41d",
     description:
@@ -512,7 +512,7 @@ const entries: CatalogEntry[] = [
   {
     id: "strapi",
     name: "Strapi",
-    abbr: "Stp",
+    abbr: "St",
     category: "Headless CMS",
     color: "#4945ff",
     description:
@@ -529,7 +529,7 @@ const entries: CatalogEntry[] = [
   {
     id: "directus",
     name: "Directus",
-    abbr: "Dir",
+    abbr: "Di",
     category: "Headless CMS",
     color: "#6644ff",
     description:
@@ -600,7 +600,7 @@ const entries: CatalogEntry[] = [
   {
     id: "drupal",
     name: "Drupal",
-    abbr: "Dru",
+    abbr: "Dr",
     category: "Content Management",
     color: "#0678be",
     description:
@@ -635,7 +635,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rest-api",
     name: "REST API",
-    abbr: "REST",
+    abbr: "RA",
     category: "API Style",
     color: "#1e88e5",
     description:
@@ -652,7 +652,7 @@ const entries: CatalogEntry[] = [
   {
     id: "grpc",
     name: "gRPC",
-    abbr: "gRPC",
+    abbr: "Gr",
     category: "RPC Framework",
     color: "#244c5a",
     description:
@@ -669,7 +669,7 @@ const entries: CatalogEntry[] = [
   {
     id: "soap",
     name: "SOAP",
-    abbr: "SOAP",
+    abbr: "SO",
     category: "Messaging Protocol",
     color: "#7b4fb3",
     description:
@@ -686,7 +686,7 @@ const entries: CatalogEntry[] = [
   {
     id: "json-rpc",
     name: "JSON-RPC",
-    abbr: "JRPC",
+    abbr: "JR",
     category: "RPC Protocol",
     color: "#f5a623",
     description:
@@ -704,7 +704,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xml-rpc",
     name: "XML-RPC",
-    abbr: "XRPC",
+    abbr: "XR",
     category: "RPC Protocol",
     color: "#e8742c",
     description:
@@ -722,7 +722,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webhooks",
     name: "Webhooks",
-    abbr: "Hook",
+    abbr: "We",
     category: "API Pattern",
     color: "#c73a63",
     description:
@@ -739,7 +739,7 @@ const entries: CatalogEntry[] = [
   {
     id: "server-sent-events",
     name: "Server-Sent Events",
-    abbr: "SSE",
+    abbr: "SS",
     category: "Web Streaming API",
     color: "#00897b",
     description:
@@ -756,7 +756,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openapi",
     name: "OpenAPI",
-    abbr: "OAS",
+    abbr: "Op",
     category: "API Specification",
     color: "#6ba539",
     description:
@@ -773,7 +773,7 @@ const entries: CatalogEntry[] = [
   {
     id: "asyncapi",
     name: "AsyncAPI",
-    abbr: "Async",
+    abbr: "As",
     category: "API Specification",
     color: "#8851fb",
     description:
@@ -787,6 +787,298 @@ const entries: CatalogEntry[] = [
       "AsyncAPI deliberately borrowed much of OpenAPI’s structure, so if you’ve read an OpenAPI file before, an AsyncAPI document will look surprisingly familiar.",
     url: "https://www.asyncapi.com",
     spawnWeight: 0.5,
+  },
+  {
+    id: "supabase",
+    name: "Supabase",
+    abbr: "SB",
+    category: "Backend as a Service",
+    color: "#3ecf8e",
+    description:
+      "An open-source backend platform built on top of PostgreSQL. It gives you a database, user authentication, file storage, realtime updates and auto-generated APIs so you can build an app without writing a server first.",
+    highlights: [
+      "Instant Postgres database + APIs",
+      "User auth and file storage",
+      "Realtime app backends",
+    ],
+    funFact:
+      "Supabase describes itself as an open-source Firebase alternative, but unlike Firebase every project is a full PostgreSQL database you can query with plain SQL.",
+    url: "https://supabase.com",
+  },
+  {
+    id: "zod",
+    name: "Zod",
+    abbr: "ZO",
+    category: "Schema Validation",
+    color: "#3068b7",
+    description:
+      "A TypeScript library for describing the shape of your data and checking it at runtime. You define a schema once, use it to validate things like form input or API payloads, and get matching TypeScript types for free.",
+    highlights: [
+      "Validating API request bodies",
+      "Type-safe form and env parsing",
+      "Inferring TS types from schemas",
+    ],
+    funFact:
+      "With z.infer, Zod turns a runtime schema into a static TypeScript type, so you write the shape of your data once instead of keeping a type and a validator in sync.",
+    url: "https://zod.dev",
+  },
+  {
+    id: "entity-framework",
+    name: "Entity Framework",
+    abbr: "EF",
+    category: "ORM",
+    color: "#512bd4",
+    description:
+      "Microsoft's object-relational mapper for .NET. It lets you work with database tables as regular C# classes and write queries with LINQ instead of raw SQL, and it can generate and apply schema migrations.",
+    highlights: [
+      "Data access in .NET apps",
+      "LINQ queries instead of raw SQL",
+      "Database schema migrations",
+    ],
+    funFact:
+      "Entity Framework Core is not just an upgrade of the original: it was a ground-up rewrite released in 2016 alongside .NET Core 1.0, so it could run cross-platform.",
+    url: "https://learn.microsoft.com/en-us/ef/",
+  },
+  {
+    id: "bullmq",
+    name: "BullMQ",
+    abbr: "Bu",
+    category: "Job Queue",
+    color: "#dc382d",
+    description:
+      "A Node.js library for running background jobs using Redis as the queue. You push tasks like sending emails or resizing images onto a queue, and worker processes pick them up, with retries, delays and priorities built in.",
+    highlights: [
+      "Background jobs in Node.js",
+      "Retries, delays and scheduling",
+      "Spreading work across workers",
+    ],
+    funFact:
+      "BullMQ is the TypeScript rewrite and successor of Bull, an older and very popular Redis queue library for Node.js from the same maintainers.",
+    url: "https://docs.bullmq.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "better-auth",
+    name: "Better Auth",
+    abbr: "BA",
+    category: "Authentication Library",
+    color: "#7c5cff",
+    description:
+      "A TypeScript authentication framework that you add to your own app. It handles sign-up, login, sessions and social logins, stores users in your own database, and works with many web frameworks.",
+    highlights: [
+      "Email and social login",
+      "Sessions stored in your own DB",
+      "Plugins for 2FA and passkeys",
+    ],
+    funFact:
+      "Better Auth is framework-agnostic: the same library can power auth in Next.js, Nuxt, SvelteKit, Hono or a plain Node server, with extra features added as plugins.",
+    url: "https://www.better-auth.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "prisma",
+    name: "Prisma",
+    abbr: "Pr",
+    category: "ORM",
+    color: "#5a67d8",
+    description:
+      "A database toolkit for Node.js and TypeScript. You describe your tables in a schema file, and Prisma generates a fully typed client so you can query your database with autocomplete instead of raw SQL.",
+    highlights: [
+      "Type-safe database queries",
+      "Schema-based migrations",
+      "Node.js and TypeScript backends",
+    ],
+    funFact:
+      "Prisma started life as Graphcool, a GraphQL backend-as-a-service, before the team pivoted to building database tools.",
+    url: "https://www.prisma.io",
+  },
+  {
+    id: "spring-framework",
+    name: "Spring Framework",
+    abbr: "SF",
+    category: "Web Framework",
+    color: "#6db33f",
+    description:
+      "A large Java framework for building enterprise apps. It wires your objects together for you (dependency injection) and provides modules for web, data access, security and more.",
+    highlights: [
+      "Enterprise Java backends",
+      "Dependency injection",
+      "Foundation of Spring Boot",
+    ],
+    funFact:
+      "Spring grew out of example code in Rod Johnson's 2002 book on Java EE design, written as a lighter alternative to the heavyweight J2EE of the time.",
+    url: "https://spring.io/projects/spring-framework",
+  },
+  {
+    id: "blazor",
+    name: "Blazor",
+    abbr: "Bl",
+    category: "Web UI Framework",
+    color: "#512bd4",
+    description:
+      "A Microsoft framework for building interactive web UIs with C# instead of JavaScript. Components can run on the server or directly in the browser via WebAssembly.",
+    highlights: [
+      "Web apps in C# and .NET",
+      "Running .NET in WebAssembly",
+      "Reusable Razor components",
+    ],
+    funFact:
+      "The name Blazor is a mash-up of \"Browser\" and \"Razor\", the .NET templating syntax its components are written in.",
+    url: "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor",
+  },
+  {
+    id: "temporal",
+    name: "Temporal",
+    abbr: "Te",
+    category: "Workflow Engine",
+    color: "#7b61ff",
+    description:
+      "A platform for running long-lived, reliable workflows as ordinary code. If a server crashes mid-task, Temporal remembers where it was and resumes, handling retries and timeouts for you.",
+    highlights: [
+      "Durable, crash-proof workflows",
+      "Retries and timeouts built in",
+      "Orchestrating microservices",
+    ],
+    funFact:
+      "Temporal is a fork of Cadence, a workflow engine its founders Maxim Fateev and Samar Abbas originally built at Uber.",
+    url: "https://temporal.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "drizzle-orm",
+    name: "Drizzle ORM",
+    abbr: "DO",
+    category: "TypeScript ORM",
+    color: "#c5f74f",
+    description:
+      "A lightweight TypeScript ORM that lets you define database tables in code and write queries that look a lot like SQL, with full type safety. Works with Postgres, MySQL and SQLite.",
+    highlights: [
+      "Type-safe SQL queries in TypeScript",
+      "Schema defined as code",
+      "Migrations via drizzle-kit",
+    ],
+    funFact:
+      "Drizzle has no runtime dependencies of its own, which keeps it small enough to run happily in serverless and edge environments.",
+    url: "https://orm.drizzle.team",
+  },
+  {
+    id: "hibernate",
+    name: "Hibernate",
+    abbr: "Hi",
+    category: "Java ORM",
+    color: "#59666c",
+    description:
+      "A Java library that maps your Java classes to database tables, so you can save and load objects instead of writing raw SQL for everything. It is the most popular implementation of the JPA standard.",
+    highlights: [
+      "Object-relational mapping in Java",
+      "Implements Jakarta Persistence (JPA)",
+      "Used by Spring Data JPA",
+    ],
+    funFact:
+      "Gavin King started Hibernate in 2001 as a simpler alternative to the clunky EJB 2 entity beans that Java developers were stuck with at the time.",
+    url: "https://hibernate.org/orm/",
+  },
+  {
+    id: "socketio",
+    name: "Socket.IO",
+    abbr: "SI",
+    category: "Realtime Library",
+    color: "#010101",
+    description:
+      "A library for real-time, two-way communication between browsers and servers. It uses WebSockets when possible, falls back to HTTP long-polling, and adds rooms, events and auto-reconnect.",
+    highlights: [
+      "Chat apps and live notifications",
+      "Multiplayer and collaborative apps",
+      "Event-based client/server messaging",
+    ],
+    funFact:
+      "Socket.IO was created by Guillermo Rauch, who later founded Vercel, the company behind Next.js.",
+    url: "https://socket.io",
+  },
+  {
+    id: "n8n",
+    name: "n8n",
+    abbr: "N8",
+    category: "Workflow Automation",
+    color: "#ea4b71",
+    description:
+      "A workflow automation tool where you connect apps and APIs by wiring nodes together on a visual canvas. You can self-host it, add custom code, and build AI agent workflows.",
+    highlights: [
+      "Automating tasks between apps",
+      "Self-hostable Zapier alternative",
+      "Building AI agent workflows",
+    ],
+    funFact:
+      "The name n8n is a numeronym for \"nodemation\": an n, then 8 letters, then another n, a nod to its node-based automation.",
+    url: "https://n8n.io",
+  },
+  {
+    id: "trpc",
+    name: "tRPC",
+    abbr: "Tr",
+    category: "Type-safe API",
+    color: "#398ccb",
+    description:
+      "A TypeScript library for building APIs where the client calls server functions directly. The server's types flow to the frontend automatically, so mistakes show up in your editor instead of at runtime.",
+    highlights: [
+      "End-to-end type-safe APIs",
+      "Full-stack TypeScript apps",
+      "Replacing hand-written REST clients",
+    ],
+    funFact:
+      "tRPC needs no schema file or code generation step: it relies purely on TypeScript's type inference to share your API's types between server and client.",
+    url: "https://trpc.io",
+  },
+  {
+    id: "dotnet",
+    name: ".NET",
+    abbr: "NE",
+    category: "Developer Platform",
+    color: "#512bd4",
+    description:
+      "Microsoft's free platform for building apps in languages like C# and F#. It includes a runtime, a huge standard library and frameworks such as ASP.NET Core for web backends, and runs on Windows, macOS and Linux.",
+    highlights: [
+      "Web APIs with ASP.NET Core",
+      "Enterprise backend services",
+      "Desktop and cloud apps in C#",
+    ],
+    funFact:
+      "In 2014 Microsoft announced it was open-sourcing .NET Core and making it cross-platform, a big shift for a company once known for keeping its tools Windows-only.",
+    url: "https://dotnet.microsoft.com",
+  },
+  {
+    id: "celery",
+    name: "Celery",
+    abbr: "Ce",
+    category: "Task Queue",
+    color: "#37814a",
+    description:
+      "A Python library for running work in the background. Your app drops tasks onto a message broker like Redis or RabbitMQ, and separate worker processes pick them up and run them.",
+    highlights: [
+      "Sending emails in the background",
+      "Scheduled periodic jobs",
+      "Offloading slow work from web apps",
+    ],
+    funFact:
+      "Celery was created by Ask Solem and was closely tied to Django in its early days, before growing into a general-purpose Python task queue.",
+    url: "https://docs.celeryq.dev",
+  },
+  {
+    id: "authjs",
+    name: "Auth.js",
+    abbr: "Au",
+    category: "Authentication Library",
+    color: "#7c3aed",
+    description:
+      "An open-source authentication library for JavaScript web apps. It handles sign-in with providers like GitHub or Google, email links and sessions, so you don't have to build login flows from scratch.",
+    highlights: [
+      "OAuth sign-in with GitHub or Google",
+      "Session handling in Next.js apps",
+      "Passwordless email login",
+    ],
+    funFact:
+      "Auth.js started life as NextAuth.js, built just for Next.js. It was renamed to Auth.js as it expanded to support other frameworks like SvelteKit.",
+    url: "https://authjs.dev",
   },
 ];
 

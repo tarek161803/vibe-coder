@@ -31,7 +31,8 @@ const FONT_SIZE_BY_LENGTH = [34, 34, 28, 22, 17, 14];
 const MAX_TEXT_WIDTH = 50;
 
 export function badgeLogo(abbr: string, color: string): string {
-  const label = abbr.slice(0, 5);
+  // At most 2 characters: longer labels can't be read on a moving obstacle.
+  const label = [...abbr].slice(0, 2).join("");
   const fontSize = FONT_SIZE_BY_LENGTH[Math.min(label.length, 5)];
   const ink = readableInk(color);
   const width = estimateWidth(label, fontSize);
@@ -40,16 +41,7 @@ export function badgeLogo(abbr: string, color: string): string {
   const baseline = 30 + fontSize * 0.36;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-    <defs>
-      <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
-        <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
-        <stop offset="1" stop-color="#000000" stop-opacity="0.25"/>
-      </linearGradient>
-    </defs>
     <rect width="64" height="64" rx="12" fill="${color}"/>
-    <rect width="64" height="64" rx="12" fill="url(#shade)"/>
-    <rect x="2.5" y="2.5" width="59" height="59" rx="10" fill="none" stroke="${ink}" stroke-opacity="0.18" stroke-width="1.5"/>
     <text x="32" y="${baseline.toFixed(1)}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="${fontSize}" fill="${ink}"${squeeze}>${escapeXml(label)}</text>
     <text x="32" y="57" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-weight="700" font-size="7" fill="${ink}" fill-opacity="0.5">&lt;/&gt;</text>
   </svg>`;
@@ -64,7 +56,6 @@ export function brandLogo(icon: BrandIcon): string {
   const tile = isDark ? "#f1f5f9" : "#151a2e";
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
     <rect width="64" height="64" rx="12" fill="${tile}"/>
-    <rect x="1.5" y="1.5" width="61" height="61" rx="11" fill="none" stroke="${color}" stroke-opacity="${isDark ? 0.25 : 0.45}" stroke-width="2"/>
     <path transform="translate(14 14) scale(1.5)" fill="${color}" d="${icon.path}"/>
   </svg>`;
 }

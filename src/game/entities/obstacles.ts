@@ -19,25 +19,37 @@ export function obstacleTop(o: Obstacle, time: number): number {
 
 export function obstacleHitbox(o: Obstacle, time: number): Rect {
   const inset = OBSTACLE.hitboxInset;
+  const top = obstacleTop(o, time);
+  // Flying obstacles hang from an energy pillar that reaches the top of the
+  // screen, so they can't be jumped over — only slid under.
+  const y = o.airborne ? 0 : top + inset;
   return {
     x: o.x + inset,
-    y: obstacleTop(o, time) + inset,
+    y,
     w: o.size - inset * 2,
-    h: o.size - inset * 2,
+    h: top + o.size - inset - y,
   };
 }
 
 type PickTech = () => TechInfo;
 
+/** What the player has to do: jump (ground), slide (air), or both in sequence (combo). */
+type PatternKind = "ground" | "air" | "combo";
+
 interface Pattern {
   id: string;
+  kind: PatternKind;
   /** Difficulty (0..1) at which the pattern starts appearing. */
   minDifficulty: number;
   weight: number;
-  build: (x: number, pick: PickTech) => Obstacle[];
+  /** `speed` lets combos space their parts in time, so they stay fair at any pace. */
+  build: (x: number, pick: PickTech, speed: number) => Obstacle[];
 }
 
 const S = OBSTACLE.size;
+const A = OBSTACLE.airSize;
+/** Seconds of travel between the two halves of a combo (verified fair at min and max speed). */
+const COMBO_GAP = 0.7;
 
 const ground = (tech: TechInfo, x: number, row = 0): Obstacle => ({
   tech,
@@ -52,8 +64,8 @@ const ground = (tech: TechInfo, x: number, row = 0): Obstacle => ({
 const flying = (tech: TechInfo, x: number): Obstacle => ({
   tech,
   x,
-  y: WORLD.groundY - OBSTACLE.airClearance - OBSTACLE.airSize,
-  size: OBSTACLE.airSize,
+  y: WORLD.groundY - OBSTACLE.airClearance - A,
+  size: A,
   airborne: true,
   bobPhase: Math.random() * Math.PI * 2,
   hit: false,
@@ -61,17 +73,47 @@ const flying = (tech: TechInfo, x: number): Obstacle => ({
 
 /** Obstacle formations. Add new ones here to vary gameplay. */
 const PATTERNS: Pattern[] = [
-  { id: "single", minDifficulty: 0, weight: 5, build: (x, pick) => [ground(pick(), x)] },
-  { id: "double", minDifficulty: 0.1, weight: 3, build: (x, pick) => [ground(pick(), x), ground(pick(), x + S)] },
-  { id: "flying", minDifficulty: 0.15, weight: 3, build: (x, pick) => [flying(pick(), x)] },
-  { id: "stack", minDifficulty: 0.25, weight: 2, build: (x, pick) => [ground(pick(), x, 0), ground(pick(), x, 1)] },
+  // Jump
+  { id: "single", kind: "ground", minDifficulty: 0, weight: 4, build: (x, pick) => [ground(pick(), x)] },
+  { id: "double", kind: "ground", minDifficulty: 0.1, weight: 2.5, build: (x, pick) => [ground(pick(), x), ground(pick(), x + S)] },
+  { id: "stack", kind: "ground", minDifficulty: 0.25, weight: 2, build: (x, pick) => [ground(pick(), x, 0), ground(pick(), x, 1)] },
   {
     id: "triple",
+    kind: "ground",
     minDifficulty: 0.45,
-    weight: 1.5,
+    weight: 1.2,
     build: (x, pick) => [ground(pick(), x), ground(pick(), x + S), ground(pick(), x + S * 2)],
   },
+  // Slide
+  // Always a single flying obstacle: two side by side would read as one odd block.
+  { id: "gate", kind: "air", minDifficulty: 0, weight: 5, build: (x, pick) => [flying(pick(), x)] },
+  // Jump then slide, and slide then jump
+  {
+    id: "jump-slide",
+    kind: "combo",
+    minDifficulty: 0.3,
+    weight: 1.5,
+    build: (x, pick, speed) => [ground(pick(), x), flying(pick(), x + S + speed * COMBO_GAP)],
+  },
+  {
+    id: "slide-jump",
+    kind: "combo",
+    minDifficulty: 0.35,
+    weight: 1.5,
+    build: (x, pick, speed) => [flying(pick(), x), ground(pick(), x + A + speed * COMBO_GAP)],
+  },
 ];
+
+/**
+ * Weight multiplier that keeps the sequence varied: the same formation rarely
+ * repeats back to back, and long runs of one kind (all jumps / all slides) are
+ * rare. Repeats aren't banned outright, so the order never becomes predictable.
+ */
+function varietyFactor(pattern: Pattern, lastId: string | null, recentKinds: PatternKind[]): number {
+  const streak = recentKinds.filter((k) => k === pattern.kind).length;
+  const kindFactor = streak === 0 ? 1.6 : streak === 1 ? 0.6 : 0.12;
+  return pattern.id === lastId ? kindFactor * 0.25 : kindFactor;
+}
 
 function weightedPick<T>(items: T[], weightOf: (item: T) => number): T {
   const total = items.reduce((sum, item) => sum + weightOf(item), 0);
@@ -85,23 +127,85 @@ function weightedPick<T>(items: T[], weightOf: (item: T) => number): T {
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
+/**
+ * Deals items like a shuffled deck: every item comes up once before any
+ * repeats. Items with spawnWeight < 1 are included in each new deck with that
+ * probability, so niche entries still appear less often.
+ */
+class ShuffleBag {
+  private all: TechInfo[] = [];
+  private deck: TechInfo[] = [];
+  /** Recently dealt ids, kept out of the start of the next deck. */
+  private recent: string[] = [];
+
+  get size() {
+    return this.all.length;
+  }
+
+  add(items: TechInfo[]) {
+    this.all.push(...items);
+    // New items join the current deck right away, mixed into what's left.
+    this.deck.push(...items.filter((t) => Math.random() < (t.spawnWeight ?? 1)));
+    shuffle(this.deck);
+  }
+
+  /** Next item, never the same as `avoid` when there's any alternative. */
+  next(avoid: string | null): TechInfo {
+    if (this.deck.length === 0) this.refill();
+    let item = this.deck.pop()!;
+    if (item.id === avoid) {
+      // Deck ran out on the item we're avoiding: start the next deck early.
+      if (this.deck.length === 0) this.refill();
+      const swap = this.deck.findIndex((t) => t.id !== avoid);
+      if (swap >= 0) [item, this.deck[swap]] = [this.deck[swap], item];
+    }
+    this.recent.push(item.id);
+    if (this.recent.length > this.all.length / 2) this.recent.shift();
+    return item;
+  }
+
+  private refill() {
+    const dealt = this.all.filter((t) => Math.random() < (t.spawnWeight ?? 1));
+    const fresh = shuffle(dealt.length > 0 ? dealt : [...this.all]);
+    // Cards are dealt from the end, so put recently seen items at the front:
+    // they come up last, and a new deck never opens with something just seen.
+    const recent = new Set(this.recent);
+    this.deck = [...fresh.filter((t) => recent.has(t.id)), ...fresh.filter((t) => !recent.has(t.id))];
+  }
+}
+
+function shuffle<T>(items: T[]): T[] {
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
+}
+
 export class ObstacleSpawner {
   private distanceToNext = 0;
   private lastTechId: string | null = null;
-  private technologies: TechInfo[] = [];
-  private hazards: TechInfo[] = [];
+  // The decks persist across runs, so a new run doesn't repeat what you just saw.
+  private technologies = new ShuffleBag();
+  private hazards = new ShuffleBag();
+  private lastPatternId: string | null = null;
+  /** Kinds of the last two formations, newest last. */
+  private recentKinds: PatternKind[] = [];
 
   constructor(pool: TechInfo[]) {
     this.addToPool(pool);
   }
 
   addToPool(techs: TechInfo[]) {
-    for (const tech of techs) (tech.kind === "hazard" ? this.hazards : this.technologies).push(tech);
+    this.technologies.add(techs.filter((t) => t.kind !== "hazard"));
+    this.hazards.add(techs.filter((t) => t.kind === "hazard"));
   }
 
   reset() {
     this.distanceToNext = SPEED.start * OBSTACLE.firstSpawnDelay;
     this.lastTechId = null;
+    this.lastPatternId = null;
+    this.recentKinds = [];
   }
 
   /** Advances by `dx` world units and returns any newly spawned obstacles. */
@@ -110,8 +214,10 @@ export class ObstacleSpawner {
     if (this.distanceToNext > 0) return [];
 
     const available = PATTERNS.filter((p) => difficulty >= p.minDifficulty);
-    const pattern = weightedPick(available, (p) => p.weight);
-    const spawned = pattern.build(spawnX, () => this.pickTech());
+    const pattern = weightedPick(available, (p) => p.weight * varietyFactor(p, this.lastPatternId, this.recentKinds));
+    this.lastPatternId = pattern.id;
+    this.recentKinds = [...this.recentKinds, pattern.kind].slice(-2);
+    const spawned = pattern.build(spawnX, () => this.pickTech(), speed);
 
     const patternWidth = Math.max(...spawned.map((o) => o.x + o.size)) - spawnX;
     const minGap = lerp(OBSTACLE.gapEasy[0], OBSTACLE.gapHard[0], difficulty);
@@ -122,10 +228,8 @@ export class ObstacleSpawner {
   }
 
   private pickTech(): TechInfo {
-    const source =
-      this.hazards.length > 0 && Math.random() < OBSTACLE.hazardChance ? this.hazards : this.technologies;
-    const pool = source.filter((t) => t.id !== this.lastTechId);
-    const tech = weightedPick(pool, (t) => t.spawnWeight ?? 1);
+    const useHazard = this.hazards.size > 0 && Math.random() < OBSTACLE.hazardChance;
+    const tech = (useHazard ? this.hazards : this.technologies).next(this.lastTechId);
     this.lastTechId = tech.id;
     return tech;
   }

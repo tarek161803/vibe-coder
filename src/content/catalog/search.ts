@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vespa",
     name: "Vespa",
-    abbr: "VSP",
+    abbr: "Ve",
     category: "Search Engine",
     color: "#3a8fd9",
     description:
@@ -23,7 +23,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-lucene",
     name: "Apache Lucene",
-    abbr: "LUC",
+    abbr: "AL",
     category: "Search Library",
     color: "#6aa84f",
     description:
@@ -40,7 +40,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tantivy",
     name: "Tantivy",
-    abbr: "TAN",
+    abbr: "Ta",
     category: "Search Library",
     color: "#e3772d",
     description:
@@ -58,7 +58,7 @@ const entries: CatalogEntry[] = [
   {
     id: "full-text-search",
     name: "Full-Text Search",
-    abbr: "FTS",
+    abbr: "FT",
     category: "Search Concept",
     color: "#0abde3",
     description:
@@ -75,7 +75,7 @@ const entries: CatalogEntry[] = [
   {
     id: "inverted-indexes",
     name: "Inverted Indexes",
-    abbr: "INV",
+    abbr: "II",
     category: "Data Structure",
     color: "#10ac84",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "semantic-search",
     name: "Semantic Search",
-    abbr: "SEM",
+    abbr: "SS",
     category: "Search Concept",
     color: "#a55eea",
     description:
@@ -126,7 +126,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ranking-algorithms",
     name: "Ranking Algorithms",
-    abbr: "RANK",
+    abbr: "RA",
     category: "Search Concept",
     color: "#ee5253",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "search-indexing",
     name: "Search Indexing",
-    abbr: "IDX",
+    abbr: "SI",
     category: "Search Concept",
     color: "#ff9f43",
     description:
@@ -160,7 +160,7 @@ const entries: CatalogEntry[] = [
   {
     id: "recommendation-systems",
     name: "Recommendation Systems",
-    abbr: "REC",
+    abbr: "RS",
     category: "ML Application",
     color: "#e84393",
     description:

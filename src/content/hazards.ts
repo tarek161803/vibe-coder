@@ -12,7 +12,7 @@ export const HAZARDS: TechInfo[] = [
     kind: "hazard",
     category: "Software Defect",
     color: "#ef4444",
-    logo: badgeLogo("BUG", "#ef4444"),
+    logo: badgeLogo("BG", "#ef4444"),
     description:
       "A bug is a mistake in code that makes a program behave in a way nobody intended — crashing, showing the wrong data, or doing something just plain weird.",
     highlights: [
@@ -31,7 +31,7 @@ export const HAZARDS: TechInfo[] = [
     kind: "hazard",
     category: "Git Problem",
     color: "#a78bfa",
-    logo: badgeLogo("MERGE", "#a78bfa"),
+    logo: badgeLogo("MC", "#a78bfa"),
     description:
       "Happens when two branches change the same lines of a file and Git can't decide which version to keep. It pauses the merge and marks the clashing sections so a human can choose.",
     highlights: [
@@ -50,7 +50,7 @@ export const HAZARDS: TechInfo[] = [
     kind: "hazard",
     category: "Toolchain Problem",
     color: "#f97316",
-    logo: badgeLogo("ERR", "#f97316"),
+    logo: badgeLogo("ER", "#f97316"),
     description:
       "The compiler or bundler couldn't turn your source code into a runnable app — usually because of a syntax mistake, a type error, or a missing import.",
     highlights: [
@@ -69,7 +69,7 @@ export const HAZARDS: TechInfo[] = [
     kind: "hazard",
     category: "Logic Error",
     color: "#c084fc",
-    logo: badgeLogo("LOOP", "#c084fc"),
+    logo: badgeLogo("∞", "#c084fc"),
     description:
       "A loop whose exit condition is never met, so it runs forever — freezing the page and pinning your CPU at 100%.",
     highlights: [
@@ -88,7 +88,7 @@ export const HAZARDS: TechInfo[] = [
     kind: "hazard",
     category: "Browser Security",
     color: "#f87171",
-    logo: badgeLogo("CORS", "#f87171"),
+    logo: badgeLogo("CR", "#f87171"),
     description:
       "The browser blocked your page from reading a response from a different domain, because that server didn't say your site was allowed. It's a security feature, not a bug in your frontend.",
     highlights: [

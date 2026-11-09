@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bitcoin",
     name: "Bitcoin",
-    abbr: "BTC",
+    abbr: "Bi",
     category: "Cryptocurrency",
     color: "#f7931a",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ethereum",
     name: "Ethereum",
-    abbr: "ETH",
+    abbr: "Et",
     category: "Blockchain Platform",
     color: "#627eea",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "solana",
     name: "Solana",
-    abbr: "SOL",
+    abbr: "So",
     category: "Blockchain Platform",
     color: "#9945ff",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "polygon",
     name: "Polygon",
-    abbr: "POL",
+    abbr: "Po",
     category: "Scaling Network",
     color: "#8247e5",
     description:
@@ -73,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "avalanche",
     name: "Avalanche",
-    abbr: "AVAX",
+    abbr: "Av",
     category: "Blockchain Platform",
     color: "#e84142",
     description:
@@ -91,7 +91,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cardano",
     name: "Cardano",
-    abbr: "ADA",
+    abbr: "Ca",
     category: "Blockchain Platform",
     color: "#0033ad",
     description:
@@ -109,7 +109,7 @@ const entries: CatalogEntry[] = [
   {
     id: "polkadot",
     name: "Polkadot",
-    abbr: "DOT",
+    abbr: "Po",
     category: "Blockchain Platform",
     color: "#e6007a",
     description:
@@ -127,7 +127,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cosmos",
     name: "Cosmos",
-    abbr: "ATOM",
+    abbr: "Co",
     category: "Blockchain Ecosystem",
     color: "#6f7390",
     description:
@@ -145,7 +145,7 @@ const entries: CatalogEntry[] = [
   {
     id: "near-protocol",
     name: "Near Protocol",
-    abbr: "NEAR",
+    abbr: "NP",
     category: "Blockchain Platform",
     color: "#00c08b",
     description:
@@ -163,7 +163,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aptos",
     name: "Aptos",
-    abbr: "APT",
+    abbr: "Ap",
     category: "Blockchain Platform",
     color: "#2dd8a3",
     description:
@@ -181,7 +181,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sui",
     name: "Sui",
-    abbr: "SUI",
+    abbr: "SU",
     category: "Blockchain Platform",
     color: "#4da2ff",
     description:
@@ -217,7 +217,7 @@ const entries: CatalogEntry[] = [
   {
     id: "move",
     name: "Move",
-    abbr: "MOVE",
+    abbr: "MO",
     category: "Smart Contract Language",
     color: "#14b8a6",
     description:
@@ -235,7 +235,7 @@ const entries: CatalogEntry[] = [
   {
     id: "web3js",
     name: "Web3.js",
-    abbr: "W3JS",
+    abbr: "WJ",
     category: "Blockchain Library",
     color: "#f16822",
     description:
@@ -253,7 +253,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ethersjs",
     name: "Ethers.js",
-    abbr: "ETHR",
+    abbr: "EJ",
     category: "Blockchain Library",
     color: "#2535a0",
     description:
@@ -271,7 +271,7 @@ const entries: CatalogEntry[] = [
   {
     id: "foundry",
     name: "Foundry",
-    abbr: "FDRY",
+    abbr: "Fo",
     category: "Smart Contract Toolkit",
     color: "#e4572e",
     description:
@@ -305,27 +305,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "truffle",
-    name: "Truffle",
-    abbr: "TRF",
-    category: "Smart Contract Toolkit",
-    color: "#5e464d",
-    description:
-      "One of the earliest frameworks for developing Ethereum smart contracts, handling compiling, testing and deploying. It has since been retired in favor of newer tools.",
-    highlights: [
-      "Compiling and migrating contracts",
-      "Ganache local blockchain",
-      "Early Ethereum dApp projects",
-    ],
-    funFact:
-      "Truffle’s companion local blockchain was called Ganache, keeping the chocolate theme going. ConsenSys sunset both tools in 2023.",
-    url: "https://archive.trufflesuite.com",
-    spawnWeight: 0.5,
-  },
-  {
     id: "anchor",
     name: "Anchor",
-    abbr: "ANC",
+    abbr: "An",
     category: "Smart Contract Framework",
     color: "#3b82f6",
     description:
@@ -343,7 +325,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ipfs",
     name: "IPFS",
-    abbr: "IPFS",
+    abbr: "IP",
     category: "Decentralized Storage",
     color: "#65c2cb",
     description:
@@ -360,7 +342,7 @@ const entries: CatalogEntry[] = [
   {
     id: "filecoin",
     name: "Filecoin",
-    abbr: "FIL",
+    abbr: "Fi",
     category: "Decentralized Storage",
     color: "#0090ff",
     description:
@@ -396,7 +378,7 @@ const entries: CatalogEntry[] = [
   {
     id: "the-graph",
     name: "The Graph",
-    abbr: "GRT",
+    abbr: "Gr",
     category: "Blockchain Indexing",
     color: "#6747ed",
     description:
@@ -414,7 +396,7 @@ const entries: CatalogEntry[] = [
   {
     id: "chainlink",
     name: "Chainlink",
-    abbr: "LINK",
+    abbr: "Ch",
     category: "Blockchain Oracle",
     color: "#375bd2",
     description:
@@ -432,7 +414,7 @@ const entries: CatalogEntry[] = [
   {
     id: "infura",
     name: "Infura",
-    abbr: "INF",
+    abbr: "In",
     category: "Blockchain API Service",
     color: "#ff6b4a",
     description:
@@ -450,7 +432,7 @@ const entries: CatalogEntry[] = [
   {
     id: "alchemy",
     name: "Alchemy",
-    abbr: "ALCH",
+    abbr: "Al",
     category: "Blockchain API Service",
     color: "#363ff9",
     description:
@@ -520,7 +502,7 @@ const entries: CatalogEntry[] = [
   {
     id: "distributed-ledger",
     name: "Distributed Ledger",
-    abbr: "DLT",
+    abbr: "DL",
     category: "Blockchain Concept",
     color: "#0ea5e9",
     description:
@@ -538,7 +520,7 @@ const entries: CatalogEntry[] = [
   {
     id: "proof-of-work",
     name: "Proof of Work",
-    abbr: "PoW",
+    abbr: "PW",
     category: "Consensus Mechanism",
     color: "#f59e0b",
     description:
@@ -555,7 +537,7 @@ const entries: CatalogEntry[] = [
   {
     id: "proof-of-stake",
     name: "Proof of Stake",
-    abbr: "PoS",
+    abbr: "PS",
     category: "Consensus Mechanism",
     color: "#22c55e",
     description:
@@ -572,7 +554,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zero-knowledge-proofs",
     name: "Zero-Knowledge Proofs",
-    abbr: "ZKP",
+    abbr: "ZK",
     category: "Cryptography Concept",
     color: "#a855f7",
     description:
@@ -589,7 +571,7 @@ const entries: CatalogEntry[] = [
   {
     id: "defi",
     name: "DeFi",
-    abbr: "DeFi",
+    abbr: "De",
     category: "Blockchain Concept",
     color: "#06b6d4",
     description:
@@ -606,7 +588,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nfts",
     name: "NFTs",
-    abbr: "NFT",
+    abbr: "Nf",
     category: "Blockchain Concept",
     color: "#ec4899",
     description:
@@ -623,7 +605,7 @@ const entries: CatalogEntry[] = [
   {
     id: "daos",
     name: "DAOs",
-    abbr: "DAO",
+    abbr: "Da",
     category: "Blockchain Concept",
     color: "#8b5cf6",
     description:
@@ -677,7 +659,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rollups",
     name: "Rollups",
-    abbr: "RLP",
+    abbr: "Ro",
     category: "Scaling Technique",
     color: "#ff0420",
     description:

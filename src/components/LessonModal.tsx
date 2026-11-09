@@ -49,22 +49,22 @@ export function LessonModal({
         aria-labelledby="tech-modal-title"
         tabIndex={-1}
         style={{ "--accent": accent } as CSSProperties}
-        className="relative my-auto w-full max-w-lg rounded-2xl border-2 border-[var(--accent)] bg-[#0d1024] font-mono text-slate-200 shadow-[0_0_0_4px_#000,0_0_48px_-8px_var(--accent)] outline-none animate-pop-in"
+        className="relative my-auto w-full max-w-xl rounded-2xl border-2 border-[var(--accent)] bg-[#0d1024] font-mono text-slate-200 shadow-[0_0_0_4px_#000,0_0_48px_-8px_var(--accent)] outline-none animate-pop-in"
       >
         <div className="space-y-5 p-5 sm:p-6">
           {/* Header */}
           <div className="flex items-center gap-4">
             <div className="shrink-0 rounded-2xl p-1 shadow-[0_0_24px_-4px_var(--accent)] ring-2 ring-[var(--accent)]/60">
-              <TechLogo tech={tech} size={72} className="size-16 rounded-xl sm:size-[72px]" />
+              <TechLogo tech={tech} size={96} className="size-[88px] rounded-xl sm:size-24" />
             </div>
             <div className="min-w-0">
-              <p className="mb-2 font-pixel text-[9px] leading-[1.6] tracking-wider text-[var(--accent)] sm:text-[10px]">
+              <p className="mb-1.5 font-pixel text-[9px] leading-[1.6] tracking-wider text-[var(--accent)] sm:text-[10px]">
                 {isHazard ? "WEAKNESS EXPOSED" : "SKILL NOT UNLOCKED"}
               </p>
-              <h2 id="tech-modal-title" className="font-pixel text-lg leading-snug text-white sm:text-xl">
+              <h2 id="tech-modal-title" className={`font-pixel leading-tight text-white ${titleSize(tech.name)}`}>
                 {tech.name}
               </h2>
-              <div className="mt-2 flex flex-wrap gap-1.5">
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
                 <span className="rounded-md border border-[var(--accent)]/50 bg-[var(--accent)]/10 px-2 py-0.5 text-[11px] font-semibold text-[var(--accent)]">
                   {tech.category}
                 </span>
@@ -110,28 +110,37 @@ export function LessonModal({
           <div className="flex flex-col gap-3 sm:flex-row">
             <button
               onClick={onRetry}
-              className="arcade-btn flex-1"
+              className="arcade-btn flex-1 gap-2"
               style={{ background: accent, color: readableInk(accent) }}
             >
-              ↻ Try Again
+              <RestartIcon />
+              Start Again
             </button>
             <a
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="arcade-btn flex-1 bg-slate-800 text-white"
+              className="arcade-btn flex-1 gap-2 bg-slate-800 text-white"
             >
-              Learn More ↗
+              Learn More
+              <ExternalIcon />
             </a>
           </div>
 
           <p className="hidden text-center text-[11px] text-slate-500 sm:block">
-            Press <kbd className="kbd">Space</kbd> or <kbd className="kbd">Enter</kbd> to try again
+            Press <kbd className="kbd">Space</kbd> or <kbd className="kbd">Enter</kbd> to start again
           </p>
         </div>
       </div>
     </div>
   );
+}
+
+/** Longer names get a smaller pixel font so the title block stays shorter than the logo. */
+function titleSize(name: string): string {
+  if (name.length <= 12) return "text-lg sm:text-xl";
+  if (name.length <= 18) return "text-base sm:text-lg";
+  return "text-xs sm:text-base";
 }
 
 function Stat({ label, value, highlight }: { label: string; value: string; highlight?: string }) {
@@ -145,5 +154,25 @@ function Stat({ label, value, highlight }: { label: string; value: string; highl
         </span>
       )}
     </div>
+  );
+}
+
+/** Chunky stroke icons sized to sit next to the pixel-font button labels. */
+function RestartIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="square" aria-hidden>
+      <path d="M3 12a9 9 0 1 0 2.64-6.36L3 8.3" />
+      <path d="M3 3v5.3h5.3" />
+    </svg>
+  );
+}
+
+function ExternalIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="square" aria-hidden>
+      <path d="M14 4h6v6" />
+      <path d="M20 4 11 13" />
+      <path d="M18 14v6H4V6h6" />
+    </svg>
   );
 }

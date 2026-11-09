@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "visual-studio-code",
     name: "Visual Studio Code",
-    abbr: "VSC",
+    abbr: "VS",
     category: "Code Editor",
     color: "#007acc",
     description:
@@ -124,7 +124,7 @@ const entries: CatalogEntry[] = [
   {
     id: "eclipse",
     name: "Eclipse",
-    abbr: "ECL",
+    abbr: "Ec",
     category: "IDE",
     color: "#f7941e",
     description:
@@ -159,7 +159,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zed",
     name: "Zed",
-    abbr: "Zed",
+    abbr: "Ze",
     category: "Code Editor",
     color: "#084ccf",
     description:
@@ -176,7 +176,7 @@ const entries: CatalogEntry[] = [
   {
     id: "neovim",
     name: "Neovim",
-    abbr: "NVIM",
+    abbr: "Ne",
     category: "Code Editor",
     color: "#57a143",
     description:
@@ -193,7 +193,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vim",
     name: "Vim",
-    abbr: "Vim",
+    abbr: "Vi",
     category: "Text Editor",
     color: "#019733",
     description:
@@ -210,7 +210,7 @@ const entries: CatalogEntry[] = [
   {
     id: "emacs",
     name: "Emacs",
-    abbr: "EMACS",
+    abbr: "EM",
     category: "Text Editor",
     color: "#7f5ab6",
     description:
@@ -313,7 +313,7 @@ const entries: CatalogEntry[] = [
   {
     id: "svn",
     name: "SVN",
-    abbr: "SVN",
+    abbr: "SV",
     category: "Version Control",
     color: "#809cc9",
     description:
@@ -348,7 +348,7 @@ const entries: CatalogEntry[] = [
   {
     id: "npm",
     name: "npm",
-    abbr: "npm",
+    abbr: "Np",
     category: "Package Manager",
     color: "#cb3837",
     description:
@@ -365,7 +365,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pnpm",
     name: "pnpm",
-    abbr: "pnpm",
+    abbr: "Pn",
     category: "Package Manager",
     color: "#f69220",
     description:
@@ -382,7 +382,7 @@ const entries: CatalogEntry[] = [
   {
     id: "yarn",
     name: "Yarn",
-    abbr: "Yarn",
+    abbr: "Ya",
     category: "Package Manager",
     color: "#2c8ebb",
     description:
@@ -399,7 +399,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pip",
     name: "pip",
-    abbr: "pip",
+    abbr: "Pi",
     category: "Package Manager",
     color: "#3775a9",
     description:
@@ -433,7 +433,7 @@ const entries: CatalogEntry[] = [
   {
     id: "poetry",
     name: "Poetry",
-    abbr: "POE",
+    abbr: "Po",
     category: "Package Manager",
     color: "#60a5fa",
     description:
@@ -450,7 +450,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cargo",
     name: "Cargo",
-    abbr: "CRG",
+    abbr: "Ca",
     category: "Package Manager",
     color: "#dea584",
     description:
@@ -467,7 +467,7 @@ const entries: CatalogEntry[] = [
   {
     id: "maven",
     name: "Maven",
-    abbr: "MVN",
+    abbr: "Ma",
     category: "Build Tool",
     color: "#c71a36",
     description:
@@ -484,7 +484,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gradle",
     name: "Gradle",
-    abbr: "GRDL",
+    abbr: "Gr",
     category: "Build Tool",
     color: "#1ba8cb",
     description:
@@ -501,7 +501,7 @@ const entries: CatalogEntry[] = [
   {
     id: "composer",
     name: "Composer",
-    abbr: "COMP",
+    abbr: "Co",
     category: "Package Manager",
     color: "#885630",
     description:
@@ -518,7 +518,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cocoapods",
     name: "CocoaPods",
-    abbr: "POD",
+    abbr: "Co",
     category: "Package Manager",
     color: "#ee3322",
     description:
@@ -536,7 +536,7 @@ const entries: CatalogEntry[] = [
   {
     id: "swift-package-manager",
     name: "Swift Package Manager",
-    abbr: "SPM",
+    abbr: "SP",
     category: "Package Manager",
     color: "#f05138",
     description:
@@ -553,7 +553,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nuget",
     name: "NuGet",
-    abbr: "NUGET",
+    abbr: "NU",
     category: "Package Manager",
     color: "#004880",
     description:
@@ -570,7 +570,7 @@ const entries: CatalogEntry[] = [
   {
     id: "go-modules",
     name: "Go Modules",
-    abbr: "GOMOD",
+    abbr: "GM",
     category: "Dependency Management",
     color: "#00add8",
     description:
@@ -604,7 +604,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rollup",
     name: "Rollup",
-    abbr: "ROLL",
+    abbr: "Ro",
     category: "Module Bundler",
     color: "#ec4a3f",
     description:
@@ -621,7 +621,7 @@ const entries: CatalogEntry[] = [
   {
     id: "esbuild",
     name: "esbuild",
-    abbr: "ESB",
+    abbr: "Es",
     category: "Module Bundler",
     color: "#ffcf00",
     description:
@@ -638,7 +638,7 @@ const entries: CatalogEntry[] = [
   {
     id: "turbopack",
     name: "Turbopack",
-    abbr: "TURBO",
+    abbr: "Tu",
     category: "Module Bundler",
     color: "#e8378b",
     description:
@@ -655,7 +655,7 @@ const entries: CatalogEntry[] = [
   {
     id: "parcel",
     name: "Parcel",
-    abbr: "PRCL",
+    abbr: "Pa",
     category: "Module Bundler",
     color: "#e7a83f",
     description:
@@ -672,7 +672,7 @@ const entries: CatalogEntry[] = [
   {
     id: "swc",
     name: "SWC",
-    abbr: "SWC",
+    abbr: "SW",
     category: "JS Compiler",
     color: "#f8c457",
     description:
@@ -689,7 +689,7 @@ const entries: CatalogEntry[] = [
   {
     id: "babel",
     name: "Babel",
-    abbr: "Babel",
+    abbr: "Ba",
     category: "JS Compiler",
     color: "#f9dc3e",
     description:
@@ -706,7 +706,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cmake",
     name: "CMake",
-    abbr: "CMake",
+    abbr: "Cm",
     category: "Build System",
     color: "#064f8c",
     description:
@@ -723,7 +723,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ninja",
     name: "Ninja",
-    abbr: "NINJA",
+    abbr: "NI",
     category: "Build System",
     color: "#9b59b6",
     description:
@@ -741,7 +741,7 @@ const entries: CatalogEntry[] = [
   {
     id: "make",
     name: "Make",
-    abbr: "MAKE",
+    abbr: "MA",
     category: "Build Tool",
     color: "#a42e2b",
     description:
@@ -775,7 +775,7 @@ const entries: CatalogEntry[] = [
   {
     id: "insomnia",
     name: "Insomnia",
-    abbr: "INSO",
+    abbr: "In",
     category: "API Client",
     color: "#4000bf",
     description:
@@ -793,7 +793,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bruno",
     name: "Bruno",
-    abbr: "BRU",
+    abbr: "Br",
     category: "API Client",
     color: "#f4aa41",
     description:
@@ -811,7 +811,7 @@ const entries: CatalogEntry[] = [
   {
     id: "swagger",
     name: "Swagger",
-    abbr: "SWAG",
+    abbr: "Sw",
     category: "API Tooling",
     color: "#85ea2d",
     description:
@@ -845,7 +845,7 @@ const entries: CatalogEntry[] = [
   {
     id: "figma",
     name: "Figma",
-    abbr: "FIG",
+    abbr: "Fi",
     category: "Design Tool",
     color: "#f24e1e",
     description:
@@ -862,7 +862,7 @@ const entries: CatalogEntry[] = [
   {
     id: "linear",
     name: "Linear",
-    abbr: "LIN",
+    abbr: "Li",
     category: "Issue Tracker",
     color: "#5e6ad2",
     description:
@@ -879,7 +879,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jira",
     name: "Jira",
-    abbr: "JIRA",
+    abbr: "JI",
     category: "Issue Tracker",
     color: "#0052cc",
     description:
@@ -913,7 +913,7 @@ const entries: CatalogEntry[] = [
   {
     id: "docusaurus",
     name: "Docusaurus",
-    abbr: "DOCU",
+    abbr: "Do",
     category: "Docs Generator",
     color: "#3ecc5f",
     description:
@@ -965,7 +965,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cursor",
     name: "Cursor",
-    abbr: "CUR",
+    abbr: "Cu",
     category: "AI Code Editor",
     color: "#4f9cf9",
     description:
@@ -999,7 +999,7 @@ const entries: CatalogEntry[] = [
   {
     id: "windsurf",
     name: "Windsurf",
-    abbr: "WSF",
+    abbr: "Wi",
     category: "AI Code Editor",
     color: "#09b6a2",
     description:
@@ -1016,7 +1016,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cline",
     name: "Cline",
-    abbr: "CLN",
+    abbr: "Cl",
     category: "AI Coding Agent",
     color: "#7c3aed",
     description:
@@ -1034,7 +1034,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aider",
     name: "Aider",
-    abbr: "AIDER",
+    abbr: "AI",
     category: "AI Coding Agent",
     color: "#14b014",
     description:
@@ -1052,7 +1052,7 @@ const entries: CatalogEntry[] = [
   {
     id: "continue",
     name: "Continue",
-    abbr: "CONT",
+    abbr: "Co",
     category: "AI Coding Assistant",
     color: "#f97316",
     description:
@@ -1070,7 +1070,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openai-codex",
     name: "OpenAI Codex",
-    abbr: "CDX",
+    abbr: "OC",
     category: "AI Coding Agent",
     color: "#10a37f",
     description:
@@ -1083,24 +1083,6 @@ const entries: CatalogEntry[] = [
     funFact:
       "The name is reused: the original 2021 Codex was the code model that first powered GitHub Copilot, and OpenAI revived the name for its coding agent in 2025.",
     url: "https://openai.com/codex/",
-  },
-  {
-    id: "gemini-code-assist",
-    name: "Gemini Code Assist",
-    abbr: "GCA",
-    category: "AI Coding Assistant",
-    color: "#8e75b2",
-    description:
-      "Gemini Code Assist is Google's AI coding assistant powered by Gemini models. It offers code completion, chat and code review in popular IDEs and on GitHub.",
-    highlights: [
-      "AI code completion",
-      "Google Cloud development",
-      "Automated code reviews",
-    ],
-    funFact:
-      "Gemini Code Assist was previously called Duet AI for Developers before Google rebranded its AI products under the Gemini name.",
-    url: "https://codeassist.google",
-    spawnWeight: 0.5,
   },
   {
     id: "amazon-q-developer",
@@ -1119,6 +1101,424 @@ const entries: CatalogEntry[] = [
       "Amazon Q Developer grew out of Amazon CodeWhisperer, AWS's earlier AI code-completion tool, which was folded into it in 2024.",
     url: "https://aws.amazon.com/q/developer/",
     spawnWeight: 0.5,
+  },
+  {
+    id: "turborepo",
+    name: "Turborepo",
+    abbr: "Tu",
+    category: "Monorepo Build Tool",
+    color: "#ef4444",
+    description:
+      "A build system for JavaScript and TypeScript monorepos. It understands how your packages depend on each other, runs tasks in parallel, and caches results so work that has not changed is never redone.",
+    highlights: [
+      "Speeding up monorepo builds",
+      "Caching task results",
+      "Running tasks in parallel",
+    ],
+    funFact:
+      "Turborepo was created by Jared Palmer and acquired by Vercel in 2021. It was later ported from Go to Rust.",
+    url: "https://turborepo.com",
+  },
+  {
+    id: "oxc",
+    name: "Oxc",
+    abbr: "OX",
+    category: "JS Tooling (Rust)",
+    color: "#00b4d8",
+    description:
+      "A collection of very fast JavaScript and TypeScript tools written in Rust, including a parser, a linter called Oxlint, a resolver, a transformer and a minifier. It aims to speed up the JS toolchain.",
+    highlights: [
+      "Ultra-fast linting with Oxlint",
+      "Parsing JS/TS for other tools",
+      "Faster builds and transforms",
+    ],
+    funFact:
+      "Oxc stands for the JavaScript Oxidation Compiler, a nod to Rust (oxidation), and its parser is used inside Rolldown, the Rust bundler built for Vite.",
+    url: "https://oxc.rs",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "nix",
+    name: "Nix",
+    abbr: "NI",
+    category: "Package Manager",
+    color: "#5277c3",
+    description:
+      "A package manager and build system that builds software in a purely functional way. Every package is stored under a unique hashed path, so different versions never clash and builds are reproducible.",
+    highlights: [
+      "Reproducible dev environments",
+      "Side-by-side package versions",
+      "Declarative system configs (NixOS)",
+    ],
+    funFact:
+      "Nix began as Eelco Dolstra's PhD research; his 2006 thesis was titled \"The Purely Functional Software Deployment Model\".",
+    url: "https://nixos.org",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "httpie",
+    name: "HTTPie",
+    abbr: "Ht",
+    category: "HTTP Client",
+    color: "#73dc8c",
+    description:
+      "A command-line HTTP client designed to be friendly for humans. You type simple commands like http GET example.com and get nicely colored, formatted responses, which makes testing APIs pleasant.",
+    highlights: [
+      "Testing APIs from the terminal",
+      "Readable, colored JSON output",
+      "Debugging HTTP requests",
+    ],
+    funFact:
+      "In 2022 HTTPie's maintainers accidentally made its GitHub repository private, which wiped out its roughly 54,000 stars, and they had to start counting again.",
+    url: "https://httpie.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "v0",
+    name: "v0",
+    abbr: "V0",
+    category: "AI App Builder",
+    color: "#7c3aed",
+    description:
+      "An AI tool from Vercel that turns text prompts into working web UI and apps. You describe what you want, it generates React code you can preview, tweak through chat, and deploy.",
+    highlights: [
+      "Generating UI from prompts",
+      "Quick React prototypes",
+      "Deploying straight to Vercel",
+    ],
+    funFact:
+      "v0 typically generates components built with React, Tailwind CSS and shadcn/ui, so the code it produces can be dropped into a normal Next.js project.",
+    url: "https://v0.app",
+  },
+  {
+    id: "devin",
+    name: "Devin",
+    abbr: "De",
+    category: "AI Coding Agent",
+    color: "#22a06b",
+    description:
+      "An autonomous AI coding agent made by Cognition. You assign it a task, and it works in its own sandbox with a shell, editor and browser to plan, write code, run tests and open pull requests.",
+    highlights: [
+      "Delegating coding tasks",
+      "Fixing bugs and writing tests",
+      "Opening pull requests on its own",
+    ],
+    funFact:
+      "Cognition announced Devin in March 2024, billing it as the first AI software engineer, and in 2025 the company acquired the Windsurf AI code editor.",
+    url: "https://devin.ai",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "nx",
+    name: "Nx",
+    abbr: "NX",
+    category: "Monorepo Build System",
+    color: "#143055",
+    description:
+      "A build system for monorepos. It understands how your projects depend on each other, only rebuilds or retests what changed, and can cache results to skip repeated work.",
+    highlights: [
+      "Managing large monorepos",
+      "Cached, incremental builds",
+      "Code generators for projects",
+    ],
+    funFact:
+      "Nx was created by Nrwl, a company founded by former Google Angular team members Jeff Cross and Victor Savkin.",
+    url: "https://nx.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "warp",
+    name: "Warp",
+    abbr: "WA",
+    category: "Terminal App",
+    color: "#01a4ff",
+    description:
+      "A modern terminal app that groups each command and its output into blocks, lets you edit commands like in a text editor, and includes built-in AI help for writing commands.",
+    highlights: [
+      "Everyday command-line work",
+      "AI command suggestions",
+      "Shareable command blocks",
+    ],
+    funFact:
+      "Warp is written in Rust and draws its interface on the GPU, an approach more common in video games than in terminal apps.",
+    url: "https://www.warp.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "wsl",
+    name: "WSL",
+    abbr: "WS",
+    category: "Linux on Windows",
+    color: "#0078d4",
+    description:
+      "Windows Subsystem for Linux lets you run a real Linux environment, like Ubuntu, directly on Windows, so you can use Linux tools and shells without a separate virtual machine setup.",
+    highlights: [
+      "Linux dev tools on Windows",
+      "Running Bash and Linux CLIs",
+      "Docker and web dev on Windows",
+    ],
+    funFact:
+      "WSL 2 runs a genuine Linux kernel that Microsoft builds and ships itself, inside a lightweight virtual machine that starts in seconds.",
+    url: "https://learn.microsoft.com/windows/wsl/",
+  },
+  {
+    id: "mermaid",
+    name: "Mermaid",
+    abbr: "Me",
+    category: "Diagrams as Code",
+    color: "#ff3670",
+    description:
+      "A tool that turns simple text descriptions into diagrams such as flowcharts, sequence diagrams and Gantt charts, so you can keep diagrams in Markdown next to your code.",
+    highlights: [
+      "Flowcharts in Markdown",
+      "Sequence and class diagrams",
+      "Diagrams in docs and READMEs",
+    ],
+    funFact:
+      "In 2022 GitHub added built-in Mermaid support, so a mermaid code block in a README or issue now renders as a real diagram.",
+    url: "https://mermaid.js.org",
+  },
+  {
+    id: "bolt-new",
+    name: "Bolt.new",
+    abbr: "Bo",
+    category: "AI App Builder",
+    color: "#1389fd",
+    description:
+      "An AI tool by StackBlitz that builds full-stack web apps from a chat prompt. It writes the code, installs packages and runs the app in your browser, ready to edit and deploy.",
+    highlights: [
+      "Prototyping apps from prompts",
+      "In-browser full-stack dev",
+      "Quick deploys of AI-built apps",
+    ],
+    funFact:
+      "Bolt.new runs Node.js entirely inside your browser tab using StackBlitz's WebContainers, so there is no remote server running your dev environment.",
+    url: "https://bolt.new",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "json",
+    name: "JSON",
+    abbr: "JS",
+    category: "Data Format",
+    color: "#f5a623",
+    description:
+      "JavaScript Object Notation is a lightweight text format for data, made of objects, arrays, strings, numbers, booleans and null. It is the most common format for web APIs.",
+    highlights: [
+      "Web API requests and responses",
+      "Configuration files",
+      "Storing structured data",
+    ],
+    funFact:
+      "JSON doesn't allow comments. Douglas Crockford removed them on purpose because people were using comments to hide parsing directives.",
+    url: "https://en.wikipedia.org/wiki/JSON",
+  },
+  {
+    id: "rspack",
+    name: "Rspack",
+    abbr: "Rs",
+    category: "Bundler",
+    color: "#f93920",
+    description:
+      "A fast JavaScript bundler written in Rust that is designed to be compatible with webpack's config and plugin ecosystem, so existing projects can switch with few changes.",
+    highlights: [
+      "Faster webpack-compatible builds",
+      "Bundling large web apps",
+      "Migrating off slow webpack setups",
+    ],
+    funFact:
+      "Rspack was built by ByteDance's web infrastructure team to speed up builds for their own huge internal apps, then released as open source.",
+    url: "https://rspack.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "tmux",
+    name: "tmux",
+    abbr: "TM",
+    category: "Terminal Multiplexer",
+    color: "#1bb91f",
+    description:
+      "A terminal multiplexer: it lets you split one terminal into many panes and windows, and keep sessions running after you disconnect so you can reattach later.",
+    highlights: [
+      "Split panes in one terminal",
+      "Persistent sessions over SSH",
+      "Managing many shells at once",
+    ],
+    funFact:
+      "tmux was written by Nicholas Marriott and first released in 2007, and it ships as part of the OpenBSD base system.",
+    url: "https://github.com/tmux/tmux/wiki",
+  },
+  {
+    id: "oh-my-zsh",
+    name: "Oh My Zsh",
+    abbr: "OM",
+    category: "Shell Framework",
+    color: "#c5d93b",
+    description:
+      "A community framework for managing your Zsh shell configuration. It bundles hundreds of plugins and themes, giving you git shortcuts, autocompletion and a fancy prompt.",
+    highlights: [
+      "Zsh themes and prompts",
+      "Plugins for git, Docker and more",
+      "Handy shell aliases",
+    ],
+    funFact:
+      "Robby Russell started Oh My Zsh in 2009 as a way to tidy up his own Zsh config, and it grew into one of the most-starred projects on GitHub.",
+    url: "https://ohmyz.sh",
+  },
+  {
+    id: "plantuml",
+    name: "PlantUML",
+    abbr: "Pl",
+    category: "Diagrams as Code",
+    color: "#a80036",
+    description:
+      "A tool that draws diagrams from plain text. You describe sequence, class, activity or other UML diagrams in a simple language and PlantUML renders them as images.",
+    highlights: [
+      "UML diagrams from text",
+      "Diagrams versioned in Git",
+      "Architecture docs",
+    ],
+    funFact:
+      "PlantUML is written in Java and uses Graphviz behind the scenes to lay out many of its diagram types.",
+    url: "https://plantuml.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "lovable",
+    name: "Lovable",
+    abbr: "Lo",
+    category: "AI App Builder",
+    color: "#ff4f8b",
+    description:
+      "An AI app builder where you describe what you want in plain English and it generates a full-stack web app, which you can then refine by chatting, edit as code, and deploy.",
+    highlights: [
+      "Prototyping apps from prompts",
+      "Vibe coding full-stack web apps",
+      "Building MVPs quickly",
+    ],
+    funFact:
+      "Lovable is based in Stockholm and grew out of GPT Engineer, an open-source project by co-founder Anton Osika.",
+    url: "https://lovable.dev",
+  },
+  {
+    id: "yaml",
+    name: "YAML",
+    abbr: "YA",
+    category: "Data Format",
+    color: "#cb171e",
+    description:
+      "A human-friendly text format for data and configuration that uses indentation instead of brackets. You'll find it in Docker Compose, Kubernetes, and CI pipeline files.",
+    highlights: [
+      "Config files",
+      "Kubernetes and Docker Compose",
+      "CI/CD pipeline definitions",
+    ],
+    funFact:
+      "YAML originally stood for \"Yet Another Markup Language\" but was renamed to the recursive \"YAML Ain't Markup Language\" to stress that it is for data.",
+    url: "https://yaml.org",
+  },
+  {
+    id: "rolldown",
+    name: "Rolldown",
+    abbr: "RD",
+    category: "JavaScript Bundler",
+    color: "#ff5100",
+    description:
+      "A fast JavaScript bundler written in Rust. It aims to be compatible with Rollup's API and plugins while being much faster, and it is designed to power the Vite build tool.",
+    highlights: [
+      "Bundling JavaScript for production",
+      "Powering Vite builds",
+      "Fast Rollup-compatible builds",
+    ],
+    funFact:
+      "Rolldown is developed by VoidZero, the company founded by Vue and Vite creator Evan You, as part of a plan to unify Vite's tooling in Rust.",
+    url: "https://rolldown.rs",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "homebrew",
+    name: "Homebrew",
+    abbr: "Ho",
+    category: "Package Manager",
+    color: "#fbb040",
+    description:
+      "A package manager for macOS and Linux. With one command like brew install git, it downloads, installs and updates command-line tools and apps for you.",
+    highlights: [
+      "Installing dev tools on a Mac",
+      "Keeping CLI tools updated",
+      "Installing desktop apps via casks",
+    ],
+    funFact:
+      "Homebrew uses beer-themed names: package recipes are \"formulae\", installed packages live in the \"Cellar\", and extra repositories are called \"taps\".",
+    url: "https://brew.sh",
+  },
+  {
+    id: "curl",
+    name: "cURL",
+    abbr: "CU",
+    category: "HTTP Command-line Tool",
+    color: "#073551",
+    description:
+      "A command-line tool and library for transferring data with URLs. Developers use it to send HTTP requests, test APIs and download files right from the terminal.",
+    highlights: [
+      "Testing APIs from the terminal",
+      "Downloading files in scripts",
+      "Debugging HTTP requests",
+    ],
+    funFact:
+      "cURL's creator Daniel Stenberg started the project in the 1990s from a small tool for fetching currency exchange rates for an IRC bot.",
+    url: "https://curl.se",
+  },
+  {
+    id: "ngrok",
+    name: "ngrok",
+    abbr: "Ng",
+    category: "Tunneling Tool",
+    color: "#1f1e37",
+    description:
+      "A tool that gives an app running on your own computer a public URL. It creates a secure tunnel from the internet to your localhost, so others or outside services can reach it.",
+    highlights: [
+      "Sharing a local dev server",
+      "Testing webhooks locally",
+      "Demoing work in progress",
+    ],
+    funFact:
+      "ngrok was created by Alan Shreve, and its original 1.x version was released as open-source software on GitHub.",
+    url: "https://ngrok.com",
+  },
+  {
+    id: "replit",
+    name: "Replit",
+    abbr: "Re",
+    category: "Online IDE",
+    color: "#f26207",
+    description:
+      "A browser-based coding environment. You can write, run and host code in dozens of languages without installing anything, collaborate live, and use an AI agent to help build apps.",
+    highlights: [
+      "Coding in the browser",
+      "Learning to program",
+      "Quickly building and hosting apps",
+    ],
+    funFact:
+      "Replit used to be called Repl.it, named after the REPL (read-eval-print loop), the interactive prompt where you type code and see results instantly.",
+    url: "https://replit.com",
+  },
+  {
+    id: "markdown",
+    name: "Markdown",
+    abbr: "MD",
+    category: "Markup Language",
+    color: "#083fa1",
+    description:
+      "A lightweight way to format plain text. Symbols like # for headings, * for lists and **bold** are easy to read as-is and can be converted to HTML.",
+    highlights: [
+      "README files and docs",
+      "Writing blog posts",
+      "Formatting chat and comments",
+    ],
+    funFact:
+      "Markdown was created in 2004 by John Gruber, with Aaron Swartz contributing significantly to its syntax design.",
+    url: "https://daringfireball.net/projects/markdown/",
   },
 ];
 

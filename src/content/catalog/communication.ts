@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "matrix",
     name: "Matrix",
-    abbr: "[m]",
+    abbr: "Ma",
     category: "Messaging Protocol",
     color: "#0dbd8b",
     description:
@@ -23,7 +23,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xmpp",
     name: "XMPP",
-    abbr: "XMPP",
+    abbr: "XM",
     category: "Messaging Protocol",
     color: "#2f7bbf",
     description:
@@ -58,7 +58,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sip",
     name: "SIP",
-    abbr: "SIP",
+    abbr: "SI",
     category: "Signaling Protocol",
     color: "#00796b",
     description:
@@ -75,7 +75,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rtp",
     name: "RTP",
-    abbr: "RTP",
+    abbr: "RT",
     category: "Network Protocol",
     color: "#5c6bc0",
     description:
@@ -93,7 +93,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rtsp",
     name: "RTSP",
-    abbr: "RTSP",
+    abbr: "RT",
     category: "Streaming Protocol",
     color: "#8e24aa",
     description:
@@ -147,7 +147,7 @@ const entries: CatalogEntry[] = [
   {
     id: "signal-protocol",
     name: "Signal Protocol",
-    abbr: "SIG",
+    abbr: "SP",
     category: "Encryption Protocol",
     color: "#3a76f0",
     description:
@@ -160,6 +160,58 @@ const entries: CatalogEntry[] = [
     funFact:
       "In 2016 WhatsApp finished rolling out the Signal Protocol to all its users, turning on end-to-end encryption for over a billion people at once.",
     url: "https://signal.org/docs/",
+  },
+  {
+    id: "resend",
+    name: "Resend",
+    abbr: "RS",
+    category: "Email API",
+    color: "#6366f1",
+    description:
+      "An email-sending API built for developers. You send transactional emails like sign-up confirmations and password resets with a simple API call, and it handles delivery and domain setup.",
+    highlights: [
+      "Transactional emails",
+      "Emails built with React",
+      "Simple API and SDKs",
+    ],
+    funFact:
+      "The team behind Resend also created React Email, an open-source library that lets you build email templates with React components.",
+    url: "https://resend.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "sendgrid",
+    name: "SendGrid",
+    abbr: "SG",
+    category: "Email Delivery API",
+    color: "#1a82e2",
+    description:
+      "A cloud service for sending email from your app through an API or SMTP. It handles delivery, bounces and spam reputation, and gives you stats on opens and clicks.",
+    highlights: [
+      "Password reset and signup emails",
+      "Transactional email at scale",
+      "Marketing campaigns",
+    ],
+    funFact:
+      "SendGrid was founded in 2009 in Boulder, Colorado, and was acquired by Twilio in 2019, joining its SMS and voice APIs.",
+    url: "https://sendgrid.com",
+  },
+  {
+    id: "twilio",
+    name: "Twilio",
+    abbr: "Tw",
+    category: "Communications API",
+    color: "#f22f46",
+    description:
+      "A cloud platform that lets your code send text messages, make phone calls, send emails and more through simple APIs, without dealing with telecom carriers yourself.",
+    highlights: [
+      "Sending SMS notifications",
+      "Two-factor auth codes",
+      "Programmable voice calls",
+    ],
+    funFact:
+      "Twilio co-founder Jeff Lawson was an early Amazon employee and later wrote the book \"Ask Your Developer\" about building software-powered companies.",
+    url: "https://www.twilio.com",
   },
 ];
 

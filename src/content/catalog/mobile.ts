@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "expo",
     name: "Expo",
-    abbr: "Expo",
+    abbr: "Ex",
     category: "Mobile Platform",
     color: "#4630eb",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "flutter",
     name: "Flutter",
-    abbr: "Flt",
+    abbr: "Fl",
     category: "UI Toolkit",
     color: "#02569b",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ionic",
     name: "Ionic",
-    abbr: "Ion",
+    abbr: "Io",
     category: "Mobile UI Framework",
     color: "#3880ff",
     description:
@@ -73,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "capacitor",
     name: "Capacitor",
-    abbr: "Cap",
+    abbr: "Ca",
     category: "Native Runtime",
     color: "#119eff",
     description:
@@ -91,7 +91,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dotnet-maui",
     name: ".NET MAUI",
-    abbr: "MAUI",
+    abbr: "NM",
     category: "Mobile Framework",
     color: "#512bd4",
     description:
@@ -126,7 +126,7 @@ const entries: CatalogEntry[] = [
   {
     id: "kotlin-multiplatform",
     name: "Kotlin Multiplatform",
-    abbr: "KMP",
+    abbr: "KM",
     category: "Cross-platform SDK",
     color: "#7f52ff",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "compose-multiplatform",
     name: "Compose Multiplatform",
-    abbr: "CMP",
+    abbr: "CM",
     category: "UI Framework",
     color: "#6b57ff",
     description:
@@ -161,7 +161,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-cordova",
     name: "Apache Cordova",
-    abbr: "CDV",
+    abbr: "AC",
     category: "Hybrid App Framework",
     color: "#4cc2e4",
     description:
@@ -179,7 +179,7 @@ const entries: CatalogEntry[] = [
   {
     id: "swiftui",
     name: "SwiftUI",
-    abbr: "SUI",
+    abbr: "Sw",
     category: "UI Framework",
     color: "#0a84ff",
     description:
@@ -196,7 +196,7 @@ const entries: CatalogEntry[] = [
   {
     id: "uikit",
     name: "UIKit",
-    abbr: "UIK",
+    abbr: "Ui",
     category: "UI Framework",
     color: "#2396f3",
     description:
@@ -213,7 +213,7 @@ const entries: CatalogEntry[] = [
   {
     id: "combine",
     name: "Combine",
-    abbr: "CMB",
+    abbr: "Co",
     category: "Reactive Framework",
     color: "#e8572a",
     description:
@@ -301,7 +301,7 @@ const entries: CatalogEntry[] = [
   {
     id: "metal",
     name: "Metal",
-    abbr: "MTL",
+    abbr: "Me",
     category: "Graphics API",
     color: "#5e5ce6",
     description:
@@ -319,7 +319,7 @@ const entries: CatalogEntry[] = [
   {
     id: "android-sdk",
     name: "Android SDK",
-    abbr: "ASDK",
+    abbr: "AS",
     category: "Mobile SDK",
     color: "#3ddc84",
     description:
@@ -336,7 +336,7 @@ const entries: CatalogEntry[] = [
   {
     id: "android-ndk",
     name: "Android NDK",
-    abbr: "NDK",
+    abbr: "AN",
     category: "Native Dev Kit",
     color: "#2e9e5b",
     description:
@@ -388,7 +388,7 @@ const entries: CatalogEntry[] = [
   {
     id: "room",
     name: "Room",
-    abbr: "Room",
+    abbr: "Ro",
     category: "Database Library",
     color: "#00897b",
     description:
@@ -423,7 +423,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hilt",
     name: "Hilt",
-    abbr: "Hilt",
+    abbr: "Hi",
     category: "Dependency Injection",
     color: "#e65100",
     description:
@@ -441,7 +441,7 @@ const entries: CatalogEntry[] = [
   {
     id: "camerax",
     name: "CameraX",
-    abbr: "CamX",
+    abbr: "Ca",
     category: "Camera Library",
     color: "#1a73e8",
     description:
@@ -459,7 +459,7 @@ const entries: CatalogEntry[] = [
   {
     id: "react-navigation",
     name: "React Navigation",
-    abbr: "RNav",
+    abbr: "RN",
     category: "Navigation Library",
     color: "#6b52ae",
     description:
@@ -492,27 +492,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "realm",
-    name: "Realm",
-    abbr: "RLM",
-    category: "Mobile Database",
-    color: "#e5466e",
-    description:
-      "An object-oriented database built for mobile apps. Instead of writing SQL, you save and query regular objects, and data can be stored fully offline.",
-    highlights: [
-      "Offline-first mobile apps",
-      "Storing objects without SQL",
-      "Reactive data updates in the UI",
-    ],
-    funFact:
-      "MongoDB acquired Realm in 2019, and in 2024 it announced the deprecation of its Realm-based device sync service.",
-    url: "https://en.wikipedia.org/wiki/Realm_(database)",
-    spawnWeight: 0.5,
-  },
-  {
     id: "sqlite",
     name: "SQLite",
-    abbr: "Lite",
+    abbr: "Sq",
     category: "Embedded Database",
     color: "#0f80cc",
     description:
@@ -529,7 +511,7 @@ const entries: CatalogEntry[] = [
   {
     id: "watermelondb",
     name: "WatermelonDB",
-    abbr: "WMDB",
+    abbr: "Wa",
     category: "Mobile Database",
     color: "#ff4d6d",
     description:
@@ -547,7 +529,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mmkv",
     name: "MMKV",
-    abbr: "MMKV",
+    abbr: "MM",
     category: "Key-Value Storage",
     color: "#07c160",
     description:
@@ -600,7 +582,7 @@ const entries: CatalogEntry[] = [
   {
     id: "detox",
     name: "Detox",
-    abbr: "DTX",
+    abbr: "De",
     category: "E2E Testing",
     color: "#2db4a5",
     description:
@@ -618,7 +600,7 @@ const entries: CatalogEntry[] = [
   {
     id: "maestro",
     name: "Maestro",
-    abbr: "Mae",
+    abbr: "Ma",
     category: "UI Testing",
     color: "#a855f7",
     description:
@@ -636,7 +618,7 @@ const entries: CatalogEntry[] = [
   {
     id: "appium",
     name: "Appium",
-    abbr: "Apm",
+    abbr: "Ap",
     category: "Mobile Test Automation",
     color: "#662d91",
     description:
@@ -653,7 +635,7 @@ const entries: CatalogEntry[] = [
   {
     id: "espresso",
     name: "Espresso",
-    abbr: "Esp",
+    abbr: "Es",
     category: "UI Testing",
     color: "#795548",
     description:
@@ -671,7 +653,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xcuitest",
     name: "XCUITest",
-    abbr: "XCUI",
+    abbr: "Xc",
     category: "UI Testing",
     color: "#1c7cd5",
     description:
@@ -689,7 +671,7 @@ const entries: CatalogEntry[] = [
   {
     id: "robolectric",
     name: "Robolectric",
-    abbr: "Robo",
+    abbr: "Ro",
     category: "Unit Testing",
     color: "#a4c639",
     description:

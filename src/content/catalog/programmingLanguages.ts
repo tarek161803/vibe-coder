@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cpp",
     name: "C++",
-    abbr: "C++",
+    abbr: "C+",
     category: "Programming Language",
     color: "#00599c",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "java",
     name: "Java",
-    abbr: "Java",
+    abbr: "Ja",
     category: "Programming Language",
     color: "#e76f00",
     description:
@@ -90,7 +90,7 @@ const entries: CatalogEntry[] = [
   {
     id: "swift",
     name: "Swift",
-    abbr: "Swft",
+    abbr: "Sw",
     category: "Programming Language",
     color: "#f05138",
     description:
@@ -124,7 +124,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dart",
     name: "Dart",
-    abbr: "Dart",
+    abbr: "Da",
     category: "Programming Language",
     color: "#0175c2",
     description:
@@ -141,7 +141,7 @@ const entries: CatalogEntry[] = [
   {
     id: "objective-c",
     name: "Objective-C",
-    abbr: "ObjC",
+    abbr: "OC",
     category: "Programming Language",
     color: "#438eff",
     description:
@@ -175,7 +175,7 @@ const entries: CatalogEntry[] = [
   {
     id: "perl",
     name: "Perl",
-    abbr: "Perl",
+    abbr: "Pe",
     category: "Programming Language",
     color: "#39457e",
     description:
@@ -192,7 +192,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lua",
     name: "Lua",
-    abbr: "Lua",
+    abbr: "Lu",
     category: "Scripting Language",
     color: "#000080",
     description:
@@ -261,7 +261,7 @@ const entries: CatalogEntry[] = [
   {
     id: "erlang",
     name: "Erlang",
-    abbr: "Erl",
+    abbr: "Er",
     category: "Programming Language",
     color: "#a90533",
     description:
@@ -297,7 +297,7 @@ const entries: CatalogEntry[] = [
   {
     id: "clojure",
     name: "Clojure",
-    abbr: "Clj",
+    abbr: "Cl",
     category: "Functional Language",
     color: "#5881d8",
     description:
@@ -351,7 +351,7 @@ const entries: CatalogEntry[] = [
   {
     id: "groovy",
     name: "Groovy",
-    abbr: "Gvy",
+    abbr: "Gr",
     category: "Scripting Language",
     color: "#4298b8",
     description:
@@ -369,7 +369,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zig",
     name: "Zig",
-    abbr: "Zig",
+    abbr: "Zi",
     category: "Systems Language",
     color: "#f7a41d",
     description:
@@ -387,7 +387,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nim",
     name: "Nim",
-    abbr: "Nim",
+    abbr: "Ni",
     category: "Programming Language",
     color: "#ffc200",
     description:
@@ -423,7 +423,7 @@ const entries: CatalogEntry[] = [
   {
     id: "delphi",
     name: "Delphi",
-    abbr: "Dlph",
+    abbr: "De",
     category: "Language & IDE",
     color: "#ee1f35",
     description:
@@ -441,7 +441,7 @@ const entries: CatalogEntry[] = [
   {
     id: "assembly",
     name: "Assembly",
-    abbr: "ASM",
+    abbr: "As",
     category: "Low-Level Language",
     color: "#6e4c13",
     description:
@@ -458,7 +458,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lisp",
     name: "Lisp",
-    abbr: "Lisp",
+    abbr: "Li",
     category: "Programming Language",
     color: "#3fb68b",
     description:
@@ -494,7 +494,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fortran",
     name: "Fortran",
-    abbr: "F90",
+    abbr: "Fo",
     category: "Programming Language",
     color: "#734f96",
     description:
@@ -511,7 +511,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cobol",
     name: "COBOL",
-    abbr: "CBL",
+    abbr: "CO",
     category: "Programming Language",
     color: "#005ca5",
     description:
@@ -528,7 +528,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ada",
     name: "Ada",
-    abbr: "Ada",
+    abbr: "Ad",
     category: "Programming Language",
     color: "#02a3e0",
     description:
@@ -546,7 +546,7 @@ const entries: CatalogEntry[] = [
   {
     id: "solidity",
     name: "Solidity",
-    abbr: "Sol",
+    abbr: "So",
     category: "Smart Contract Language",
     color: "#627eea",
     description:
@@ -582,7 +582,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mojo",
     name: "Mojo",
-    abbr: "Mojo",
+    abbr: "Mo",
     category: "Programming Language",
     color: "#ff4f00",
     description:
@@ -596,6 +596,110 @@ const entries: CatalogEntry[] = [
       "Mojo was created by a team led by Chris Lattner, who also created Swift and LLVM — and Mojo source files can use a fire emoji 🔥 as their file extension.",
     url: "https://docs.modular.com/mojo/",
     spawnWeight: 0.5,
+  },
+  {
+    id: "elm",
+    name: "Elm",
+    abbr: "EL",
+    category: "Functional Language",
+    color: "#60b5cc",
+    description:
+      "A purely functional programming language that compiles to JavaScript for building web apps. Its strict type system and friendly compiler errors help catch bugs before your code ever runs.",
+    highlights: [
+      "Reliable web frontends",
+      "Friendly compiler error messages",
+      "The Elm Architecture pattern",
+    ],
+    funFact:
+      "Elm was created by Evan Czaplicki for his 2012 thesis, and its Model-Update-View pattern, The Elm Architecture, inspired the design of Redux.",
+    url: "https://elm-lang.org",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "bash",
+    name: "Bash",
+    abbr: "BA",
+    category: "Shell Language",
+    color: "#4eaa25",
+    description:
+      "The command-line shell and scripting language used by default on most Linux systems. You type commands to run programs, and can save them as scripts to automate tasks.",
+    highlights: [
+      "Automating tasks with scripts",
+      "Running command-line tools",
+      "Server and CI setup",
+    ],
+    funFact:
+      "Bash stands for \"Bourne-Again SHell\", a pun on the older Bourne shell. Brian Fox wrote it for the GNU Project, releasing it in 1989.",
+    url: "https://www.gnu.org/software/bash/",
+  },
+  {
+    id: "gleam",
+    name: "Gleam",
+    abbr: "Gl",
+    category: "Functional Language",
+    color: "#ffaff3",
+    description:
+      "A friendly, statically typed functional language that runs on the Erlang virtual machine (BEAM) and can also compile to JavaScript. It aims for simple syntax and helpful errors.",
+    highlights: [
+      "Fault-tolerant BEAM services",
+      "Type-safe functional code",
+      "Compiling to JavaScript",
+    ],
+    funFact:
+      "Gleam's mascot is Lucy, a pink star, and the language reached its 1.0 release in March 2024.",
+    url: "https://gleam.run",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "powershell",
+    name: "PowerShell",
+    abbr: "PS",
+    category: "Shell & Scripting",
+    color: "#5391fe",
+    description:
+      "A command-line shell and scripting language from Microsoft. Unlike classic shells that pass text, PowerShell commands pass structured objects to each other.",
+    highlights: [
+      "Automating Windows admin tasks",
+      "Managing Azure and Microsoft 365",
+      "Cross-platform scripting",
+    ],
+    funFact:
+      "PowerShell began as Jeffrey Snover's \"Monad\" project, and in 2016 Microsoft open-sourced it and made it run on Linux and macOS.",
+    url: "https://learn.microsoft.com/powershell/",
+  },
+  {
+    id: "regular-expressions",
+    name: "Regular Expressions",
+    abbr: "RE",
+    category: "Pattern Matching",
+    color: "#e0234e",
+    description:
+      "A compact mini-language for describing text patterns, used to search, validate, extract or replace text. Supported in almost every programming language and editor.",
+    highlights: [
+      "Validating input like emails",
+      "Search and replace in editors",
+      "Extracting data from text",
+    ],
+    funFact:
+      "The grep command got its name from the ed editor command g/re/p: globally search for a regular expression and print matching lines.",
+    url: "https://en.wikipedia.org/wiki/Regular_expression",
+  },
+  {
+    id: "sql",
+    name: "SQL",
+    abbr: "SQ",
+    category: "Query Language",
+    color: "#e38c00",
+    description:
+      "The standard language for working with relational databases. You write statements like SELECT, INSERT and UPDATE to read, add and change rows in tables.",
+    highlights: [
+      "Querying relational databases",
+      "Reports and data analysis",
+      "Creating and changing tables",
+    ],
+    funFact:
+      "SQL was developed at IBM in the 1970s under the name SEQUEL, and was renamed because of a trademark conflict. That's why many people still pronounce it \"sequel\".",
+    url: "https://en.wikipedia.org/wiki/SQL",
   },
 ];
 

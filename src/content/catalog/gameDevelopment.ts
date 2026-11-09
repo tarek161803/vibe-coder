@@ -144,7 +144,7 @@ const entries: CatalogEntry[] = [
   {
     id: "babylonjs",
     name: "Babylon.js",
-    abbr: "Bab",
+    abbr: "BJ",
     category: "3D Web Engine",
     color: "#bb464b",
     description:
@@ -179,7 +179,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bevy",
     name: "Bevy",
-    abbr: "Bevy",
+    abbr: "Be",
     category: "Game Engine",
     color: "#4a6b8a",
     description:
@@ -197,7 +197,7 @@ const entries: CatalogEntry[] = [
   {
     id: "love2d",
     name: "LÖVE",
-    abbr: "LÖVE",
+    abbr: "Lv",
     category: "2D Game Framework",
     color: "#e74a99",
     description:
@@ -214,7 +214,7 @@ const entries: CatalogEntry[] = [
   {
     id: "stride",
     name: "Stride",
-    abbr: "Str",
+    abbr: "St",
     category: "Game Engine",
     color: "#c61c34",
     description:
@@ -249,7 +249,7 @@ const entries: CatalogEntry[] = [
   {
     id: "o3de",
     name: "O3DE",
-    abbr: "O3DE",
+    abbr: "O3",
     category: "Game Engine",
     color: "#00a0e5",
     description:
@@ -318,7 +318,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webgl",
     name: "WebGL",
-    abbr: "WGL",
+    abbr: "We",
     category: "Graphics API",
     color: "#990000",
     description:
@@ -335,7 +335,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webgpu",
     name: "WebGPU",
-    abbr: "WGPU",
+    abbr: "We",
     category: "Graphics API",
     color: "#005a9c",
     description:
@@ -352,7 +352,7 @@ const entries: CatalogEntry[] = [
   {
     id: "threejs",
     name: "Three.js",
-    abbr: "3JS",
+    abbr: "TJ",
     category: "3D Graphics Library",
     color: "#049ef4",
     description:
@@ -369,7 +369,7 @@ const entries: CatalogEntry[] = [
   {
     id: "glsl",
     name: "GLSL",
-    abbr: "GLSL",
+    abbr: "GL",
     category: "Shading Language",
     color: "#5586a4",
     description:
@@ -386,7 +386,7 @@ const entries: CatalogEntry[] = [
   {
     id: "hlsl",
     name: "HLSL",
-    abbr: "HLSL",
+    abbr: "HL",
     category: "Shading Language",
     color: "#0078d4",
     description:
@@ -403,7 +403,7 @@ const entries: CatalogEntry[] = [
   {
     id: "wgsl",
     name: "WGSL",
-    abbr: "WGSL",
+    abbr: "WG",
     category: "Shading Language",
     color: "#005a9c",
     description:
@@ -421,7 +421,7 @@ const entries: CatalogEntry[] = [
   {
     id: "box2d",
     name: "Box2D",
-    abbr: "B2D",
+    abbr: "2D",
     category: "Physics Engine",
     color: "#8ccc49",
     description:
@@ -438,7 +438,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bullet-physics",
     name: "Bullet Physics",
-    abbr: "BLT",
+    abbr: "BP",
     category: "Physics Engine",
     color: "#d9534f",
     description:
@@ -456,7 +456,7 @@ const entries: CatalogEntry[] = [
   {
     id: "physx",
     name: "PhysX",
-    abbr: "PhX",
+    abbr: "Ph",
     category: "Physics Engine",
     color: "#76b900",
     description:
@@ -473,7 +473,7 @@ const entries: CatalogEntry[] = [
   {
     id: "havok",
     name: "Havok",
-    abbr: "Hvk",
+    abbr: "Ha",
     category: "Physics Engine",
     color: "#f2a900",
     description:
@@ -490,7 +490,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rapier",
     name: "Rapier",
-    abbr: "Rap",
+    abbr: "Ra",
     category: "Physics Engine",
     color: "#e2a33b",
     description:
@@ -508,7 +508,7 @@ const entries: CatalogEntry[] = [
   {
     id: "matterjs",
     name: "Matter.js",
-    abbr: "MJS",
+    abbr: "MJ",
     category: "Physics Engine",
     color: "#4b5fe1",
     description:
@@ -526,7 +526,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jolt-physics",
     name: "Jolt Physics",
-    abbr: "Jolt",
+    abbr: "JP",
     category: "Physics Engine",
     color: "#f5c518",
     description:
@@ -544,7 +544,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cannonjs",
     name: "Cannon.js",
-    abbr: "Cnn",
+    abbr: "Ca",
     category: "Physics Engine",
     color: "#6c7a89",
     description:
@@ -562,7 +562,7 @@ const entries: CatalogEntry[] = [
   {
     id: "photon",
     name: "Photon",
-    abbr: "Pho",
+    abbr: "Ph",
     category: "Multiplayer Service",
     color: "#004480",
     description:
@@ -580,7 +580,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mirror",
     name: "Mirror",
-    abbr: "Mir",
+    abbr: "Mi",
     category: "Networking Library",
     color: "#5d6cc1",
     description:
@@ -598,7 +598,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fishnet",
     name: "FishNet",
-    abbr: "Fish",
+    abbr: "Fi",
     category: "Networking Library",
     color: "#2196f3",
     description:
@@ -616,7 +616,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nakama",
     name: "Nakama",
-    abbr: "Nak",
+    abbr: "Na",
     category: "Game Server",
     color: "#7b2ff7",
     description:
@@ -634,7 +634,7 @@ const entries: CatalogEntry[] = [
   {
     id: "colyseus",
     name: "Colyseus",
-    abbr: "Col",
+    abbr: "Co",
     category: "Multiplayer Framework",
     color: "#e53935",
     description:
@@ -670,7 +670,7 @@ const entries: CatalogEntry[] = [
   {
     id: "unity-netcode",
     name: "Unity Netcode",
-    abbr: "NGO",
+    abbr: "UN",
     category: "Networking Library",
     color: "#4a7fc1",
     description:
@@ -688,7 +688,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ecs",
     name: "ECS",
-    abbr: "ECS",
+    abbr: "EC",
     category: "Architecture Pattern",
     color: "#e67e22",
     description:
@@ -739,7 +739,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pathfinding",
     name: "Pathfinding",
-    abbr: "Path",
+    abbr: "Pa",
     category: "Algorithm Concept",
     color: "#00b894",
     description:
@@ -756,7 +756,7 @@ const entries: CatalogEntry[] = [
   {
     id: "procedural-generation",
     name: "Procedural Generation",
-    abbr: "PCG",
+    abbr: "PG",
     category: "Game Technique",
     color: "#6ab04c",
     description:
@@ -790,7 +790,7 @@ const entries: CatalogEntry[] = [
   {
     id: "game-ai",
     name: "Game AI",
-    abbr: "GAI",
+    abbr: "GA",
     category: "Game Programming",
     color: "#fd9644",
     description:
@@ -837,6 +837,42 @@ const entries: CatalogEntry[] = [
     funFact:
       "Many matchmaking ratings descend from the Elo system, invented by physicist Arpad Elo to rank chess players.",
     url: "https://en.wikipedia.org/wiki/Elo_rating_system",
+  },
+  {
+    id: "raylib",
+    name: "Raylib",
+    abbr: "Ra",
+    category: "Game Library",
+    color: "#e04e39",
+    description:
+      "A simple C library for making games and graphics programs. It handles windows, input, 2D and 3D drawing, audio and more with an easy API, and has bindings for dozens of other languages.",
+    highlights: [
+      "Learning game programming",
+      "Small 2D and 3D games",
+      "Game jams and prototypes",
+    ],
+    funFact:
+      "Ramon Santamaria created raylib in 2013 to teach game programming to art students with no coding experience, so it was designed to be simple from day one.",
+    url: "https://www.raylib.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "sdl",
+    name: "SDL",
+    abbr: "SD",
+    category: "Multimedia Library",
+    color: "#173e6b",
+    description:
+      "Simple DirectMedia Layer is a cross-platform C library that gives games low-level access to windows, graphics, audio, keyboard and controllers on Windows, macOS, Linux and more.",
+    highlights: [
+      "Cross-platform game windows",
+      "Input and controller handling",
+      "Audio for games and emulators",
+    ],
+    funFact:
+      "Sam Lantinga created SDL in 1998 while at Loki Software, a company that ported Windows games to Linux.",
+    url: "https://www.libsdl.org",
+    spawnWeight: 0.5,
   },
 ];
 

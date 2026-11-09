@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "autodesk-maya",
     name: "Autodesk Maya",
-    abbr: "Maya",
+    abbr: "AM",
     category: "3D Animation Software",
     color: "#37a5cc",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "3ds-max",
     name: "3ds Max",
-    abbr: "3ds",
+    abbr: "3M",
     category: "3D Modeling Software",
     color: "#00a5a5",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cinema-4d",
     name: "Cinema 4D",
-    abbr: "C4D",
+    abbr: "C4",
     category: "3D Software",
     color: "#2160d4",
     description:
@@ -73,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "houdini",
     name: "Houdini",
-    abbr: "Hou",
+    abbr: "Ho",
     category: "3D VFX Software",
     color: "#ff4713",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "direct3d",
     name: "Direct3D",
-    abbr: "D3D",
+    abbr: "Di",
     category: "Graphics API",
     color: "#00a4ef",
     description:
@@ -160,7 +160,7 @@ const entries: CatalogEntry[] = [
   {
     id: "optix",
     name: "OptiX",
-    abbr: "OptX",
+    abbr: "Op",
     category: "Ray Tracing Engine",
     color: "#76b900",
     description:
@@ -212,7 +212,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pillow",
     name: "Pillow",
-    abbr: "PIL",
+    abbr: "Pi",
     category: "Image Library",
     color: "#3c7bab",
     description:
@@ -246,7 +246,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sharp",
     name: "Sharp",
-    abbr: "Shrp",
+    abbr: "Sh",
     category: "Image Library",
     color: "#99cc00",
     description:
@@ -299,7 +299,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rasterization",
     name: "Rasterization",
-    abbr: "Rast",
+    abbr: "Ra",
     category: "Rendering Technique",
     color: "#e056fd",
     description:
@@ -384,7 +384,7 @@ const entries: CatalogEntry[] = [
   {
     id: "physically-based-rendering",
     name: "Physically Based Rendering",
-    abbr: "PBR",
+    abbr: "PB",
     category: "Rendering Technique",
     color: "#22a6b3",
     description:

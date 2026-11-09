@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apple-vision-pro",
     name: "Apple Vision Pro",
-    abbr: "AVP",
+    abbr: "AV",
     category: "XR Headset",
     color: "#8e8e93",
     description:
@@ -75,7 +75,7 @@ const entries: CatalogEntry[] = [
   {
     id: "android-xr",
     name: "Android XR",
-    abbr: "AXR",
+    abbr: "AX",
     category: "XR Platform",
     color: "#3ddc84",
     description:
@@ -93,7 +93,7 @@ const entries: CatalogEntry[] = [
   {
     id: "arcore",
     name: "ARCore",
-    abbr: "ARC",
+    abbr: "Ar",
     category: "AR SDK",
     color: "#4285f4",
     description:
@@ -145,7 +145,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openxr",
     name: "OpenXR",
-    abbr: "OXR",
+    abbr: "Op",
     category: "XR Standard",
     color: "#e4342d",
     description:
@@ -162,7 +162,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webxr",
     name: "WebXR",
-    abbr: "WXR",
+    abbr: "We",
     category: "Web API",
     color: "#ff6f00",
     description:
@@ -175,41 +175,6 @@ const entries: CatalogEntry[] = [
     funFact:
       "WebXR replaced an earlier experimental API called WebVR, which only handled virtual reality — the new name reflects that it covers AR too.",
     url: "https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API",
-  },
-  {
-    id: "unity-xr",
-    name: "Unity XR",
-    abbr: "UXR",
-    category: "XR Game Engine",
-    color: "#4c4c4c",
-    description:
-      "The set of tools in the Unity game engine for building VR and AR apps. Its plugin system and XR Interaction Toolkit let one project target many headsets and phones.",
-    highlights: [
-      "Most VR games on Quest",
-      "AR mobile apps via AR Foundation",
-      "Training simulations and prototypes",
-    ],
-    funFact:
-      "Niantic built Pokémon GO, one of the most famous AR games ever, using the Unity engine.",
-    url: "https://docs.unity3d.com/Manual/XR.html",
-  },
-  {
-    id: "unreal-xr",
-    name: "Unreal XR",
-    abbr: "UEXR",
-    category: "XR Game Engine",
-    color: "#313d9c",
-    description:
-      "Unreal Engine's support for building VR and AR experiences. It brings the engine's high-end graphics to headsets, including a ready-made VR template to start from.",
-    highlights: [
-      "High-fidelity VR games",
-      "Architectural and automotive visualization",
-      "Virtual production for film and TV",
-    ],
-    funFact:
-      "Unreal Engine was first built for Unreal, a 1998 first-person shooter, before growing into an engine used for games, films and VR.",
-    url: "https://www.unrealengine.com/",
-    spawnWeight: 0.5,
   },
   {
     id: "augmented-reality",
@@ -283,7 +248,7 @@ const entries: CatalogEntry[] = [
   {
     id: "slam",
     name: "SLAM",
-    abbr: "SLAM",
+    abbr: "SL",
     category: "Robotics Algorithm",
     color: "#d63031",
     description:
@@ -351,7 +316,7 @@ const entries: CatalogEntry[] = [
   {
     id: "3d-spatial-mapping",
     name: "3D Spatial Mapping",
-    abbr: "3DSM",
+    abbr: "3D",
     category: "Spatial Sensing",
     color: "#a29bfe",
     description:

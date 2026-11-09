@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sass-scss",
     name: "Sass / SCSS",
-    abbr: "Sass",
+    abbr: "SS",
     category: "CSS Preprocessor",
     color: "#cc6699",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "less",
     name: "Less",
-    abbr: "Less",
+    abbr: "Le",
     category: "CSS Preprocessor",
     color: "#1d365d",
     description:
@@ -40,7 +40,7 @@ const entries: CatalogEntry[] = [
   {
     id: "solidjs",
     name: "SolidJS",
-    abbr: "Solid",
+    abbr: "So",
     category: "UI Library",
     color: "#2c4f7c",
     description:
@@ -74,7 +74,7 @@ const entries: CatalogEntry[] = [
   {
     id: "qwik",
     name: "Qwik",
-    abbr: "Qwik",
+    abbr: "Qw",
     category: "Web Framework",
     color: "#ac7ef4",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lit",
     name: "Lit",
-    abbr: "Lit",
+    abbr: "Li",
     category: "Web Components",
     color: "#324fff",
     description:
@@ -110,7 +110,7 @@ const entries: CatalogEntry[] = [
   {
     id: "alpinejs",
     name: "Alpine.js",
-    abbr: "AJS",
+    abbr: "AJ",
     category: "JavaScript Library",
     color: "#77c1d2",
     description:
@@ -127,7 +127,7 @@ const entries: CatalogEntry[] = [
   {
     id: "htmx",
     name: "HTMX",
-    abbr: "htmx",
+    abbr: "HT",
     category: "JavaScript Library",
     color: "#3366cc",
     description:
@@ -144,7 +144,7 @@ const entries: CatalogEntry[] = [
   {
     id: "emberjs",
     name: "Ember.js",
-    abbr: "Ember",
+    abbr: "EJ",
     category: "Web Framework",
     color: "#e04e39",
     description:
@@ -180,7 +180,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nuxt",
     name: "Nuxt",
-    abbr: "Nuxt",
+    abbr: "Nu",
     category: "Meta-Framework",
     color: "#00dc82",
     description:
@@ -197,7 +197,7 @@ const entries: CatalogEntry[] = [
   {
     id: "remix",
     name: "Remix",
-    abbr: "Remix",
+    abbr: "Re",
     category: "Meta-Framework",
     color: "#3992ff",
     description:
@@ -212,27 +212,9 @@ const entries: CatalogEntry[] = [
     url: "https://remix.run",
   },
   {
-    id: "gatsby",
-    name: "Gatsby",
-    abbr: "Gby",
-    category: "Static Site Generator",
-    color: "#663399",
-    description:
-      "A React-based framework for building fast static websites. It pulls content from Markdown, CMSs or APIs through a GraphQL data layer and turns it into pre-built pages.",
-    highlights: [
-      "Blogs and marketing sites",
-      "Pulling content from headless CMSs",
-      "Pre-built static pages",
-    ],
-    funFact:
-      "Gatsby was one of the most popular React site generators of the late 2010s. In 2023 the company behind it was acquired by Netlify.",
-    url: "https://www.gatsbyjs.com",
-    spawnWeight: 0.5,
-  },
-  {
     id: "astro",
     name: "Astro",
-    abbr: "Astro",
+    abbr: "As",
     category: "Web Framework",
     color: "#bc52ee",
     description:
@@ -284,7 +266,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tanstack-start",
     name: "TanStack Start",
-    abbr: "TSS",
+    abbr: "TS",
     category: "Meta-Framework",
     color: "#10b981",
     description:
@@ -319,7 +301,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bulma",
     name: "Bulma",
-    abbr: "Bulma",
+    abbr: "Bu",
     category: "CSS Framework",
     color: "#00d1b2",
     description:
@@ -337,7 +319,7 @@ const entries: CatalogEntry[] = [
   {
     id: "foundation",
     name: "Foundation",
-    abbr: "Fdn",
+    abbr: "Fo",
     category: "CSS Framework",
     color: "#1779ba",
     description:
@@ -353,27 +335,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "materialize",
-    name: "Materialize",
-    abbr: "Mtz",
-    category: "CSS Framework",
-    color: "#ee6e73",
-    description:
-      "A CSS framework that follows Google's Material Design look, with cards, shadows and ripple effects. It gives your site an Android-style feel with simple CSS classes.",
-    highlights: [
-      "Material Design-style websites",
-      "Student and hobby projects",
-      "Quick styled prototypes",
-    ],
-    funFact:
-      "Material Design, the visual language Materialize copies, was introduced by Google in 2014 and was inspired by paper and ink — think layers, shadows and cards.",
-    url: "https://materializecss.com",
-    spawnWeight: 0.5,
-  },
-  {
     id: "unocss",
     name: "UnoCSS",
-    abbr: "Uno",
+    abbr: "Un",
     category: "Atomic CSS Engine",
     color: "#5ec2a1",
     description:
@@ -389,27 +353,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "windi-css",
-    name: "Windi CSS",
-    abbr: "Windi",
-    category: "Utility CSS Framework",
-    color: "#48b0f1",
-    description:
-      "A Tailwind-compatible utility CSS framework that generated styles on demand for faster builds. It is no longer maintained, but it influenced newer tools.",
-    highlights: [
-      "Tailwind-style utility classes",
-      "Faster dev builds (historically)",
-      "Vite and Vue projects",
-    ],
-    funFact:
-      "The Windi CSS team officially sunset the project in 2023 and recommended moving to UnoCSS or Tailwind CSS, which had adopted on-demand generation.",
-    url: "https://github.com/windicss/windicss",
-    spawnWeight: 0.5,
-  },
-  {
     id: "material-ui",
     name: "Material UI",
-    abbr: "MUI",
+    abbr: "MU",
     category: "Component Library",
     color: "#007fff",
     description:
@@ -426,7 +372,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ant-design",
     name: "Ant Design",
-    abbr: "AntD",
+    abbr: "AD",
     category: "Component Library",
     color: "#1677ff",
     description:
@@ -443,7 +389,7 @@ const entries: CatalogEntry[] = [
   {
     id: "chakra-ui",
     name: "Chakra UI",
-    abbr: "CUI",
+    abbr: "CU",
     category: "Component Library",
     color: "#319795",
     description:
@@ -460,7 +406,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mantine",
     name: "Mantine",
-    abbr: "Mtn",
+    abbr: "Ma",
     category: "Component Library",
     color: "#339af0",
     description:
@@ -478,7 +424,7 @@ const entries: CatalogEntry[] = [
   {
     id: "shadcn-ui",
     name: "shadcn/ui",
-    abbr: "/ui",
+    abbr: "SU",
     category: "Component Collection",
     color: "#8b5cf6",
     description:
@@ -495,7 +441,7 @@ const entries: CatalogEntry[] = [
   {
     id: "radix-ui",
     name: "Radix UI",
-    abbr: "Radix",
+    abbr: "RU",
     category: "UI Primitives",
     color: "#6e56cf",
     description:
@@ -512,7 +458,7 @@ const entries: CatalogEntry[] = [
   {
     id: "headless-ui",
     name: "Headless UI",
-    abbr: "HUI",
+    abbr: "HU",
     category: "UI Primitives",
     color: "#66e3ff",
     description:
@@ -530,7 +476,7 @@ const entries: CatalogEntry[] = [
   {
     id: "daisyui",
     name: "DaisyUI",
-    abbr: "Daisy",
+    abbr: "Da",
     category: "Tailwind Plugin",
     color: "#1ad1a5",
     description:
@@ -547,7 +493,7 @@ const entries: CatalogEntry[] = [
   {
     id: "heroui",
     name: "HeroUI",
-    abbr: "Hero",
+    abbr: "He",
     category: "Component Library",
     color: "#7828c8",
     description:
@@ -565,7 +511,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fluent-ui",
     name: "Fluent UI",
-    abbr: "FUI",
+    abbr: "FU",
     category: "Design System",
     color: "#0078d4",
     description:
@@ -583,7 +529,7 @@ const entries: CatalogEntry[] = [
   {
     id: "primereact",
     name: "PrimeReact",
-    abbr: "Prime",
+    abbr: "Pr",
     category: "Component Library",
     color: "#06b6d4",
     description:
@@ -601,7 +547,7 @@ const entries: CatalogEntry[] = [
   {
     id: "redux",
     name: "Redux",
-    abbr: "Rdx",
+    abbr: "Re",
     category: "State Management",
     color: "#764abc",
     description:
@@ -618,7 +564,7 @@ const entries: CatalogEntry[] = [
   {
     id: "redux-toolkit",
     name: "Redux Toolkit",
-    abbr: "RTK",
+    abbr: "RT",
     category: "State Management",
     color: "#593d88",
     description:
@@ -652,7 +598,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mobx",
     name: "MobX",
-    abbr: "MobX",
+    abbr: "Mo",
     category: "State Management",
     color: "#ff7102",
     description:
@@ -667,27 +613,9 @@ const entries: CatalogEntry[] = [
     url: "https://mobx.js.org",
   },
   {
-    id: "recoil",
-    name: "Recoil",
-    abbr: "Rcl",
-    category: "State Management",
-    color: "#3578e5",
-    description:
-      "An experimental state management library for React from Meta. State lives in small units called atoms, and derived values are computed with selectors.",
-    highlights: [
-      "Atom-based React state",
-      "Derived state with selectors",
-      "Legacy React codebases",
-    ],
-    funFact:
-      "Recoil never left its \"experimental\" label and its repository was eventually archived. Many developers moved to Jotai, which uses a similar atom idea.",
-    url: "https://recoiljs.org",
-    spawnWeight: 0.5,
-  },
-  {
     id: "jotai",
     name: "Jotai",
-    abbr: "Jotai",
+    abbr: "Jo",
     category: "State Management",
     color: "#5b5bd6",
     description:
@@ -695,7 +623,7 @@ const entries: CatalogEntry[] = [
     highlights: [
       "Atom-based React state",
       "Fine-grained re-renders",
-      "Replacing Recoil",
+      "Shared state without a global store",
     ],
     funFact:
       "\"Jotai\" means \"state\" in Japanese. It was created by Daishi Kato, who also maintains Zustand and created Valtio.",
@@ -758,7 +686,7 @@ const entries: CatalogEntry[] = [
   {
     id: "swr",
     name: "SWR",
-    abbr: "SWR",
+    abbr: "SW",
     category: "Data Fetching",
     color: "#0070f3",
     description:
@@ -775,7 +703,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apollo-client",
     name: "Apollo Client",
-    abbr: "Apo",
+    abbr: "AC",
     category: "GraphQL Client",
     color: "#311c87",
     description:
@@ -792,7 +720,7 @@ const entries: CatalogEntry[] = [
   {
     id: "relay",
     name: "Relay",
-    abbr: "Rly",
+    abbr: "Re",
     category: "GraphQL Client",
     color: "#f26b00",
     description:
@@ -808,27 +736,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "rtk-query",
-    name: "RTK Query",
-    abbr: "RTKQ",
-    category: "Data Fetching",
-    color: "#8e5bd9",
-    description:
-      "A data fetching and caching tool built into Redux Toolkit. You define your API endpoints once, and it generates React hooks that load and cache the data.",
-    highlights: [
-      "API calls in Redux apps",
-      "Auto-generated data hooks",
-      "Caching and refetching data",
-    ],
-    funFact:
-      "RTK Query ships inside the Redux Toolkit package, so if you already use Redux Toolkit you have it without installing anything extra.",
-    url: "https://redux-toolkit.js.org/rtk-query/overview",
-    spawnWeight: 0.5,
-  },
-  {
     id: "urql",
     name: "urql",
-    abbr: "urql",
+    abbr: "Ur",
     category: "GraphQL Client",
     color: "#e24c9b",
     description:
@@ -880,7 +790,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webassembly",
     name: "WebAssembly",
-    abbr: "Wasm",
+    abbr: "We",
     category: "Web Standard",
     color: "#654ff0",
     description:
@@ -948,7 +858,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webrtc",
     name: "WebRTC",
-    abbr: "RTC",
+    abbr: "We",
     category: "Real-Time Web API",
     color: "#e2522c",
     description:
@@ -965,7 +875,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dom",
     name: "DOM",
-    abbr: "DOM",
+    abbr: "DO",
     category: "Web Concept",
     color: "#e34c26",
     description:
@@ -982,7 +892,7 @@ const entries: CatalogEntry[] = [
   {
     id: "web-apis",
     name: "Web APIs",
-    abbr: "API",
+    abbr: "WA",
     category: "Browser APIs",
     color: "#0069c2",
     description:
@@ -995,6 +905,473 @@ const entries: CatalogEntry[] = [
     funFact:
       "There's even a Vibration API: on supported phones, calling navigator.vibrate(200) makes the device buzz for 200 milliseconds.",
     url: "https://developer.mozilla.org/en-US/docs/Web/API",
+  },
+  {
+    id: "d3js",
+    name: "D3.js",
+    abbr: "D3",
+    category: "Data Visualization",
+    color: "#f9a03c",
+    description:
+      "A JavaScript library for building custom, interactive data visualizations in the browser. It binds data to SVG, Canvas or HTML elements and gives you tools for scales, axes, shapes and animated transitions.",
+    highlights: [
+      "Custom charts and graphs",
+      "Interactive data journalism",
+      "Maps and network diagrams",
+    ],
+    funFact:
+      "D3 stands for Data-Driven Documents. Mike Bostock released it in 2011 as the successor to Protovis, and it became a staple of interactive news graphics.",
+    url: "https://d3js.org",
+  },
+  {
+    id: "react-hook-form",
+    name: "React Hook Form",
+    abbr: "RH",
+    category: "Form Library",
+    color: "#ec5990",
+    description:
+      "A React library for building forms with hooks. It tracks input values, runs validation and handles submission while keeping re-renders to a minimum, and it pairs nicely with schema validators like Zod.",
+    highlights: [
+      "Forms in React apps",
+      "Validation with fewer re-renders",
+      "Pairing with Zod or Yup schemas",
+    ],
+    funFact:
+      "React Hook Form is fast largely because it relies on uncontrolled inputs and refs, so typing in one field does not re-render your whole form.",
+    url: "https://react-hook-form.com",
+  },
+  {
+    id: "postcss",
+    name: "PostCSS",
+    abbr: "Po",
+    category: "CSS Tool",
+    color: "#dd3a0a",
+    description:
+      "A tool that transforms CSS using JavaScript plugins. It parses your stylesheet, lets plugins rewrite it, and outputs new CSS, for example adding vendor prefixes or enabling future CSS syntax today.",
+    highlights: [
+      "Adding vendor prefixes",
+      "Using modern CSS features early",
+      "Running Tailwind and other plugins",
+    ],
+    funFact:
+      "Autoprefixer, one of the most widely used CSS tools ever, is actually a PostCSS plugin, and both were created by the same developer, Andrey Sitnik.",
+    url: "https://postcss.org",
+  },
+  {
+    id: "tauri",
+    name: "Tauri",
+    abbr: "Ta",
+    category: "Desktop App Framework",
+    color: "#ffc131",
+    description:
+      "A framework for building desktop and mobile apps with a web frontend and a Rust backend. Instead of bundling a whole browser, it uses the operating system's built-in webview, so apps stay small.",
+    highlights: [
+      "Lightweight desktop apps",
+      "Web UI with a Rust backend",
+      "iOS and Android apps (v2)",
+    ],
+    funFact:
+      "Because Tauri uses the system webview instead of shipping Chromium like Electron does, a basic Tauri app can be just a few megabytes in size.",
+    url: "https://tauri.app",
+  },
+  {
+    id: "vitepress",
+    name: "VitePress",
+    abbr: "VP",
+    category: "Static Site Generator",
+    color: "#646cff",
+    description:
+      "A static site generator powered by Vite and Vue, made for documentation sites. You write pages in Markdown and get a fast, searchable docs site with a clean default theme.",
+    highlights: [
+      "Documentation websites",
+      "Markdown with Vue components",
+      "Fast dev server via Vite",
+    ],
+    funFact:
+      "VitePress is the spiritual successor to VuePress, and it powers the official docs for both Vue and Vite.",
+    url: "https://vitepress.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "contentful",
+    name: "Contentful",
+    abbr: "CF",
+    category: "Headless CMS",
+    color: "#2478cc",
+    description:
+      "A hosted headless content management system. Editors manage text, images and other content in a web app, and developers fetch it through APIs to display on websites, apps or anywhere else.",
+    highlights: [
+      "Content for websites and apps",
+      "Editing without touching code",
+      "Delivering content via API",
+    ],
+    funFact:
+      "Contentful was founded in Berlin in 2013 and helped popularize the idea of a headless CMS, where content is stored separately from how it is displayed.",
+    url: "https://www.contentful.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "jquery",
+    name: "jQuery",
+    abbr: "JQ",
+    category: "JavaScript Library",
+    color: "#0769ad",
+    description:
+      "A small JavaScript library that made it easy to select page elements, handle events, animate things and make AJAX requests, smoothing over the differences between old browsers.",
+    highlights: [
+      "DOM selection and manipulation",
+      "Simple AJAX requests",
+      "Legacy and WordPress sites",
+    ],
+    funFact:
+      "John Resig first unveiled jQuery at BarCamp NYC in January 2006, and its $() selector style inspired the browser's built-in querySelectorAll.",
+    url: "https://jquery.com",
+  },
+  {
+    id: "chartjs",
+    name: "Chart.js",
+    abbr: "CJ",
+    category: "Charting Library",
+    color: "#ff6384",
+    description:
+      "A JavaScript library for drawing charts like bar, line, pie and radar on an HTML canvas. You pass it your data and some options, and it renders responsive, animated charts.",
+    highlights: [
+      "Quick dashboard charts",
+      "Responsive canvas graphics",
+      "Animated data visualizations",
+    ],
+    funFact:
+      "Chart.js draws everything on an HTML5 <canvas> rather than with SVG, which keeps it fast even when a chart has lots of data points.",
+    url: "https://www.chartjs.org",
+  },
+  {
+    id: "tanstack-router",
+    name: "TanStack Router",
+    abbr: "TR",
+    category: "Routing Library",
+    color: "#ff4154",
+    description:
+      "A router for React apps that is fully type-safe: route paths, URL params and search params are all checked by TypeScript, so broken links get caught before you ship.",
+    highlights: [
+      "Type-safe routes and params",
+      "Search params as app state",
+      "Data loading per route",
+    ],
+    funFact:
+      "TanStack is named after its creator, Tanner Linsley. Libraries like React Query were renamed under the TanStack brand once they supported more than just React.",
+    url: "https://tanstack.com/router",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "lucide",
+    name: "Lucide",
+    abbr: "Lu",
+    category: "Icon Library",
+    color: "#f56565",
+    description:
+      "An open-source set of clean, consistent line icons. You can use them as plain SVGs or through ready-made packages for React, Vue, Svelte and other frameworks.",
+    highlights: [
+      "UI icons in web apps",
+      "Tree-shakable icon components",
+      "Customizable SVG strokes",
+    ],
+    funFact:
+      "Lucide began as a community fork of Feather Icons, created to keep adding new icons after Feather's development slowed down.",
+    url: "https://lucide.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "hugo",
+    name: "Hugo",
+    abbr: "HU",
+    category: "Static Site Generator",
+    color: "#ff4088",
+    description:
+      "A static site generator that turns Markdown files and templates into a complete website of plain HTML pages. It ships as a single binary and builds sites very quickly.",
+    highlights: [
+      "Blogs and documentation sites",
+      "Fast static site builds",
+      "Markdown-based content",
+    ],
+    funFact:
+      "Hugo is written in Go and was created by Steve Francia in 2013; it can often build sites with thousands of pages in just a few seconds.",
+    url: "https://gohugo.io",
+  },
+  {
+    id: "nextra",
+    name: "Nextra",
+    abbr: "Ne",
+    category: "Docs Site Framework",
+    color: "#7c3aed",
+    description:
+      "A framework built on top of Next.js for creating documentation sites and blogs from Markdown and MDX files, with search, navigation and theming included.",
+    highlights: [
+      "Documentation websites",
+      "MDX-powered content pages",
+      "Built on Next.js",
+    ],
+    funFact:
+      "Nextra was created by Shu Ding, who also co-created the SWR data-fetching library and Satori, the tool that turns HTML into images for social cards.",
+    url: "https://nextra.site",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "shopify",
+    name: "Shopify",
+    abbr: "Sh",
+    category: "E-commerce Platform",
+    color: "#95bf47",
+    description:
+      "A hosted platform for running online stores. Developers customize store themes with the Liquid template language and extend stores with apps that use Shopify's APIs.",
+    highlights: [
+      "Building online stores",
+      "Liquid theme development",
+      "Custom storefront apps",
+    ],
+    funFact:
+      "Shopify began in 2004 when Tobias Lütke built his own software to sell snowboards online through a shop called Snowdevil.",
+    url: "https://www.shopify.com",
+  },
+  {
+    id: "lodash",
+    name: "Lodash",
+    abbr: "_",
+    category: "JS Utility Library",
+    color: "#3492ff",
+    description:
+      "A JavaScript utility library full of handy helpers for working with arrays, objects, strings and functions, like debounce, cloneDeep, groupBy and get.",
+    highlights: [
+      "Deep cloning and merging objects",
+      "Debounce and throttle",
+      "Array and collection helpers",
+    ],
+    funFact:
+      "Lodash started as a fork of Underscore.js, and its name is a pun: the underscore character \"_\" is a low dash.",
+    url: "https://lodash.com",
+  },
+  {
+    id: "gsap",
+    name: "GSAP",
+    abbr: "GS",
+    category: "Animation Library",
+    color: "#0ae448",
+    description:
+      "The GreenSock Animation Platform is a JavaScript library for smooth, high-performance animations of anything the browser can render: CSS, SVG, canvas and more, with powerful timelines.",
+    highlights: [
+      "Complex timeline animations",
+      "Scroll-driven effects (ScrollTrigger)",
+      "Animating SVG and DOM elements",
+    ],
+    funFact:
+      "GreenSock's animation tools began in the Flash era as ActionScript libraries like TweenLite, before being rebuilt for JavaScript.",
+    url: "https://gsap.com",
+  },
+  {
+    id: "react-router",
+    name: "React Router",
+    abbr: "RR",
+    category: "Routing Library",
+    color: "#f44250",
+    description:
+      "The most widely used routing library for React. It maps URLs to components so your single-page app can have multiple pages, nested layouts, and data loading per route.",
+    highlights: [
+      "Client-side routing in React",
+      "Nested routes and layouts",
+      "Loading data per route",
+    ],
+    funFact:
+      "React Router was created by Michael Jackson and Ryan Florence, who later built Remix; with version 7, Remix's features were merged back into React Router.",
+    url: "https://reactrouter.com",
+  },
+  {
+    id: "font-awesome",
+    name: "Font Awesome",
+    abbr: "FA",
+    category: "Icon Toolkit",
+    color: "#538dd7",
+    description:
+      "A huge library of vector icons you can drop into a website with a CSS class, an SVG, or a framework component. Icons scale cleanly and can be styled like text.",
+    highlights: [
+      "Icons for buttons and menus",
+      "Social media brand icons",
+      "Scalable, stylable vector icons",
+    ],
+    funFact:
+      "Dave Gandy created Font Awesome in 2012 as an icon set designed to pair with Twitter Bootstrap.",
+    url: "https://fontawesome.com",
+  },
+  {
+    id: "jekyll",
+    name: "Jekyll",
+    abbr: "Je",
+    category: "Static Site Generator",
+    color: "#cc0000",
+    description:
+      "A Ruby-based static site generator that turns Markdown files and Liquid templates into a plain HTML website. Great for blogs and docs, with no database needed.",
+    highlights: [
+      "Blogs written in Markdown",
+      "Hosting free sites on GitHub Pages",
+      "Simple documentation sites",
+    ],
+    funFact:
+      "Jekyll was created in 2008 by GitHub co-founder Tom Preston-Werner, and it is the engine built into GitHub Pages.",
+    url: "https://jekyllrb.com",
+  },
+  {
+    id: "mintlify",
+    name: "Mintlify",
+    abbr: "Mi",
+    category: "Docs Platform",
+    color: "#0d9373",
+    description:
+      "A hosted platform for building good-looking developer documentation. You write pages in MDX, keep them in your Git repo, and Mintlify builds a searchable docs site with API references.",
+    highlights: [
+      "Developer and API documentation",
+      "Docs-as-code from a Git repo",
+      "Interactive API playgrounds",
+    ],
+    funFact:
+      "Mintlify docs are written in MDX, which means you can mix plain Markdown with interactive React components on the same page.",
+    url: "https://mintlify.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "webflow",
+    name: "Webflow",
+    abbr: "WF",
+    category: "No-Code Site Builder",
+    color: "#146ef5",
+    description:
+      "A visual website builder that lets you design responsive sites by working with real HTML and CSS concepts through a drag-and-drop interface, with built-in hosting and a CMS.",
+    highlights: [
+      "Designing sites without hand-coding",
+      "Marketing sites and landing pages",
+      "Content management (CMS)",
+    ],
+    funFact:
+      "In 2024 Webflow acquired GreenSock, the company behind the GSAP animation library.",
+    url: "https://webflow.com",
+  },
+  {
+    id: "rxjs",
+    name: "RxJS",
+    abbr: "Rx",
+    category: "Reactive Programming",
+    color: "#b7178c",
+    description:
+      "A JavaScript library for working with streams of events or data over time, called Observables. You can filter, combine and transform them with operators like map, debounce and merge.",
+    highlights: [
+      "Handling complex async event streams",
+      "State and HTTP in Angular apps",
+      "Debouncing user input",
+    ],
+    funFact:
+      "RxJS is the JavaScript version of Reactive Extensions (Rx), an idea that originally came from Microsoft for .NET before being ported to many languages.",
+    url: "https://rxjs.dev",
+  },
+  {
+    id: "motion",
+    name: "Motion",
+    abbr: "MO",
+    category: "Animation Library",
+    color: "#fff312",
+    description:
+      "An animation library for React, JavaScript and Vue. You describe how elements should look, and it smoothly animates between states, including gestures, layout changes and scroll effects.",
+    highlights: [
+      "UI animations in React",
+      "Drag and gesture interactions",
+      "Scroll-linked effects",
+    ],
+    funFact:
+      "Motion was previously known as Framer Motion. In 2024 it became an independent project and was renamed simply Motion.",
+    url: "https://motion.dev",
+  },
+  {
+    id: "stencil",
+    name: "Stencil",
+    abbr: "St",
+    category: "Web Component Compiler",
+    color: "#5851ff",
+    description:
+      "A compiler that turns components written with TypeScript and JSX into standard Web Components. The output works in any framework, or with no framework at all.",
+    highlights: [
+      "Building reusable Web Components",
+      "Framework-agnostic design systems",
+      "Shareable UI libraries",
+    ],
+    funFact:
+      "Stencil was built by the Ionic team so they could rewrite Ionic's UI components as Web Components that work with Angular, React, Vue or plain JavaScript.",
+    url: "https://stenciljs.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "electron",
+    name: "Electron",
+    abbr: "El",
+    category: "Desktop App Framework",
+    color: "#47848f",
+    description:
+      "A framework for building desktop apps with HTML, CSS and JavaScript. It bundles Chromium and Node.js, so one web codebase can run as a native-feeling app on Windows, macOS and Linux.",
+    highlights: [
+      "Cross-platform desktop apps",
+      "Code editors like VS Code",
+      "Turning web apps into desktop apps",
+    ],
+    funFact:
+      "Electron was originally called Atom Shell because GitHub created it to power its Atom code editor.",
+    url: "https://www.electronjs.org",
+  },
+  {
+    id: "eleventy",
+    name: "Eleventy",
+    abbr: "El",
+    category: "Static Site Generator",
+    color: "#222222",
+    description:
+      "A simple static site generator written in JavaScript. It turns templates and Markdown files into plain HTML pages, and ships no client-side JavaScript unless you add it yourself.",
+    highlights: [
+      "Blogs and documentation sites",
+      "Fast static websites",
+      "Mixing Markdown with templates",
+    ],
+    funFact:
+      "Eleventy, also written 11ty, was created by Zach Leatherman and supports many template languages at once, including Nunjucks, Liquid and Markdown.",
+    url: "https://www.11ty.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "sanity",
+    name: "Sanity",
+    abbr: "Sa",
+    category: "Headless CMS",
+    color: "#f03e2f",
+    description:
+      "A headless content management system. Editors write content in a customizable studio, and developers fetch it as structured data through an API to show on any website or app.",
+    highlights: [
+      "Managing website content",
+      "Structured content for many channels",
+      "Custom editing studios",
+    ],
+    funFact:
+      "Sanity stores rich text as Portable Text, a JSON-based format, so the same content can be rendered as HTML, mobile views or anything else.",
+    url: "https://www.sanity.io",
+  },
+  {
+    id: "framer",
+    name: "Framer",
+    abbr: "Fr",
+    category: "Website Builder",
+    color: "#0055ff",
+    description:
+      "A visual design tool for creating and publishing websites. You lay out pages on a canvas like in a design app, add animations and interactions, and publish a live site without writing code.",
+    highlights: [
+      "Landing pages and portfolios",
+      "Interactive design prototypes",
+      "Publishing sites without code",
+    ],
+    funFact:
+      "Framer began as Framer.js, an open-source JavaScript library for prototyping interactions, before evolving into a design tool and then a website builder.",
+    url: "https://www.framer.com",
   },
 ];
 

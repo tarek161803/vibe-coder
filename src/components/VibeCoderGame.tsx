@@ -18,7 +18,7 @@ const SWIPE_WINDOW_MS = 90;
 /** Preferred maximum world width before the canvas starts scaling up. */
 const PREFERRED_WIDTH = 1000;
 /** Horizontal space taken by the console frame's border and padding. */
-const CARD_CHROME = 24;
+const CARD_CHROME = 44;
 /** Vertical space reserved for the logo, the console's status strips and the credits line. */
 const RESERVED_HEIGHT = 250;
 /** On short screens (landscape phones) the logo and credits are hidden. */
@@ -236,8 +236,6 @@ export default function VibeCoderGame() {
     gestureRef.current = null;
   };
 
-  const pad = (n: number, width: number) => String(n).padStart(width, "0");
-
   return (
     <div className="relative flex min-h-dvh flex-col items-center justify-center gap-5 overflow-clip px-3 py-5 [@media(max-height:560px)]:gap-2 [@media(max-height:560px)]:py-2">
       <div aria-hidden className="grid-floor" />
@@ -255,25 +253,17 @@ export default function VibeCoderGame() {
         <div className="hud-glow">
           {/* Neon gradient edge */}
           <div className="hud-frame bg-gradient-to-br from-cyan-400 via-violet-500 to-fuchsia-500 p-[1.5px]">
-            <div className="hud-frame bg-[linear-gradient(180deg,#0b0d1f,#06070f)] p-2.5">
+            <div className="hud-frame bg-[linear-gradient(180deg,#0b0d1f,#06070f)] px-5 py-2.5">
               {/* Top status strip */}
-              <div className="flex items-center justify-between gap-3 px-1 pb-2.5 font-pixel text-[8px] tracking-wider text-slate-500 sm:text-[9px]">
+              <div className="mb-2 flex h-7 items-center justify-between gap-3 font-pixel text-[8px] tracking-wider text-slate-500 sm:text-[9px]">
                 <span className="flex items-center gap-2">
                   <span className="size-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
                   <span className="text-emerald-300/80">
                     {agents} {agents === 1 ? "AGENT" : "AGENTS"} RUNNING
                   </span>
                 </span>
-                <span className="flex items-center gap-4">
-                  <span>
-                    MAX <span className="text-orange-300">{progress.highScore > 0 ? formatTokens(progress.highScore) : "--"}</span>
-                  </span>
-                  <span className="hidden sm:inline">
-                    LEARNED{" "}
-                    <span className="text-cyan-200">
-                      {pad(progress.discovered.length, String(total).length)}/{total}
-                    </span>
-                  </span>
+                <span>
+                  MAX <span className="text-orange-300">{progress.highScore > 0 ? formatTokens(progress.highScore) : "--"}</span>
                 </span>
               </div>
 
@@ -297,13 +287,10 @@ export default function VibeCoderGame() {
                 {phase === "ready" && (
                   <div className="pointer-events-none absolute inset-0 grid place-items-center bg-black/30 px-4">
                     <div className="holo-panel px-6 py-4 text-center sm:px-10 sm:py-6">
-                      <p className="font-pixel text-[8px] tracking-[0.3em] text-fuchsia-300/80 sm:text-[9px]">PLAYER 1</p>
+                      <p className="font-pixel text-[8px] tracking-[0.3em] text-fuchsia-300/80 sm:text-[9px]">READY TO VIBE?</p>
                       <p className="neon-text mt-3 font-pixel text-[10px] text-cyan-200 animate-blink sm:text-sm">
                         <span className="pointer-coarse:hidden">PRESS SPACE TO START</span>
                         <span className="hidden pointer-coarse:inline">TAP TO START</span>
-                      </p>
-                      <p className="mt-3 hidden font-mono text-xs text-slate-300 sm:block">
-                        Burn tokens, dodge the stack, and learn what you skipped.
                       </p>
                     </div>
                   </div>
@@ -314,7 +301,7 @@ export default function VibeCoderGame() {
                     <div className="holo-panel px-8 py-5 text-center">
                       <p className="neon-text font-pixel text-sm text-white sm:text-lg">PAUSED</p>
                       <p className="mt-3 font-pixel text-[8px] tracking-wider text-cyan-200/80 sm:text-[9px]">
-                        <span className="pointer-coarse:hidden">PRESS P TO RESUME</span>
+                        <span className="pointer-coarse:hidden">PRESS P / SPACE TO RESUME</span>
                         <span className="hidden pointer-coarse:inline">TAP TO RESUME</span>
                       </p>
                     </div>
@@ -322,7 +309,7 @@ export default function VibeCoderGame() {
                 )}
               </div>
 
-              <GameControls canPause={phase === "playing"} onPause={() => gameRef.current?.pause()} />
+              <GameControls />
             </div>
           </div>
         </div>

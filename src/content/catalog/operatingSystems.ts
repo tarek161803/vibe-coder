@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "linux",
     name: "Linux",
-    abbr: "LNX",
+    abbr: "Li",
     category: "Operating System",
     color: "#fcc624",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "windows",
     name: "Windows",
-    abbr: "WIN",
+    abbr: "Wi",
     category: "Operating System",
     color: "#0078d4",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "macos",
     name: "macOS",
-    abbr: "MAC",
+    abbr: "Ma",
     category: "Operating System",
     color: "#a2aaad",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "freebsd",
     name: "FreeBSD",
-    abbr: "FBSD",
+    abbr: "Fr",
     category: "Operating System",
     color: "#ab2b28",
     description:
@@ -74,7 +74,7 @@ const entries: CatalogEntry[] = [
   {
     id: "openbsd",
     name: "OpenBSD",
-    abbr: "OBSD",
+    abbr: "Op",
     category: "Operating System",
     color: "#f2ca30",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "android",
     name: "Android",
-    abbr: "AND",
+    abbr: "An",
     category: "Mobile OS",
     color: "#3ddc84",
     description:
@@ -109,7 +109,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ios",
     name: "iOS",
-    abbr: "iOS",
+    abbr: "Io",
     category: "Mobile OS",
     color: "#147efb",
     description:
@@ -126,7 +126,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ubuntu",
     name: "Ubuntu",
-    abbr: "UBU",
+    abbr: "Ub",
     category: "Linux Distribution",
     color: "#e95420",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "debian",
     name: "Debian",
-    abbr: "DEB",
+    abbr: "De",
     category: "Linux Distribution",
     color: "#a80030",
     description:
@@ -160,7 +160,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fedora",
     name: "Fedora",
-    abbr: "FED",
+    abbr: "Fe",
     category: "Linux Distribution",
     color: "#51a2da",
     description:
@@ -177,7 +177,7 @@ const entries: CatalogEntry[] = [
   {
     id: "arch-linux",
     name: "Arch Linux",
-    abbr: "ARCH",
+    abbr: "AL",
     category: "Linux Distribution",
     color: "#1793d1",
     description:
@@ -194,7 +194,7 @@ const entries: CatalogEntry[] = [
   {
     id: "red-hat-enterprise-linux",
     name: "Red Hat Enterprise Linux",
-    abbr: "RHEL",
+    abbr: "RH",
     category: "Linux Distribution",
     color: "#ee0000",
     description:
@@ -211,7 +211,7 @@ const entries: CatalogEntry[] = [
   {
     id: "alpine-linux",
     name: "Alpine Linux",
-    abbr: "ALP",
+    abbr: "AL",
     category: "Linux Distribution",
     color: "#0d597f",
     description:
@@ -224,23 +224,6 @@ const entries: CatalogEntry[] = [
     funFact:
       "The Alpine Linux base Docker image is only around 5 MB — tiny compared with hundreds of megabytes for some other distributions.",
     url: "https://alpinelinux.org",
-  },
-  {
-    id: "linux-kernel",
-    name: "Linux Kernel",
-    abbr: "KRNL",
-    category: "OS Kernel",
-    color: "#f0b400",
-    description:
-      "The core of Linux that talks directly to hardware, managing memory, processes, files and devices. Distributions bundle it with other tools to make a full OS.",
-    highlights: [
-      "Core of every Linux distro",
-      "Inside Android phones",
-      "Drivers for countless devices",
-    ],
-    funFact:
-      "Linus Torvalds created Git in 2005 specifically to manage Linux kernel development after the project lost access to its previous tool, BitKeeper.",
-    url: "https://www.kernel.org",
   },
   {
     id: "windows-nt-kernel",
@@ -263,7 +246,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xnu",
     name: "XNU",
-    abbr: "XNU",
+    abbr: "XN",
     category: "OS Kernel",
     color: "#6e6e73",
     description:
@@ -281,7 +264,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mach",
     name: "Mach",
-    abbr: "MACH",
+    abbr: "MA",
     category: "Microkernel",
     color: "#7c3aed",
     description:
@@ -299,7 +282,7 @@ const entries: CatalogEntry[] = [
   {
     id: "minix",
     name: "MINIX",
-    abbr: "MINX",
+    abbr: "MI",
     category: "Operating System",
     color: "#3c6e9f",
     description:
@@ -317,7 +300,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sel4",
     name: "seL4",
-    abbr: "seL4",
+    abbr: "L4",
     category: "Microkernel",
     color: "#2e7d32",
     description:
@@ -335,7 +318,7 @@ const entries: CatalogEntry[] = [
   {
     id: "system-calls",
     name: "System Calls",
-    abbr: "SYS",
+    abbr: "SC",
     category: "OS Concept",
     color: "#0891b2",
     description:
@@ -352,7 +335,7 @@ const entries: CatalogEntry[] = [
   {
     id: "kernel-development",
     name: "Kernel Development",
-    abbr: "KDEV",
+    abbr: "KD",
     category: "Systems Programming",
     color: "#dc2626",
     description:
@@ -370,7 +353,7 @@ const entries: CatalogEntry[] = [
   {
     id: "memory-management",
     name: "Memory Management",
-    abbr: "MEM",
+    abbr: "MM",
     category: "OS Concept",
     color: "#16a34a",
     description:
@@ -404,7 +387,7 @@ const entries: CatalogEntry[] = [
   {
     id: "process-scheduling",
     name: "Process Scheduling",
-    abbr: "SCHD",
+    abbr: "PS",
     category: "OS Concept",
     color: "#ea580c",
     description:
@@ -439,7 +422,7 @@ const entries: CatalogEntry[] = [
   {
     id: "concurrency",
     name: "Concurrency",
-    abbr: "CONC",
+    abbr: "Co",
     category: "Programming Concept",
     color: "#db2777",
     description:
@@ -456,7 +439,7 @@ const entries: CatalogEntry[] = [
   {
     id: "interrupt-handling",
     name: "Interrupt Handling",
-    abbr: "IRQ",
+    abbr: "IH",
     category: "OS Concept",
     color: "#e11d48",
     description:
@@ -474,7 +457,7 @@ const entries: CatalogEntry[] = [
   {
     id: "device-drivers",
     name: "Device Drivers",
-    abbr: "DRV",
+    abbr: "DD",
     category: "OS Concept",
     color: "#65a30d",
     description:
@@ -508,7 +491,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ext4",
     name: "ext4",
-    abbr: "ext4",
+    abbr: "Ex",
     category: "File System",
     color: "#f97316",
     description:
@@ -525,7 +508,7 @@ const entries: CatalogEntry[] = [
   {
     id: "btrfs",
     name: "Btrfs",
-    abbr: "BTRFS",
+    abbr: "BT",
     category: "File System",
     color: "#0d9488",
     description:
@@ -543,7 +526,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zfs",
     name: "ZFS",
-    abbr: "ZFS",
+    abbr: "ZF",
     category: "File System",
     color: "#2a667f",
     description:
@@ -561,7 +544,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xfs",
     name: "XFS",
-    abbr: "XFS",
+    abbr: "XF",
     category: "File System",
     color: "#4f46e5",
     description:
@@ -579,7 +562,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ntfs",
     name: "NTFS",
-    abbr: "NTFS",
+    abbr: "NT",
     category: "File System",
     color: "#0067b8",
     description:
@@ -596,7 +579,7 @@ const entries: CatalogEntry[] = [
   {
     id: "fat32",
     name: "FAT32",
-    abbr: "FAT",
+    abbr: "FT",
     category: "File System",
     color: "#64748b",
     description:
@@ -613,7 +596,7 @@ const entries: CatalogEntry[] = [
   {
     id: "exfat",
     name: "exFAT",
-    abbr: "exFAT",
+    abbr: "eF",
     category: "File System",
     color: "#475569",
     description:
@@ -631,7 +614,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apfs",
     name: "APFS",
-    abbr: "APFS",
+    abbr: "AP",
     category: "File System",
     color: "#8e8e93",
     description:
@@ -649,7 +632,7 @@ const entries: CatalogEntry[] = [
   {
     id: "f2fs",
     name: "F2FS",
-    abbr: "F2FS",
+    abbr: "F2",
     category: "File System",
     color: "#1428a0",
     description:
@@ -667,7 +650,7 @@ const entries: CatalogEntry[] = [
   {
     id: "bios",
     name: "BIOS",
-    abbr: "BIOS",
+    abbr: "BI",
     category: "Firmware",
     color: "#2563eb",
     description:
@@ -684,7 +667,7 @@ const entries: CatalogEntry[] = [
   {
     id: "uefi",
     name: "UEFI",
-    abbr: "UEFI",
+    abbr: "UE",
     category: "Firmware",
     color: "#3b82f6",
     description:
@@ -701,7 +684,7 @@ const entries: CatalogEntry[] = [
   {
     id: "grub",
     name: "GRUB",
-    abbr: "GRUB",
+    abbr: "GR",
     category: "Bootloader",
     color: "#7c2d12",
     description:
@@ -718,7 +701,7 @@ const entries: CatalogEntry[] = [
   {
     id: "u-boot",
     name: "U-Boot",
-    abbr: "UBT",
+    abbr: "UB",
     category: "Bootloader",
     color: "#0e7490",
     description:
@@ -754,7 +737,7 @@ const entries: CatalogEntry[] = [
   {
     id: "secure-boot",
     name: "Secure Boot",
-    abbr: "SBT",
+    abbr: "SB",
     category: "Security Feature",
     color: "#059669",
     description:

@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jest",
     name: "Jest",
-    abbr: "Jest",
+    abbr: "Je",
     category: "Testing Framework",
     color: "#c21325",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "jasmine",
     name: "Jasmine",
-    abbr: "Jas",
+    abbr: "Ja",
     category: "Testing Framework",
     color: "#8a4182",
     description:
@@ -124,7 +124,7 @@ const entries: CatalogEntry[] = [
   {
     id: "webdriverio",
     name: "WebdriverIO",
-    abbr: "WDIO",
+    abbr: "We",
     category: "Browser Automation",
     color: "#ea5906",
     description:
@@ -142,7 +142,7 @@ const entries: CatalogEntry[] = [
   {
     id: "puppeteer",
     name: "Puppeteer",
-    abbr: "Pup",
+    abbr: "Pu",
     category: "Browser Automation",
     color: "#40b5a4",
     description:
@@ -211,7 +211,7 @@ const entries: CatalogEntry[] = [
   {
     id: "testng",
     name: "TestNG",
-    abbr: "TNG",
+    abbr: "Te",
     category: "Testing Framework",
     color: "#e8721c",
     description:
@@ -229,7 +229,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pytest",
     name: "Pytest",
-    abbr: "PyT",
+    abbr: "Py",
     category: "Testing Framework",
     color: "#0a9edc",
     description:
@@ -246,7 +246,7 @@ const entries: CatalogEntry[] = [
   {
     id: "phpunit",
     name: "PHPUnit",
-    abbr: "PHPU",
+    abbr: "Ph",
     category: "Testing Framework",
     color: "#3c9cd7",
     description:
@@ -297,7 +297,7 @@ const entries: CatalogEntry[] = [
   {
     id: "xctest",
     name: "XCTest",
-    abbr: "XCT",
+    abbr: "Xc",
     category: "Testing Framework",
     color: "#147efb",
     description:
@@ -348,7 +348,7 @@ const entries: CatalogEntry[] = [
   {
     id: "biome",
     name: "Biome",
-    abbr: "Bio",
+    abbr: "Bi",
     category: "Linter and Formatter",
     color: "#60a5fa",
     description:
@@ -381,7 +381,7 @@ const entries: CatalogEntry[] = [
   },
   {
     id: "sonarcloud",
-    name: "SonarCloud",
+    name: "SonarQube Cloud",
     abbr: "SC",
     category: "Code Quality Service",
     color: "#f3702a",
@@ -393,14 +393,14 @@ const entries: CatalogEntry[] = [
       "Code quality without self-hosting",
     ],
     funFact:
-      "In late 2024 SonarCloud was renamed \"SonarQube Cloud\" to make it clearer that it is the cloud edition of SonarQube.",
+      "Until late 2024 it was called SonarCloud; it was renamed SonarQube Cloud to make clear it's the cloud edition of SonarQube.",
     url: "https://sonarcloud.io",
     spawnWeight: 0.5,
   },
   {
     id: "codeql",
     name: "CodeQL",
-    abbr: "CQL",
+    abbr: "Co",
     category: "Security Analysis",
     color: "#2188ff",
     description:
@@ -435,7 +435,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ruff",
     name: "Ruff",
-    abbr: "Ruff",
+    abbr: "Ru",
     category: "Linter and Formatter",
     color: "#c9b800",
     description:
@@ -452,7 +452,7 @@ const entries: CatalogEntry[] = [
   {
     id: "pylint",
     name: "Pylint",
-    abbr: "PyL",
+    abbr: "Py",
     category: "Linter",
     color: "#2a5adf",
     description:
@@ -487,7 +487,7 @@ const entries: CatalogEntry[] = [
   {
     id: "clippy",
     name: "Clippy",
-    abbr: "Clip",
+    abbr: "Cl",
     category: "Linter",
     color: "#dea584",
     description:
@@ -504,7 +504,7 @@ const entries: CatalogEntry[] = [
   {
     id: "husky",
     name: "Husky",
-    abbr: "Hsk",
+    abbr: "Hu",
     category: "Git Hooks Tool",
     color: "#0099e5",
     description:
@@ -573,7 +573,7 @@ const entries: CatalogEntry[] = [
   {
     id: "end-to-end-testing",
     name: "End-to-End Testing",
-    abbr: "E2E",
+    abbr: "EE",
     category: "Testing Concept",
     color: "#8e44ad",
     description:
@@ -607,7 +607,7 @@ const entries: CatalogEntry[] = [
   {
     id: "smoke-testing",
     name: "Smoke Testing",
-    abbr: "Smk",
+    abbr: "ST",
     category: "Testing Concept",
     color: "#7f8c8d",
     description:
@@ -624,7 +624,7 @@ const entries: CatalogEntry[] = [
   {
     id: "performance-testing",
     name: "Performance Testing",
-    abbr: "Perf",
+    abbr: "PT",
     category: "Testing Concept",
     color: "#e67e22",
     description:
@@ -641,7 +641,7 @@ const entries: CatalogEntry[] = [
   {
     id: "load-testing",
     name: "Load Testing",
-    abbr: "Load",
+    abbr: "LT",
     category: "Testing Concept",
     color: "#c0392b",
     description:
@@ -658,7 +658,7 @@ const entries: CatalogEntry[] = [
   {
     id: "stress-testing",
     name: "Stress Testing",
-    abbr: "Strs",
+    abbr: "ST",
     category: "Testing Concept",
     color: "#e74c3c",
     description:
@@ -675,7 +675,7 @@ const entries: CatalogEntry[] = [
   {
     id: "security-testing",
     name: "Security Testing",
-    abbr: "Sec",
+    abbr: "ST",
     category: "Testing Concept",
     color: "#16a085",
     description:
@@ -692,7 +692,7 @@ const entries: CatalogEntry[] = [
   {
     id: "accessibility-testing",
     name: "Accessibility Testing",
-    abbr: "A11y",
+    abbr: "AT",
     category: "Testing Concept",
     color: "#0072c6",
     description:
@@ -709,7 +709,7 @@ const entries: CatalogEntry[] = [
   {
     id: "visual-regression-testing",
     name: "Visual Regression Testing",
-    abbr: "VRT",
+    abbr: "VR",
     category: "Testing Concept",
     color: "#9b59b6",
     description:
@@ -763,7 +763,7 @@ const entries: CatalogEntry[] = [
   {
     id: "snapshot-testing",
     name: "Snapshot Testing",
-    abbr: "Snap",
+    abbr: "ST",
     category: "Testing Concept",
     color: "#99425b",
     description:
@@ -776,6 +776,93 @@ const entries: CatalogEntry[] = [
     funFact:
       "Snapshot files are meant to be committed and reviewed like code; in Jest you run with -u to update them when a change is intentional.",
     url: "https://jestjs.io/docs/snapshot-testing",
+  },
+  {
+    id: "mock-service-worker",
+    name: "Mock Service Worker",
+    abbr: "MS",
+    category: "API Mocking",
+    color: "#ff6a33",
+    description:
+      "A JavaScript library for mocking API requests by intercepting them at the network level. The same mock handlers work in the browser, in tests and in Node, so your app code doesn't need to change.",
+    highlights: [
+      "Mocking APIs in tests",
+      "Frontend dev without a backend",
+      "Reusing mocks in browser and Node",
+    ],
+    funFact:
+      "In the browser MSW really does use the Service Worker API, but Node has no service workers, so there it intercepts requests by hooking into Node's own request modules.",
+    url: "https://mswjs.io",
+  },
+  {
+    id: "faker",
+    name: "Faker",
+    abbr: "Fa",
+    category: "Fake Data Library",
+    color: "#e5541b",
+    description:
+      "A library that generates realistic fake data such as names, addresses, emails and dates. Versions exist for JavaScript, Python, Ruby, PHP and more, handy for tests and demos.",
+    highlights: [
+      "Seeding test databases",
+      "Realistic demo data",
+      "Mock data for unit tests",
+    ],
+    funFact:
+      "In January 2022 the original author of faker.js deliberately broke the npm package, so the community forked it into the maintained @faker-js/faker.",
+    url: "https://fakerjs.dev",
+  },
+  {
+    id: "k6",
+    name: "k6",
+    abbr: "K6",
+    category: "Load Testing",
+    color: "#7d64ff",
+    description:
+      "An open-source load testing tool where you write test scripts in JavaScript to simulate many users hitting your API or site, then measure response times and errors.",
+    highlights: [
+      "Load and stress testing APIs",
+      "Performance checks in CI",
+      "Finding bottlenecks before launch",
+    ],
+    funFact:
+      "Although you write k6 tests in JavaScript, the k6 engine itself is written in Go. Grafana Labs acquired k6 in 2021.",
+    url: "https://k6.io",
+  },
+  {
+    id: "chromatic",
+    name: "Chromatic",
+    abbr: "Ch",
+    category: "Visual Testing",
+    color: "#fc521f",
+    description:
+      "A cloud service for visual testing of UI components. It snapshots your Storybook stories and flags pixel changes so you can catch visual bugs before they ship.",
+    highlights: [
+      "Visual regression testing",
+      "Reviewing UI changes in PRs",
+      "Publishing Storybooks",
+    ],
+    funFact:
+      "Chromatic is made by the same team that maintains Storybook, the popular open-source tool for building UI components in isolation.",
+    url: "https://www.chromatic.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "locust",
+    name: "Locust",
+    abbr: "Lo",
+    category: "Load Testing Tool",
+    color: "#36b37e",
+    description:
+      "An open-source load testing tool where you describe user behavior in plain Python code. It then simulates many users hitting your site at once and shows results in a web UI.",
+    highlights: [
+      "Load testing web apps",
+      "Finding performance bottlenecks",
+      "Simulating thousands of users",
+    ],
+    funFact:
+      "True to its name, Locust talks about \"swarming\" your system: you start a test by choosing how many simulated users to unleash on it.",
+    url: "https://locust.io",
+    spawnWeight: 0.5,
   },
 ];
 

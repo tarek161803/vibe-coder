@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "algorithms",
     name: "Algorithms",
-    abbr: "ALGO",
+    abbr: "Al",
     category: "CS Fundamentals",
     color: "#8b5cf6",
     description:
@@ -73,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "stacks",
     name: "Stacks",
-    abbr: "STK",
+    abbr: "St",
     category: "Data Structure",
     color: "#f97316",
     description:
@@ -124,7 +124,7 @@ const entries: CatalogEntry[] = [
   {
     id: "trees",
     name: "Trees",
-    abbr: "TREE",
+    abbr: "Tr",
     category: "Data Structure",
     color: "#16a34a",
     description:
@@ -158,7 +158,7 @@ const entries: CatalogEntry[] = [
   {
     id: "heaps",
     name: "Heaps",
-    abbr: "HEAP",
+    abbr: "He",
     category: "Data Structure",
     color: "#db2777",
     description:
@@ -175,7 +175,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tries",
     name: "Tries",
-    abbr: "TRIE",
+    abbr: "Tr",
     category: "Data Structure",
     color: "#65a30d",
     description:
@@ -192,7 +192,7 @@ const entries: CatalogEntry[] = [
   {
     id: "sorting-algorithms",
     name: "Sorting Algorithms",
-    abbr: "SORT",
+    abbr: "SA",
     category: "Algorithm Concept",
     color: "#f59e0b",
     description:
@@ -209,7 +209,7 @@ const entries: CatalogEntry[] = [
   {
     id: "searching-algorithms",
     name: "Searching Algorithms",
-    abbr: "SRCH",
+    abbr: "SA",
     category: "Algorithm Concept",
     color: "#06b6d4",
     description:
@@ -243,7 +243,7 @@ const entries: CatalogEntry[] = [
   {
     id: "greedy-algorithms",
     name: "Greedy Algorithms",
-    abbr: "GRDY",
+    abbr: "GA",
     category: "Algorithm Technique",
     color: "#ca8a04",
     description:
@@ -277,7 +277,7 @@ const entries: CatalogEntry[] = [
   {
     id: "divide-and-conquer",
     name: "Divide and Conquer",
-    abbr: "D&C",
+    abbr: "DC",
     category: "Algorithm Technique",
     color: "#2563eb",
     description:
@@ -294,7 +294,7 @@ const entries: CatalogEntry[] = [
   {
     id: "automata-theory",
     name: "Automata Theory",
-    abbr: "AUTO",
+    abbr: "AT",
     category: "Theory of Computation",
     color: "#0891b2",
     description:
@@ -330,7 +330,7 @@ const entries: CatalogEntry[] = [
   {
     id: "computational-complexity",
     name: "Computational Complexity",
-    abbr: "P/NP",
+    abbr: "CC",
     category: "Theory of Computation",
     color: "#be123c",
     description:
@@ -382,7 +382,7 @@ const entries: CatalogEntry[] = [
   {
     id: "compiler-theory",
     name: "Compiler Theory",
-    abbr: "CMP",
+    abbr: "CT",
     category: "Theory of Computation",
     color: "#b45309",
     description:
@@ -487,7 +487,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cryptography",
     name: "Cryptography",
-    abbr: "CRYP",
+    abbr: "Cr",
     category: "Security Field",
     color: "#15803d",
     description:
@@ -555,7 +555,7 @@ const entries: CatalogEntry[] = [
   {
     id: "probability",
     name: "Probability",
-    abbr: "P(x)",
+    abbr: "Pr",
     category: "Mathematics Field",
     color: "#f59e0b",
     description:
@@ -572,7 +572,7 @@ const entries: CatalogEntry[] = [
   {
     id: "statistics",
     name: "Statistics",
-    abbr: "STAT",
+    abbr: "St",
     category: "Mathematics Field",
     color: "#0d9488",
     description:
@@ -606,7 +606,7 @@ const entries: CatalogEntry[] = [
   {
     id: "set-theory",
     name: "Set Theory",
-    abbr: "SET",
+    abbr: "ST",
     category: "Mathematics Field",
     color: "#0369a1",
     description:
@@ -640,7 +640,7 @@ const entries: CatalogEntry[] = [
   {
     id: "combinatorics",
     name: "Combinatorics",
-    abbr: "nCr",
+    abbr: "Co",
     category: "Mathematics Field",
     color: "#c2410c",
     description:

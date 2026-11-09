@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-hadoop",
     name: "Apache Hadoop",
-    abbr: "HDP",
+    abbr: "AH",
     category: "Big Data Framework",
     color: "#66ccff",
     description:
@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-spark",
     name: "Apache Spark",
-    abbr: "Spk",
+    abbr: "AS",
     category: "Data Processing Engine",
     color: "#e25a1c",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-flink",
     name: "Apache Flink",
-    abbr: "Flk",
+    abbr: "AF",
     category: "Stream Processing",
     color: "#e6526f",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-beam",
     name: "Apache Beam",
-    abbr: "Beam",
+    abbr: "AB",
     category: "Data Pipeline Model",
     color: "#f26b38",
     description:
@@ -74,7 +74,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-storm",
     name: "Apache Storm",
-    abbr: "Stm",
+    abbr: "AS",
     category: "Stream Processing",
     color: "#3b8dbd",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-samza",
     name: "Apache Samza",
-    abbr: "Smz",
+    abbr: "AS",
     category: "Stream Processing",
     color: "#2e86c1",
     description:
@@ -110,7 +110,7 @@ const entries: CatalogEntry[] = [
   {
     id: "trino",
     name: "Trino",
-    abbr: "Tri",
+    abbr: "Tr",
     category: "SQL Query Engine",
     color: "#dd00a1",
     description:
@@ -127,7 +127,7 @@ const entries: CatalogEntry[] = [
   {
     id: "presto",
     name: "Presto",
-    abbr: "Pst",
+    abbr: "Pr",
     category: "SQL Query Engine",
     color: "#5890ff",
     description:
@@ -144,7 +144,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dask",
     name: "Dask",
-    abbr: "Dsk",
+    abbr: "Da",
     category: "Parallel Computing",
     color: "#fda061",
     description:
@@ -161,7 +161,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-kafka",
     name: "Apache Kafka",
-    abbr: "Kfk",
+    abbr: "AK",
     category: "Event Streaming",
     color: "#5b5bd6",
     description:
@@ -178,7 +178,7 @@ const entries: CatalogEntry[] = [
   {
     id: "rabbitmq",
     name: "RabbitMQ",
-    abbr: "RMQ",
+    abbr: "Ra",
     category: "Message Broker",
     color: "#ff6600",
     description:
@@ -195,7 +195,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-pulsar",
     name: "Apache Pulsar",
-    abbr: "Pls",
+    abbr: "AP",
     category: "Event Streaming",
     color: "#188fff",
     description:
@@ -213,7 +213,7 @@ const entries: CatalogEntry[] = [
   {
     id: "nats",
     name: "NATS",
-    abbr: "NATS",
+    abbr: "NA",
     category: "Messaging System",
     color: "#27aae1",
     description:
@@ -229,27 +229,9 @@ const entries: CatalogEntry[] = [
     spawnWeight: 0.5,
   },
   {
-    id: "redis-streams",
-    name: "Redis Streams",
-    abbr: "RS",
-    category: "Stream Data Type",
-    color: "#dc382d",
-    description:
-      "A Redis data type that acts like an append-only log of messages. Apps can add events and read them back, and consumer groups let several workers share the processing.",
-    highlights: [
-      "Lightweight event queues",
-      "Activity feeds and logs",
-      "Consumer groups for workers",
-    ],
-    funFact:
-      "Redis Streams arrived in Redis 5.0 in 2018, and its design was openly inspired by Kafka's log-based model.",
-    url: "https://redis.io/docs/latest/develop/data-types/streams/",
-    spawnWeight: 0.5,
-  },
-  {
     id: "amazon-kinesis",
     name: "Amazon Kinesis",
-    abbr: "Kin",
+    abbr: "AK",
     category: "Cloud Data Streaming",
     color: "#8c4fff",
     description:
@@ -283,7 +265,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws-sqs",
     name: "AWS SQS",
-    abbr: "SQS",
+    abbr: "AS",
     category: "Message Queue",
     color: "#e7157b",
     description:
@@ -300,7 +282,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws-sns",
     name: "AWS SNS",
-    abbr: "SNS",
+    abbr: "AS",
     category: "Pub/Sub Service",
     color: "#e7157b",
     description:
@@ -317,7 +299,7 @@ const entries: CatalogEntry[] = [
   {
     id: "zeromq",
     name: "ZeroMQ",
-    abbr: "ZMQ",
+    abbr: "Ze",
     category: "Messaging Library",
     color: "#df0000",
     description:
@@ -352,7 +334,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dagster",
     name: "Dagster",
-    abbr: "Dag",
+    abbr: "Da",
     category: "Data Orchestration",
     color: "#4f43dd",
     description:
@@ -370,7 +352,7 @@ const entries: CatalogEntry[] = [
   {
     id: "prefect",
     name: "Prefect",
-    abbr: "Pfc",
+    abbr: "Pr",
     category: "Workflow Orchestration",
     color: "#2d6df6",
     description:
@@ -388,7 +370,7 @@ const entries: CatalogEntry[] = [
   {
     id: "luigi",
     name: "Luigi",
-    abbr: "Lgi",
+    abbr: "Lu",
     category: "Workflow Orchestration",
     color: "#2e9e44",
     description:
@@ -406,7 +388,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dbt",
     name: "dbt",
-    abbr: "dbt",
+    abbr: "Db",
     category: "Data Transformation",
     color: "#ff694b",
     description:
@@ -423,7 +405,7 @@ const entries: CatalogEntry[] = [
   {
     id: "meltano",
     name: "Meltano",
-    abbr: "Mlt",
+    abbr: "Me",
     category: "Data Integration",
     color: "#311772",
     description:
@@ -476,7 +458,7 @@ const entries: CatalogEntry[] = [
   {
     id: "debezium",
     name: "Debezium",
-    abbr: "Dbz",
+    abbr: "De",
     category: "Change Data Capture",
     color: "#91d443",
     description:
@@ -494,7 +476,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tableau",
     name: "Tableau",
-    abbr: "Tab",
+    abbr: "Ta",
     category: "BI & Visualization",
     color: "#e97627",
     description:
@@ -511,7 +493,7 @@ const entries: CatalogEntry[] = [
   {
     id: "power-bi",
     name: "Power BI",
-    abbr: "PBI",
+    abbr: "PB",
     category: "BI & Visualization",
     color: "#f2c811",
     description:
@@ -528,7 +510,7 @@ const entries: CatalogEntry[] = [
   {
     id: "looker",
     name: "Looker",
-    abbr: "Lkr",
+    abbr: "Lo",
     category: "BI Platform",
     color: "#4285f4",
     description:
@@ -615,7 +597,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-avro",
     name: "Apache Avro",
-    abbr: "Avro",
+    abbr: "AA",
     category: "Serialization Format",
     color: "#2a64b4",
     description:
@@ -633,7 +615,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-orc",
     name: "Apache ORC",
-    abbr: "ORC",
+    abbr: "AO",
     category: "Columnar File Format",
     color: "#2e8b57",
     description:
@@ -651,7 +633,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-arrow",
     name: "Apache Arrow",
-    abbr: "Arw",
+    abbr: "AA",
     category: "In-Memory Data Format",
     color: "#d22128",
     description:
@@ -685,7 +667,7 @@ const entries: CatalogEntry[] = [
   {
     id: "messagepack",
     name: "MessagePack",
-    abbr: "MsgP",
+    abbr: "Me",
     category: "Serialization Format",
     color: "#2db7f5",
     description:
@@ -699,6 +681,125 @@ const entries: CatalogEntry[] = [
       "MessagePack's tagline is \"It's like JSON. But fast and small.\" — small integers can be stored in just a single byte.",
     url: "https://msgpack.org/",
     spawnWeight: 0.5,
+  },
+  {
+    id: "polars",
+    name: "Polars",
+    abbr: "PL",
+    category: "DataFrame Library",
+    color: "#0075ff",
+    description:
+      "A fast DataFrame library for working with tables of data, written in Rust with Python bindings. It uses all your CPU cores and offers a lazy mode that optimizes your whole query before running it.",
+    highlights: [
+      "Fast data analysis in Python",
+      "Processing large CSV/Parquet",
+      "A speedy pandas alternative",
+    ],
+    funFact:
+      "The name is a playful jab at pandas, the classic Python DataFrame library: Polars is named after polar bears. It was created by Ritchie Vink.",
+    url: "https://pola.rs",
+  },
+  {
+    id: "google-analytics",
+    name: "Google Analytics",
+    abbr: "GA",
+    category: "Web Analytics",
+    color: "#e37400",
+    description:
+      "Google's service for measuring how people use your website or app. A small tracking script records visits and events, and reports show traffic sources, popular pages and user behavior.",
+    highlights: [
+      "Tracking website traffic",
+      "Measuring conversions",
+      "Understanding user behavior",
+    ],
+    funFact:
+      "Google Analytics grew out of Urchin, a web analytics company Google bought in 2005. Its older Universal Analytics stopped processing data in 2023, replaced by GA4.",
+    url: "https://marketingplatform.google.com/about/analytics/",
+  },
+  {
+    id: "matplotlib",
+    name: "Matplotlib",
+    abbr: "Ma",
+    category: "Plotting Library",
+    color: "#11557c",
+    description:
+      "The classic Python library for making charts and plots, from simple line graphs to complex scientific figures. Many other Python plotting tools, like seaborn, are built on top of it.",
+    highlights: [
+      "Scientific figures and plots",
+      "Charts in Jupyter notebooks",
+      "Base for seaborn and pandas plots",
+    ],
+    funFact:
+      "Matplotlib was created by neurobiologist John D. Hunter around 2003, who wanted MATLAB-style plotting in Python to visualize brain-signal data.",
+    url: "https://matplotlib.org",
+  },
+  {
+    id: "jupyter",
+    name: "Jupyter",
+    abbr: "Ju",
+    category: "Interactive Notebooks",
+    color: "#f37626",
+    description:
+      "An open-source notebook environment where you mix live code, charts and notes in one document. You run code cell by cell and see results right away.",
+    highlights: [
+      "Data exploration and analysis",
+      "Machine learning experiments",
+      "Teaching and sharing code",
+    ],
+    funFact:
+      "The name Jupyter is a nod to three core languages it supported: Julia, Python and R. It was spun off from the IPython project in 2014.",
+    url: "https://jupyter.org",
+  },
+  {
+    id: "posthog",
+    name: "PostHog",
+    abbr: "PH",
+    category: "Product Analytics",
+    color: "#f54e00",
+    description:
+      "An open-source product analytics platform. It tracks what users do in your app and bundles session replays, feature flags, A/B tests and surveys in one tool.",
+    highlights: [
+      "Product analytics and funnels",
+      "Session replays",
+      "Feature flags and A/B tests",
+    ],
+    funFact:
+      "PostHog publishes its entire company handbook publicly on its website, covering everything from how it hires to how it pays people.",
+    url: "https://posthog.com",
+  },
+  {
+    id: "pandas",
+    name: "Pandas",
+    abbr: "PD",
+    category: "Data Analysis Library",
+    color: "#150458",
+    description:
+      "A Python library for working with tables of data. Its DataFrame lets you load CSVs or spreadsheets, then filter, group, clean and summarize data with a few lines of code.",
+    highlights: [
+      "Cleaning messy datasets",
+      "Exploring data in notebooks",
+      "Reading and writing CSV and Excel",
+    ],
+    funFact:
+      "The name pandas comes from \"panel data\", an economics term for multi-dimensional datasets. Wes McKinney started it in 2008 while working at a finance firm.",
+    url: "https://pandas.pydata.org",
+  },
+  {
+    id: "mixpanel",
+    name: "Mixpanel",
+    abbr: "Mi",
+    category: "Product Analytics",
+    color: "#7856ff",
+    description:
+      "A product analytics service that tracks what users do in your app, like clicks, sign-ups and purchases. Teams use its charts to see funnels, retention and which features get used.",
+    highlights: [
+      "Tracking user events",
+      "Funnel and retention analysis",
+      "Measuring feature adoption",
+    ],
+    funFact:
+      "Mixpanel was co-founded by Suhail Doshi and was part of the Y Combinator startup accelerator in 2009.",
+    url: "https://mixpanel.com",
   },
 ];
 

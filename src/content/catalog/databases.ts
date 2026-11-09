@@ -22,7 +22,7 @@ const entries: CatalogEntry[] = [
   {
     id: "mariadb",
     name: "MariaDB",
-    abbr: "MDB",
+    abbr: "Ma",
     category: "Relational Database",
     color: "#c0765a",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "microsoft-sql-server",
     name: "Microsoft SQL Server",
-    abbr: "MSSQL",
+    abbr: "MS",
     category: "Relational Database",
     color: "#cc2927",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "oracle-database",
     name: "Oracle Database",
-    abbr: "ORCL",
+    abbr: "OD",
     category: "Relational Database",
     color: "#f80000",
     description:
@@ -73,7 +73,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cockroachdb",
     name: "CockroachDB",
-    abbr: "CRDB",
+    abbr: "Co",
     category: "Distributed SQL Database",
     color: "#6933ff",
     description:
@@ -90,7 +90,7 @@ const entries: CatalogEntry[] = [
   {
     id: "tidb",
     name: "TiDB",
-    abbr: "TiDB",
+    abbr: "Ti",
     category: "Distributed SQL Database",
     color: "#dc150b",
     description:
@@ -126,7 +126,7 @@ const entries: CatalogEntry[] = [
   {
     id: "amazon-aurora",
     name: "Amazon Aurora",
-    abbr: "AUR",
+    abbr: "AA",
     category: "Managed SQL Database",
     color: "#3b48cc",
     description:
@@ -143,7 +143,7 @@ const entries: CatalogEntry[] = [
   {
     id: "couchdb",
     name: "CouchDB",
-    abbr: "CDB",
+    abbr: "Co",
     category: "Document Database",
     color: "#e42528",
     description:
@@ -194,7 +194,7 @@ const entries: CatalogEntry[] = [
   {
     id: "dynamodb",
     name: "DynamoDB",
-    abbr: "DDB",
+    abbr: "Dy",
     category: "Key-Value Database",
     color: "#4053d6",
     description:
@@ -211,7 +211,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ravendb",
     name: "RavenDB",
-    abbr: "RDB",
+    abbr: "Ra",
     category: "Document Database",
     color: "#d6202f",
     description:
@@ -229,7 +229,7 @@ const entries: CatalogEntry[] = [
   {
     id: "arangodb",
     name: "ArangoDB",
-    abbr: "ADB",
+    abbr: "Ar",
     category: "Multi-Model Database",
     color: "#77b300",
     description:
@@ -247,7 +247,7 @@ const entries: CatalogEntry[] = [
   {
     id: "surrealdb",
     name: "SurrealDB",
-    abbr: "SDB",
+    abbr: "Su",
     category: "Multi-Model Database",
     color: "#ff00a0",
     description:
@@ -280,24 +280,6 @@ const entries: CatalogEntry[] = [
     url: "https://valkey.io",
   },
   {
-    id: "riak",
-    name: "Riak",
-    abbr: "RK",
-    category: "Key-Value Database",
-    color: "#f15a29",
-    description:
-      "A distributed NoSQL key-value database designed to stay available even when servers fail. It spreads copies of data across a cluster with no single master node.",
-    highlights: [
-      "Highly available key-value storage",
-      "Systems that must never go down",
-      "Learning about Dynamo-style databases",
-    ],
-    funFact:
-      "Riak is written in Erlang, the language built at Ericsson for telephone switches, and its design follows Amazon’s famous Dynamo paper.",
-    url: "https://en.wikipedia.org/wiki/Riak",
-    spawnWeight: 0.5,
-  },
-  {
     id: "aerospike",
     name: "Aerospike",
     abbr: "AS",
@@ -318,7 +300,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-cassandra",
     name: "Apache Cassandra",
-    abbr: "CAS",
+    abbr: "AC",
     category: "Wide-Column Database",
     color: "#1287b1",
     description:
@@ -335,7 +317,7 @@ const entries: CatalogEntry[] = [
   {
     id: "scylladb",
     name: "ScyllaDB",
-    abbr: "SCY",
+    abbr: "Sc",
     category: "Wide-Column Database",
     color: "#53cadd",
     description:
@@ -405,7 +387,7 @@ const entries: CatalogEntry[] = [
   {
     id: "neo4j",
     name: "Neo4j",
-    abbr: "N4J",
+    abbr: "Ne",
     category: "Graph Database",
     color: "#018bff",
     description:
@@ -422,7 +404,7 @@ const entries: CatalogEntry[] = [
   {
     id: "amazon-neptune",
     name: "Amazon Neptune",
-    abbr: "NEP",
+    abbr: "AN",
     category: "Graph Database",
     color: "#2e73b8",
     description:
@@ -494,7 +476,7 @@ const entries: CatalogEntry[] = [
   {
     id: "influxdb",
     name: "InfluxDB",
-    abbr: "IDB",
+    abbr: "In",
     category: "Time-Series Database",
     color: "#22adf6",
     description:
@@ -511,7 +493,7 @@ const entries: CatalogEntry[] = [
   {
     id: "timescaledb",
     name: "TimescaleDB",
-    abbr: "TSDB",
+    abbr: "Ti",
     category: "Time-Series Database",
     color: "#fdb515",
     description:
@@ -528,7 +510,7 @@ const entries: CatalogEntry[] = [
   {
     id: "questdb",
     name: "QuestDB",
-    abbr: "QDB",
+    abbr: "Qu",
     category: "Time-Series Database",
     color: "#d14671",
     description:
@@ -564,7 +546,7 @@ const entries: CatalogEntry[] = [
   {
     id: "prometheus",
     name: "Prometheus",
-    abbr: "PROM",
+    abbr: "Pr",
     category: "Monitoring Database",
     color: "#e6522c",
     description:
@@ -615,7 +597,7 @@ const entries: CatalogEntry[] = [
   {
     id: "apache-solr",
     name: "Apache Solr",
-    abbr: "SOLR",
+    abbr: "AS",
     category: "Search Engine",
     color: "#d9411e",
     description:
@@ -632,7 +614,7 @@ const entries: CatalogEntry[] = [
   {
     id: "meilisearch",
     name: "Meilisearch",
-    abbr: "MEI",
+    abbr: "Me",
     category: "Search Engine",
     color: "#ff5caa",
     description:
@@ -667,7 +649,7 @@ const entries: CatalogEntry[] = [
   {
     id: "algolia",
     name: "Algolia",
-    abbr: "ALG",
+    abbr: "Al",
     category: "Search as a Service",
     color: "#003dff",
     description:
@@ -702,7 +684,7 @@ const entries: CatalogEntry[] = [
   {
     id: "milvus",
     name: "Milvus",
-    abbr: "MIL",
+    abbr: "Mi",
     category: "Vector Database",
     color: "#00a1ea",
     description:
@@ -755,7 +737,7 @@ const entries: CatalogEntry[] = [
   {
     id: "chroma",
     name: "Chroma",
-    abbr: "CHR",
+    abbr: "Ch",
     category: "Vector Database",
     color: "#f5a623",
     description:
@@ -790,7 +772,7 @@ const entries: CatalogEntry[] = [
   {
     id: "faiss",
     name: "FAISS",
-    abbr: "FAISS",
+    abbr: "FA",
     category: "Vector Search Library",
     color: "#0467df",
     description:
@@ -808,7 +790,7 @@ const entries: CatalogEntry[] = [
   {
     id: "lancedb",
     name: "LanceDB",
-    abbr: "LDB",
+    abbr: "La",
     category: "Vector Database",
     color: "#e2493a",
     description:
@@ -826,7 +808,7 @@ const entries: CatalogEntry[] = [
   {
     id: "duckdb",
     name: "DuckDB",
-    abbr: "DUCK",
+    abbr: "Du",
     category: "Analytical Database",
     color: "#fff000",
     description:
@@ -843,7 +825,7 @@ const entries: CatalogEntry[] = [
   {
     id: "snowflake",
     name: "Snowflake",
-    abbr: "SNOW",
+    abbr: "Sn",
     category: "Cloud Data Warehouse",
     color: "#29b5e8",
     description:
@@ -894,7 +876,7 @@ const entries: CatalogEntry[] = [
   {
     id: "databricks",
     name: "Databricks",
-    abbr: "DBX",
+    abbr: "Da",
     category: "Data Platform",
     color: "#ff3621",
     description:
@@ -911,7 +893,7 @@ const entries: CatalogEntry[] = [
   {
     id: "azure-synapse-analytics",
     name: "Azure Synapse Analytics",
-    abbr: "SYN",
+    abbr: "AS",
     category: "Cloud Data Warehouse",
     color: "#0078d4",
     description:
@@ -929,7 +911,7 @@ const entries: CatalogEntry[] = [
   {
     id: "minio",
     name: "MinIO",
-    abbr: "MinIO",
+    abbr: "Mi",
     category: "Object Storage",
     color: "#c72c48",
     description:
@@ -980,7 +962,7 @@ const entries: CatalogEntry[] = [
   {
     id: "google-cloud-storage",
     name: "Google Cloud Storage",
-    abbr: "GCS",
+    abbr: "GC",
     category: "Object Storage",
     color: "#4285f4",
     description:
@@ -997,7 +979,7 @@ const entries: CatalogEntry[] = [
   {
     id: "azure-blob-storage",
     name: "Azure Blob Storage",
-    abbr: "BLOB",
+    abbr: "AB",
     category: "Object Storage",
     color: "#0078d4",
     description:
@@ -1010,6 +992,147 @@ const entries: CatalogEntry[] = [
     funFact:
       "\"Blob\" stands for Binary Large OBject — a database term for chunks of raw data. Azure offers Hot, Cool, Cold and Archive tiers for it.",
     url: "https://azure.microsoft.com/en-us/products/storage/blobs",
+  },
+  {
+    id: "neon",
+    name: "Neon",
+    abbr: "NE",
+    category: "Serverless Postgres",
+    color: "#00e599",
+    description:
+      "A serverless PostgreSQL service that separates storage from compute. Databases can scale down to zero when idle, and you can branch your database like Git to get instant copies for testing.",
+    highlights: [
+      "Serverless Postgres databases",
+      "Database branching for previews",
+      "Scale-to-zero for side projects",
+    ],
+    funFact:
+      "Neon lets you create a branch of an entire database almost instantly because branches share the same underlying storage until data changes.",
+    url: "https://neon.com",
+  },
+  {
+    id: "appwrite",
+    name: "Appwrite",
+    abbr: "AW",
+    category: "Backend as a Service",
+    color: "#fd366e",
+    description:
+      "An open-source backend platform that bundles a database, authentication, file storage, serverless functions and realtime events. You can use the hosted cloud or run it yourself with Docker.",
+    highlights: [
+      "Backends for web and mobile apps",
+      "Self-hosted with Docker",
+      "Auth, storage and functions",
+    ],
+    funFact:
+      "Appwrite started as a side project by developer Eldad Fux before growing into a company and a popular open-source project.",
+    url: "https://appwrite.io",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "turso",
+    name: "Turso",
+    abbr: "Tu",
+    category: "Edge SQLite Database",
+    color: "#4ff8d2",
+    description:
+      "A hosted database based on SQLite that can copy your data to locations around the world, so reads are fast for users everywhere. It also makes it cheap to create many small databases.",
+    highlights: [
+      "SQLite in the cloud",
+      "Low-latency edge reads",
+      "Database-per-user setups",
+    ],
+    funFact:
+      "Turso is built on libSQL, an open-contribution fork of SQLite created because SQLite itself does not accept outside code contributions.",
+    url: "https://turso.tech",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "convex",
+    name: "Convex",
+    abbr: "Co",
+    category: "Reactive Backend",
+    color: "#ee342f",
+    description:
+      "A backend platform that combines a database with server functions written in TypeScript. Your app subscribes to queries, and the UI updates automatically when the data changes.",
+    highlights: [
+      "Real-time app backends",
+      "Queries as TypeScript functions",
+      "Auto-updating React UIs",
+    ],
+    funFact:
+      "In Convex, database queries are plain TypeScript functions that run next to the data, and any client using a query is pushed fresh results when the data changes.",
+    url: "https://www.convex.dev",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "upstash",
+    name: "Upstash",
+    abbr: "Up",
+    category: "Serverless Data",
+    color: "#00e9a3",
+    description:
+      "A serverless data platform offering Redis, vector databases and message queues that you pay for per request, so it costs almost nothing when idle.",
+    highlights: [
+      "Serverless Redis caching",
+      "Rate limiting for APIs",
+      "Queues and vector search",
+    ],
+    funFact:
+      "Upstash lets you talk to Redis over a plain HTTP REST API, which works in edge runtimes where normal TCP database connections aren't allowed.",
+    url: "https://upstash.com",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "pgvector",
+    name: "pgvector",
+    abbr: "Pg",
+    category: "Vector Extension",
+    color: "#336791",
+    description:
+      "An open-source PostgreSQL extension that adds a vector column type and similarity search, so you can store AI embeddings right next to your regular data.",
+    highlights: [
+      "Storing AI embeddings in Postgres",
+      "Semantic similarity search",
+      "RAG apps without a new database",
+    ],
+    funFact:
+      "pgvector was created by Andrew Kane and supports both IVFFlat and HNSW indexes for fast approximate nearest-neighbor search.",
+    url: "https://github.com/pgvector/pgvector",
+  },
+  {
+    id: "planetscale",
+    name: "PlanetScale",
+    abbr: "PS",
+    category: "Cloud Database",
+    color: "#f35815",
+    description:
+      "A managed cloud database service for MySQL and Postgres. It focuses on scaling and safe schema changes, letting teams use branch-like workflows for their database.",
+    highlights: [
+      "Scalable MySQL in the cloud",
+      "Safe schema migrations",
+      "Database branching workflows",
+    ],
+    funFact:
+      "PlanetScale's MySQL offering is built on Vitess, an open-source system originally created at YouTube to scale its MySQL databases.",
+    url: "https://planetscale.com",
+  },
+  {
+    id: "pocketbase",
+    name: "PocketBase",
+    abbr: "PB",
+    category: "Backend in a File",
+    color: "#16161a",
+    description:
+      "An open-source backend that ships as a single executable file. It includes a SQLite database, user authentication, file storage, realtime updates and an admin dashboard.",
+    highlights: [
+      "Backends for side projects",
+      "Realtime apps with SQLite",
+      "Quick prototypes with built-in auth",
+    ],
+    funFact:
+      "PocketBase is written in Go and packs its database, API and admin UI into one file, so running a backend can be as simple as launching a single program.",
+    url: "https://pocketbase.io",
+    spawnWeight: 0.5,
   },
 ];
 

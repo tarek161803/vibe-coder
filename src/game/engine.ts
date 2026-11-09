@@ -1,12 +1,12 @@
 import type { TechInfo } from "@/content/types";
+import { luminance, withAlpha } from "@/lib/color";
 import { formatTokens } from "@/lib/tokens";
-import { CRASH_FREEZE_SECONDS, PLAYER, SCORE, SPEED, WORLD } from "./config";
+import { CRASH_FREEZE_SECONDS, OBSTACLE, PLAYER, SCORE, SPEED, WORLD } from "./config";
 import { obstacleHitbox, obstacleTop, ObstacleSpawner, type Obstacle } from "./entities/obstacles";
 import { ParticleSystem } from "./entities/particles";
 import { Player } from "./entities/player";
 import { Background } from "./rendering/background";
 import { LogoAtlas } from "./rendering/logoAtlas";
-import { createPlayerSprites, type PlayerSprites } from "./rendering/playerSprites";
 import { intersects, type GameCallbacks, type GameFonts, type GamePhase } from "./types";
 
 /** Physics runs in sub-steps no longer than this to avoid tunneling at high speed. */
@@ -18,7 +18,6 @@ const MAX_STEP = 1 / 120;
  */
 export class Game {
   private ctx: CanvasRenderingContext2D;
-  private sprites: PlayerSprites;
   private logos = new LogoAtlas();
   private background: Background;
   private player = new Player();
@@ -32,6 +31,8 @@ export class Game {
   private dpr = 1;
 
   private time = 0;
+  /** Clock for the scenery; it stays frozen on the start screen. */
+  private sceneTime = 0;
   private elapsed = 0;
   private speed: number = SPEED.start;
   private distance = 0;
@@ -44,6 +45,7 @@ export class Game {
   private toast: { text: string; t: number } | null = null;
   private agents = 1;
   private trailTimer = 0;
+  private slideDustTimer = 0;
   private reducedMotion = false;
 
   private rafId = 0;
@@ -58,7 +60,6 @@ export class Game {
   ) {
     this.spawner = new ObstacleSpawner(starterObstacles);
     this.ctx = canvas.getContext("2d")!;
-    this.sprites = createPlayerSprites();
     this.background = new Background(fonts);
     this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     this.lastFrame = performance.now();
@@ -171,11 +172,9 @@ export class Game {
   private update(dt: number) {
     if (this.phase === "paused") return;
     this.time += dt;
-
-    if (this.phase === "ready") {
-      this.background.update(SPEED.idle * dt);
-      return;
-    }
+    // The start screen shows a still scene; only the character idles.
+    if (this.phase === "ready") return;
+    this.sceneTime += dt;
 
     if (this.phase === "playing") this.updatePlaying(dt);
     else this.particles.update(dt);
@@ -209,6 +208,14 @@ export class Game {
     player.update(dt, this.speed);
     if (player.jumped) this.dust(PLAYER.x + 20, 8);
     if (player.landed) this.dust(PLAYER.x + 24, 12);
+    if (player.stepped) this.dust(PLAYER.x + 30, 3, 0.6);
+    if (player.slid) this.dust(PLAYER.x + 30, 12);
+    // Friction dust trails behind the body while sliding.
+    this.slideDustTimer -= dt;
+    if (player.sliding && this.slideDustTimer <= 0) {
+      this.slideDustTimer = 0.045;
+      this.dust(PLAYER.x + 22, 2);
+    }
 
     // Speed trail once things get fast.
     this.trailTimer -= dt;
@@ -269,11 +276,12 @@ export class Game {
     this.setPhase("crashed");
   }
 
-  private dust(x: number, count: number) {
+  /** `strength` scales how far the dust is kicked (footsteps are lighter than landings). */
+  private dust(x: number, count: number, strength = 1) {
     this.particles.burst(x, WORLD.groundY - 2, {
       count,
       colors: ["#c4b5fd", "#a5b4fc", "#e9d5ff"],
-      speed: [30, 120],
+      speed: [30 * strength, 120 * strength],
       angle: [Math.PI * 0.95, Math.PI * 1.45],
       life: [0.25, 0.5],
       size: [2, 3],
@@ -293,21 +301,60 @@ export class Game {
       ctx.translate((Math.random() - 0.5) * m, (Math.random() - 0.5) * m);
     }
 
-    this.background.draw(ctx, this.width, this.time);
+    this.background.draw(ctx, this.width, this.sceneTime);
     for (const o of this.obstacles) this.drawObstacle(o);
 
     const flash = this.phase === "crashed" && Math.floor(this.time * 16) % 2 === 0;
-    this.player.draw(ctx, this.sprites, this.phase === "ready", flash);
+    this.player.draw(ctx, this.phase === "ready", flash, this.time);
     this.particles.draw(ctx);
 
     ctx.setTransform(k, 0, 0, k, 0, 0);
     this.drawHud();
   }
 
+  /** The energy pillar a flying obstacle hangs from (part of its hitbox, so it can't be jumped). */
+  private drawEnergyPillar(x: number, tileTop: number, size: number, accent: string) {
+    const ctx = this.ctx;
+    const inset = OBSTACLE.hitboxInset;
+    const left = x + inset;
+    const width = size - inset * 2;
+
+    const body = ctx.createLinearGradient(0, 0, 0, tileTop);
+    body.addColorStop(0, withAlpha(accent, 0.04));
+    body.addColorStop(1, withAlpha(accent, 0.3));
+    ctx.fillStyle = body;
+    ctx.fillRect(left, 0, width, tileTop);
+
+    // Bright edges
+    const edge = ctx.createLinearGradient(0, 0, 0, tileTop);
+    edge.addColorStop(0, withAlpha(accent, 0.1));
+    edge.addColorStop(1, withAlpha(accent, 0.85));
+    ctx.fillStyle = edge;
+    ctx.fillRect(left, 0, 1.5, tileTop);
+    ctx.fillRect(left + width - 1.5, 0, 1.5, tileTop);
+
+    // Energy pulses flowing down into the tile
+    ctx.fillStyle = withAlpha(accent, 0.55);
+    const spacing = 22;
+    const flow = (this.time * 90) % spacing;
+    for (let py = flow - spacing; py < tileTop - 2; py += spacing) {
+      const fade = Math.max(0, py / tileTop);
+      ctx.globalAlpha = 0.25 + 0.6 * fade;
+      ctx.fillRect(left + 3, py, width - 6, 2);
+    }
+    ctx.globalAlpha = 1;
+  }
+
   private drawObstacle(o: Obstacle) {
     const ctx = this.ctx;
     const y = obstacleTop(o, this.time);
     const { x, size } = o;
+    const hazard = o.tech.kind === "hazard";
+    // Near-black brand colors would vanish on the dark scene; use a light accent instead.
+    const accent = luminance(o.tech.color) < 0.06 ? "#cbd5e1" : o.tech.color;
+    const bracketColor = hazard ? "#f87171" : accent;
+    // Hazard brackets blink as a warning; everything else stays steady.
+    const warningBlink = 0.5 + 0.5 * Math.sin(this.time * 7 + x * 0.05);
 
     if (o.airborne) {
       // Ground shadow
@@ -315,25 +362,23 @@ export class Game {
       ctx.beginPath();
       ctx.ellipse(x + size / 2, WORLD.groundY + 2, size * 0.35, 3, 0, 0, Math.PI * 2);
       ctx.fill();
-      // Drone rotors
-      ctx.fillStyle = "#94a3b8";
-      ctx.fillRect(x + size / 2 - 1, y - 6, 2, 6);
-      ctx.fillRect(x + 4, y - 7, size - 8, 2);
-      const blade = 6 + Math.abs(Math.sin(this.time * 40)) * 8;
-      ctx.fillStyle = "rgba(226, 232, 240, 0.8)";
-      ctx.fillRect(x + 6 - blade / 2, y - 9, blade, 2);
-      ctx.fillRect(x + size - 6 - blade / 2, y - 9, blade, 2);
+      this.drawEnergyPillar(x, y, size, accent);
+    } else if (o.y + size >= WORLD.groundY) {
+      // Contact shadow so ground obstacles sit on the road
+      ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+      ctx.beginPath();
+      ctx.ellipse(x + size / 2, WORLD.groundY + 1, size * 0.55, 4, 0, 0, Math.PI * 2);
+      ctx.fill();
     }
 
-    // Neon glow plate
-    ctx.save();
-    ctx.shadowColor = o.tech.color;
-    ctx.shadowBlur = o.hit ? 26 : 10;
+    // Logo tiles use a 12/64 corner radius; the plate and border hug them exactly.
+    const radius = size * (12 / 64);
+
+    // Flat backing plate (shows only if a logo hasn't loaded yet)
     ctx.fillStyle = "#0b0d1a";
     ctx.beginPath();
-    ctx.roundRect(x - 2, y - 2, size + 4, size + 4, 10);
+    ctx.roundRect(x, y, size, size, radius);
     ctx.fill();
-    ctx.restore();
 
     const logo = this.logos.get(o.tech, size * this.scale * this.dpr);
     if (logo) {
@@ -342,18 +387,51 @@ export class Game {
     } else {
       ctx.fillStyle = o.tech.color;
       ctx.beginPath();
-      ctx.roundRect(x, y, size, size, 8);
+      ctx.roundRect(x, y, size, size, radius);
       ctx.fill();
     }
+
+    // Border, right on the tile's edge
+    ctx.strokeStyle = withAlpha(accent, 0.8);
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.roundRect(x, y, size, size, radius);
+    ctx.stroke();
+
+    // HUD target brackets at the corners
+    const g = 6; // gap outside the tile
+    const l = 7; // bracket arm length
+    const left = x - g;
+    const right = x + size + g;
+    const top = y - g;
+    const bottom = y + size + g;
+    ctx.strokeStyle = withAlpha(bracketColor, hazard ? 0.45 + 0.5 * warningBlink : 0.75);
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = "square";
+    ctx.beginPath();
+    ctx.moveTo(left, top + l);
+    ctx.lineTo(left, top);
+    ctx.lineTo(left + l, top);
+    ctx.moveTo(right - l, top);
+    ctx.lineTo(right, top);
+    ctx.lineTo(right, top + l);
+    ctx.moveTo(right, bottom - l);
+    ctx.lineTo(right, bottom);
+    ctx.lineTo(right - l, bottom);
+    ctx.moveTo(left + l, bottom);
+    ctx.lineTo(left, bottom);
+    ctx.lineTo(left, bottom - l);
+    ctx.stroke();
 
     if (o.hit) {
       ctx.strokeStyle = "#ffffff";
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.roundRect(x - 2, y - 2, size + 4, size + 4, 10);
+      ctx.roundRect(x, y, size, size, radius);
       ctx.stroke();
     }
   }
+
 
   private drawHud() {
     if (this.phase === "ready") return;
@@ -370,12 +448,6 @@ export class Game {
       ctx.fillStyle = "#f8fafc";
       ctx.fillText(scoreText, right, 16);
     }
-
-    // Burn rate: tokens burn faster as the run speeds up
-    ctx.textAlign = "left";
-    ctx.font = `9px ${this.fonts.pixel}`;
-    ctx.fillStyle = "#fb923c";
-    ctx.fillText(`BURN RATE x${this.burnRate().toFixed(1)}`, 16, 18);
 
     if (this.toast) {
       const alpha = Math.min(1, this.toast.t * 2);

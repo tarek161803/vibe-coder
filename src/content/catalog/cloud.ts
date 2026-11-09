@@ -5,7 +5,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws",
     name: "Amazon Web Services (AWS)",
-    abbr: "AWS",
+    abbr: "AW",
     category: "Cloud Platform",
     color: "#ff9900",
     description:
@@ -39,7 +39,7 @@ const entries: CatalogEntry[] = [
   {
     id: "gcp",
     name: "Google Cloud Platform (GCP)",
-    abbr: "GCP",
+    abbr: "GC",
     category: "Cloud Platform",
     color: "#4285f4",
     description:
@@ -56,7 +56,7 @@ const entries: CatalogEntry[] = [
   {
     id: "oracle-cloud",
     name: "Oracle Cloud",
-    abbr: "OCI",
+    abbr: "OC",
     category: "Cloud Platform",
     color: "#c74634",
     description:
@@ -74,7 +74,7 @@ const entries: CatalogEntry[] = [
   {
     id: "ibm-cloud",
     name: "IBM Cloud",
-    abbr: "IBM",
+    abbr: "IC",
     category: "Cloud Platform",
     color: "#0f62fe",
     description:
@@ -92,7 +92,7 @@ const entries: CatalogEntry[] = [
   {
     id: "alibaba-cloud",
     name: "Alibaba Cloud",
-    abbr: "Ali",
+    abbr: "AC",
     category: "Cloud Platform",
     color: "#ff6a00",
     description:
@@ -127,7 +127,7 @@ const entries: CatalogEntry[] = [
   {
     id: "linode",
     name: "Linode",
-    abbr: "Lin",
+    abbr: "Li",
     category: "Cloud Hosting",
     color: "#02b159",
     description:
@@ -145,7 +145,7 @@ const entries: CatalogEntry[] = [
   {
     id: "akamai-cloud",
     name: "Akamai Cloud",
-    abbr: "AKM",
+    abbr: "AC",
     category: "Cloud Platform",
     color: "#0096d6",
     description:
@@ -181,7 +181,7 @@ const entries: CatalogEntry[] = [
   {
     id: "vercel",
     name: "Vercel",
-    abbr: "VCL",
+    abbr: "Ve",
     category: "Frontend Hosting",
     color: "#0070f3",
     description:
@@ -198,7 +198,7 @@ const entries: CatalogEntry[] = [
   {
     id: "netlify",
     name: "Netlify",
-    abbr: "NTL",
+    abbr: "Ne",
     category: "Frontend Hosting",
     color: "#00c7b7",
     description:
@@ -215,7 +215,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cloudflare-pages",
     name: "Cloudflare Pages",
-    abbr: "CFP",
+    abbr: "CP",
     category: "Frontend Hosting",
     color: "#f38020",
     description:
@@ -249,7 +249,7 @@ const entries: CatalogEntry[] = [
   {
     id: "github-pages",
     name: "GitHub Pages",
-    abbr: "GHP",
+    abbr: "GP",
     category: "Static Site Hosting",
     color: "#6e5494",
     description:
@@ -266,7 +266,7 @@ const entries: CatalogEntry[] = [
   {
     id: "render",
     name: "Render",
-    abbr: "RND",
+    abbr: "Re",
     category: "Cloud Hosting",
     color: "#46e3b7",
     description:
@@ -302,7 +302,7 @@ const entries: CatalogEntry[] = [
   {
     id: "flyio",
     name: "Fly.io",
-    abbr: "Fly",
+    abbr: "FI",
     category: "Cloud Hosting",
     color: "#7b3be2",
     description:
@@ -336,7 +336,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cloudflare-workers",
     name: "Cloudflare Workers",
-    abbr: "CFW",
+    abbr: "CW",
     category: "Edge Functions",
     color: "#f38020",
     description:
@@ -352,8 +352,8 @@ const entries: CatalogEntry[] = [
   },
   {
     id: "google-cloud-functions",
-    name: "Google Cloud Functions",
-    abbr: "GCF",
+    name: "Cloud Run functions",
+    abbr: "CR",
     category: "Serverless Functions",
     color: "#4285f4",
     description:
@@ -364,14 +364,14 @@ const entries: CatalogEntry[] = [
       "Gluing Google Cloud services together",
     ],
     funFact:
-      "In 2024 Google renamed Cloud Functions to \"Cloud Run functions\", merging it with its Cloud Run container platform.",
+      "It was called Google Cloud Functions until 2024, when Google merged it into its Cloud Run container platform and gave it its current name.",
     url: "https://cloud.google.com/functions",
     spawnWeight: 0.5,
   },
   {
     id: "azure-functions",
     name: "Azure Functions",
-    abbr: "AzF",
+    abbr: "AF",
     category: "Serverless Functions",
     color: "#0062ad",
     description:
@@ -425,7 +425,7 @@ const entries: CatalogEntry[] = [
   {
     id: "supabase-edge-functions",
     name: "Supabase Edge Functions",
-    abbr: "SEF",
+    abbr: "SE",
     category: "Edge Functions",
     color: "#3ecf8e",
     description:
@@ -477,7 +477,7 @@ const entries: CatalogEntry[] = [
   {
     id: "azure-front-door",
     name: "Azure Front Door",
-    abbr: "AFD",
+    abbr: "AF",
     category: "CDN",
     color: "#0078d4",
     description:
@@ -495,7 +495,7 @@ const entries: CatalogEntry[] = [
   {
     id: "google-cloud-cdn",
     name: "Google Cloud CDN",
-    abbr: "GCDN",
+    abbr: "GC",
     category: "CDN",
     color: "#4285f4",
     description:
@@ -513,7 +513,7 @@ const entries: CatalogEntry[] = [
   {
     id: "aws-vpc",
     name: "AWS VPC",
-    abbr: "VPC",
+    abbr: "AV",
     category: "Cloud Networking",
     color: "#8c4fff",
     description:
@@ -531,7 +531,7 @@ const entries: CatalogEntry[] = [
   {
     id: "cloudflare-tunnel",
     name: "Cloudflare Tunnel",
-    abbr: "CFT",
+    abbr: "CT",
     category: "Network Tunnel",
     color: "#f38020",
     description:
@@ -562,6 +562,41 @@ const entries: CatalogEntry[] = [
     funFact:
       "The idea of \"Zero Trust\" — never trust, always verify — was popularized by Forrester analyst John Kindervag around 2010.",
     url: "https://www.cloudflare.com/zero-trust/",
+    spawnWeight: 0.5,
+  },
+  {
+    id: "heroku",
+    name: "Heroku",
+    abbr: "He",
+    category: "Platform as a Service",
+    color: "#430098",
+    description:
+      "A cloud platform where you deploy apps by pushing your code, and it handles servers, scaling and add-ons like databases for you. It popularized the simple \"git push to deploy\" workflow.",
+    highlights: [
+      "Easy app deployment",
+      "Hosting web apps and APIs",
+      "Managed add-ons like Postgres",
+    ],
+    funFact:
+      "Heroku launched in 2007 as a platform for Ruby apps only, and was acquired by Salesforce in 2010.",
+    url: "https://www.heroku.com",
+  },
+  {
+    id: "coolify",
+    name: "Coolify",
+    abbr: "Co",
+    category: "Self-Hosted PaaS",
+    color: "#6b16ed",
+    description:
+      "An open-source, self-hostable platform for deploying apps, databases and services on your own servers, giving you a Heroku- or Vercel-like experience without the platform bill.",
+    highlights: [
+      "Deploying apps to your own VPS",
+      "One-click databases and services",
+      "Self-hosted Heroku/Vercel alternative",
+    ],
+    funFact:
+      "Coolify is open source under the Apache 2.0 license, so you can run the full platform on a cheap server you control.",
+    url: "https://coolify.io",
     spawnWeight: 0.5,
   },
 ];

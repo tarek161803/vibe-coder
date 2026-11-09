@@ -11,3 +11,9 @@ export function luminance(hex: string): number {
 export function readableInk(background: string): string {
   return luminance(background) > 0.38 ? "#0b0d17" : "#ffffff";
 }
+
+/** A #rrggbb color as an rgba() string with the given opacity. */
+export function withAlpha(hex: string, alpha: number): string {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
