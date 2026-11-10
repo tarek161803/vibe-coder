@@ -108,6 +108,14 @@ body {
       radial-gradient(800px 500px at 0% 100%, rgb(34 211 238 / 0.1), transparent 70%),
       #05060d;
   }
+  /* Installed to the iPhone home screen, lvh is short by the status bar height:
+     pin both edges to the screen instead. */
+  @media (display-mode: standalone), (display-mode: fullscreen) {
+    .page-bg {
+      bottom: 0;
+      height: auto;
+    }
+  }
 
   /* Static neon perspective grid floor along the bottom of .page-bg. It keeps its
      desktop proportions on every screen (at least 1280px wide, centred) so narrow
