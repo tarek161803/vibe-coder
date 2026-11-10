@@ -51,7 +51,7 @@ type HoldHandlers = { onPress: () => void; onRelease: () => void };
 /** On-screen gamepad buttons for touch devices, shown under the console. */
 export function TouchButtons({ jump, slide }: { jump: HoldHandlers; slide: HoldHandlers }) {
   return (
-    <div data-ui className="hidden items-start justify-center gap-20 pointer-coarse:flex">
+    <div data-ui className="hidden items-start justify-center gap-20 pointer-coarse:flex portrait:mt-10">
       <HoldButton label="SLIDE" handlers={slide} tint="#e879f9" />
       <HoldButton label="JUMP" handlers={jump} tint="#22d3ee" />
     </div>
@@ -90,9 +90,9 @@ function HoldButton({
       onPointerCancel={release}
       onContextMenu={(e) => e.preventDefault()}
     >
-      <span className="pad-btn-housing size-16 [@media(max-height:560px)]:size-13">
+      <span className="pad-btn-housing size-[82px] [@media(max-height:560px)]:size-13">
         <span className="pad-btn-cap">
-          <span className="pad-btn-text font-pixel text-[9px] tracking-wider [@media(max-height:560px)]:text-[8px]">{label}</span>
+          <span className="pad-btn-text font-pixel text-[11px] tracking-wider [@media(max-height:560px)]:text-[8px]">{label}</span>
         </span>
       </span>
     </button>

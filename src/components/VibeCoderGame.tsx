@@ -21,6 +21,8 @@ const PREFERRED_WIDTH = 1000;
 const CARD_CHROME = 44;
 /** Vertical space reserved for the logo, the console's status strips and the credits line. */
 const RESERVED_HEIGHT = 250;
+/** Smallest canvas height (CSS px) when shrinking it to fit a short screen. */
+const MIN_CANVAS_HEIGHT = 100;
 /** Shell padding the reserved heights above already account for (normal / short screens). */
 const SHELL_PADDING = 40;
 const SHELL_PADDING_SHORT = 16;
@@ -28,7 +30,7 @@ const SHELL_PADDING_SHORT = 16;
 const SHORT_SCREEN = 560;
 const RESERVED_HEIGHT_SHORT = 110;
 /** Extra vertical space for the on-screen gamepad buttons on touch devices. */
-const TOUCH_BUTTONS_HEIGHT = 112;
+const TOUCH_BUTTONS_HEIGHT = 136;
 const TOUCH_BUTTONS_HEIGHT_SHORT = 86;
 
 type TouchGesture = {
@@ -106,14 +108,9 @@ export default function VibeCoderGame() {
       })
       .catch((error) => console.error("Failed to load the technology catalog", error));
 
-    const resize = () => {
+    const shell = stage.parentElement!;
+    const fit = (maxCssHeight: number) => {
       const cssWidth = stage.clientWidth - CARD_CHROME;
-      const short = window.innerHeight <= SHORT_SCREEN;
-      const reserved =
-        (short ? RESERVED_HEIGHT_SHORT : RESERVED_HEIGHT) +
-        (window.matchMedia("(pointer: coarse)").matches ? (short ? TOUCH_BUTTONS_HEIGHT_SHORT : TOUCH_BUTTONS_HEIGHT) : 0) +
-        safeAreaExtra(stage.parentElement, short ? SHELL_PADDING_SHORT : SHELL_PADDING);
-      const maxCssHeight = Math.max(170, Math.min(window.innerHeight * 0.7, window.innerHeight - reserved));
       let worldWidth = Math.min(Math.max(cssWidth, WORLD.minWidth), PREFERRED_WIDTH);
       let scale = cssWidth / worldWidth;
       if (WORLD.height * scale > maxCssHeight) {
@@ -123,6 +120,21 @@ export default function VibeCoderGame() {
       canvas.style.width = `${Math.floor(worldWidth * scale)}px`;
       canvas.style.height = `${Math.floor(WORLD.height * scale)}px`;
       game.resize(worldWidth, scale, Math.min(window.devicePixelRatio || 1, 2));
+    };
+
+    const resize = () => {
+      // Size against the shell, which is exactly the visible area.
+      const screenHeight = shell.clientHeight;
+      const short = screenHeight <= SHORT_SCREEN;
+      const reserved =
+        (short ? RESERVED_HEIGHT_SHORT : RESERVED_HEIGHT) +
+        (window.matchMedia("(pointer: coarse)").matches ? (short ? TOUCH_BUTTONS_HEIGHT_SHORT : TOUCH_BUTTONS_HEIGHT) : 0) +
+        safeAreaExtra(shell, short ? SHELL_PADDING_SHORT : SHELL_PADDING);
+      fit(Math.max(170, Math.min(screenHeight * 0.7, screenHeight - reserved)));
+      // The page is a fixed-height screen: if the estimate above still overflows it,
+      // shrink the canvas by exactly the overflow so everything fits without scrolling.
+      const overflow = shell.scrollHeight - shell.clientHeight;
+      if (overflow > 0) fit(Math.max(MIN_CANVAS_HEIGHT, canvas.offsetHeight - overflow));
     };
     resize();
     const observer = new ResizeObserver(resize);
@@ -270,8 +282,10 @@ export default function VibeCoderGame() {
   };
 
   return (
-    <div className="relative flex min-h-dvh flex-col items-center justify-center gap-5 overflow-clip safe-shell [@media(max-height:560px)]:gap-2">
-      <div aria-hidden className="grid-floor" />
+    <div className="relative isolate flex h-dvh flex-col items-center justify-center-safe gap-5 overflow-hidden safe-shell portrait:pointer-coarse:justify-start portrait:pointer-coarse:pt-[max(3.5rem,calc(var(--safe-top)+1.75rem))] [@media(max-height:560px)]:gap-2">
+      <div aria-hidden className="page-bg">
+        <div className="grid-floor" />
+      </div>
 
       <header className="text-center [@media(max-height:560px)]:hidden">
         <h1 className="title-glow font-pixel text-2xl leading-tight animate-flicker sm:text-4xl">
@@ -350,8 +364,17 @@ export default function VibeCoderGame() {
 
       <TouchButtons jump={jumpButton} slide={slideButton} />
 
-      <p className="hidden rounded-lg bg-violet-500/10 px-3 py-2 text-center font-mono text-xs text-violet-200 portrait:pointer-coarse:block">
-        Tip: rotate your phone to landscape for a bigger screen.
+      {/* Credit pinned to the bottom of the visible area; out of the layout flow so it never shrinks the game. */}
+      <p className="absolute inset-x-0 bottom-[max(0.5rem,var(--safe-bottom))] text-center font-pixel text-[8px] tracking-wider text-slate-500 [@media(max-height:560px)]:hidden">
+        vibe coded by{" "}
+        <a
+          href="https://github.com/itarek99"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-slate-400 underline decoration-slate-600 underline-offset-2 hover:text-cyan-300 hover:decoration-cyan-300"
+        >
+          itarek99
+        </a>
       </p>
 
       {phase === "over" && result && (
