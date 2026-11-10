@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Press_Start_2P } from "next/font/google";
+import { ServiceWorker } from "@/components/ServiceWorker";
 import "./globals.css";
 
 const pressStart = Press_Start_2P({
@@ -60,7 +61,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${pressStart.variable} ${jetbrains.variable} h-full antialiased`}>
-      <body className="h-full">{children}</body>
+      <body className="h-full">
+        {children}
+        <ServiceWorker />
+      </body>
     </html>
   );
 }
