@@ -1,11 +1,8 @@
 import type { GameEvent } from "@/game/types";
 
-/** Vibration patterns (ms). Jumps and slides are left out: buzzing on every input gets tiring. */
+/** Vibration patterns (ms). Only the crash buzzes: vibrating during play felt like noise. */
 const PATTERNS: Partial<Record<GameEvent, number | number[]>> = {
   crash: [60, 40, 120],
-  tokens: 30,
-  dodged: 30,
-  overdrive: [40, 30, 40],
 };
 
 /** Buzzes the phone where supported (Android browsers; iOS Safari has no Vibration API). */

@@ -15,6 +15,11 @@ const MAX_STEP = 1 / 120;
 const HUD_CORNER_CLEARANCE = 32;
 /** Smallest on-screen (CSS px) size of the score text. */
 const HUD_SCORE_MIN_CSS = 10;
+/** Adaptive resolution: if frames average slower than this over a sample window, render at a lower pixel ratio. */
+const SLOW_FRAME_MS = 1000 / 45;
+const QUALITY_SAMPLE_SECONDS = 2;
+/** Seconds of play to skip before sampling (startup work and the catalog loading skew the first frames). */
+const QUALITY_WARMUP_SECONDS = 1.5;
 
 /**
  * Owns the simulation and canvas rendering. React talks to it through the
@@ -33,6 +38,11 @@ export class Game {
   private width: number = WORLD.minWidth;
   private scale = 1;
   private dpr = 1;
+  /** Pixel ratio the page asked for; `dprCap` lowers what's actually used on slow devices. */
+  private requestedDpr = 1;
+  private dprCap = 2;
+  private sampleMs = 0;
+  private sampleFrames = 0;
 
   private time = 0;
   /** Clock for the scenery; it stays frozen on the start screen. */
@@ -49,6 +59,8 @@ export class Game {
   /** 0 until top speed is reached, then ramps to 1 over OBSTACLE.overdriveSeconds. */
   private overdrive = 0;
   private overdriveFlash = 0;
+  private overdriveGlow: CanvasGradient | null = null;
+  private overdriveGlowWidth = 0;
   private toast: { text: string; color: string; t: number } | null = null;
   /** Toasts waiting for the current one to finish, so simultaneous milestones don't overwrite each other. */
   private toastQueue: { text: string; color: string }[] = [];
@@ -70,7 +82,8 @@ export class Game {
     starterObstacles: TechInfo[],
   ) {
     this.spawner = new ObstacleSpawner(starterObstacles);
-    this.ctx = canvas.getContext("2d")!;
+    // Every frame paints the whole canvas, so it can be opaque: the browser then skips blending it with the page.
+    this.ctx = canvas.getContext("2d", { alpha: false })!;
     this.background = new Background(fonts);
     this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     this.lastFrame = performance.now();
@@ -83,7 +96,8 @@ export class Game {
   resize(width: number, scale: number, dpr: number) {
     this.width = width;
     this.scale = scale;
-    this.dpr = dpr;
+    this.requestedDpr = dpr;
+    this.dpr = Math.min(dpr, this.dprCap);
     this.canvas.width = Math.round(width * scale * dpr);
     this.canvas.height = Math.round(WORLD.height * scale * dpr);
     this.logos.invalidate();
@@ -137,17 +151,34 @@ export class Game {
   // ── Loop ──────────────────────────────────────────────────────────────
 
   private frame = (now: number) => {
+    const frameMs = now - this.lastFrame;
     // Clamp long gaps (tab switches, breakpoints) so the world doesn't jump.
-    let dt = Math.min((now - this.lastFrame) / 1000, 1 / 20);
+    let dt = Math.min(frameMs / 1000, 1 / 20);
     this.lastFrame = now;
     while (dt > 0) {
       const step = Math.min(dt, MAX_STEP);
       this.update(step);
       dt -= step;
     }
-    this.render();
+    this.adaptQuality(frameMs);
+    // Paused and game-over screens are still: skip redrawing so the overlays on top stay smooth.
+    if (this.phase !== "paused" && this.phase !== "over") this.render();
     this.rafId = requestAnimationFrame(this.frame);
   };
+
+  /** Drops the canvas resolution a step (2 → 1.5 → 1) while play keeps running slower than SLOW_FRAME_MS. */
+  private adaptQuality(frameMs: number) {
+    if (this.phase !== "playing" || this.elapsed < QUALITY_WARMUP_SECONDS || frameMs > 250) return;
+    this.sampleMs += frameMs;
+    this.sampleFrames++;
+    if (this.sampleMs < QUALITY_SAMPLE_SECONDS * 1000) return;
+    const average = this.sampleMs / this.sampleFrames;
+    this.sampleMs = this.sampleFrames = 0;
+    if (average > SLOW_FRAME_MS && this.dpr > 1) {
+      this.dprCap = Math.max(1, this.dpr - 0.5);
+      this.resize(this.width, this.scale, this.requestedDpr);
+    }
+  }
 
   private setPhase(phase: GamePhase) {
     this.phase = phase;
@@ -368,11 +399,17 @@ export class Game {
     const h = WORLD.height;
     const pulse = this.reducedMotion ? 0.5 : 0.5 + 0.5 * Math.sin(this.time * 4);
     const alpha = (0.1 + 0.08 * pulse) * Math.max(0.4, this.overdrive);
-    const glow = ctx.createRadialGradient(w / 2, h / 2, h * 0.35, w / 2, h / 2, Math.max(w, h) * 0.75);
-    glow.addColorStop(0, withAlpha("#f43f5e", 0));
-    glow.addColorStop(1, withAlpha("#f43f5e", alpha * 2.5));
-    ctx.fillStyle = glow;
+    // One cached gradient at full strength; the pulse just changes globalAlpha.
+    if (!this.overdriveGlow || this.overdriveGlowWidth !== w) {
+      this.overdriveGlow = ctx.createRadialGradient(w / 2, h / 2, h * 0.35, w / 2, h / 2, Math.max(w, h) * 0.75);
+      this.overdriveGlow.addColorStop(0, withAlpha("#f43f5e", 0));
+      this.overdriveGlow.addColorStop(1, withAlpha("#f43f5e", 1));
+      this.overdriveGlowWidth = w;
+    }
+    ctx.globalAlpha = Math.min(1, alpha * 2.5);
+    ctx.fillStyle = this.overdriveGlow;
     ctx.fillRect(0, 0, w, h);
+    ctx.globalAlpha = 1;
     if (this.overdriveFlash > 0) {
       ctx.fillStyle = withAlpha("#f472b6", this.overdriveFlash * 0.35);
       ctx.fillRect(0, 0, w, h);

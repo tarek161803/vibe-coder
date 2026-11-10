@@ -46,6 +46,18 @@ function wrap(x: number, tile: number, margin: number) {
 
 const pick = <T,>(rnd: Rng, items: T[]) => items[Math.floor(rnd() * items.length)];
 
+/** Neon sign sprites are drawn at this many pixels per world unit (sharp up to a 2x canvas). */
+const SIGN_SPRITE_SCALE = 3;
+const SIGN_GLOW = 10;
+
+interface SignSprite {
+  canvas: HTMLCanvasElement;
+  w: number;
+  h: number;
+  /** Distance from the sprite's top edge to the text baseline. */
+  baseline: number;
+}
+
 function windowGrid(rnd: Rng, w: number, h: number, top: number, density: number): Led[] {
   const lights: Led[] = [];
   for (let y = top; y < h - 6; y += 8) {
@@ -59,6 +71,9 @@ function windowGrid(rnd: Rng, w: number, h: number, top: number, density: number
 }
 
 export class Skyline {
+  /** Glowing sign text, pre-rendered once per text/colour: shadowBlur every frame is very slow on phones. */
+  private signSprites = new Map<string, SignSprite>();
+
   private near: Building[] = [];
   private far: FarBuilding[] = [];
 
@@ -150,7 +165,7 @@ export class Skyline {
     const offset = distance * 0.24;
     for (const b of this.near) {
       const x = Math.round(wrap(b.x - offset, NEAR_TILE, 140));
-      if (x > width) continue;
+      if (x > width || x + b.w < 0) continue;
       const top = WORLD.horizonY - b.h;
       this.drawBody(ctx, x, top, b.w, b.h);
       if (b.kind === "rack") this.drawRack(ctx, b, x, top, time);
@@ -163,7 +178,7 @@ export class Skyline {
   private drawFar(ctx: CanvasRenderingContext2D, width: number, offset: number) {
     for (const b of this.far) {
       const x = Math.round(wrap(b.x - offset, FAR_TILE, 100));
-      if (x > width) continue;
+      if (x > width || x + b.w < 0) continue;
       const top = WORLD.horizonY - b.h;
       ctx.fillStyle = "#0d0a24";
       ctx.fillRect(x, top, b.w, b.h);
@@ -262,13 +277,47 @@ export class Skyline {
     ctx.fillRect(cx + textW / 2 - 4, top - 6, 2, 6);
     // Occasional neon flicker
     const flicker = Math.sin(time * 13 + b.x) > 0.97 ? 0.35 : 1;
-    ctx.save();
     ctx.globalAlpha = flicker;
-    ctx.shadowColor = b.color;
-    ctx.shadowBlur = 10;
-    ctx.fillStyle = b.color;
-    ctx.fillText(b.text, cx, top - 8);
-    ctx.restore();
+    const sprite = this.signSprite(ctx.font, b.text, b.color);
+    if (sprite) {
+      ctx.drawImage(sprite.canvas, cx - sprite.w / 2, top - 8 - sprite.baseline, sprite.w, sprite.h);
+    } else {
+      // Font not loaded yet: plain text until the sprite can be built with the right font.
+      ctx.fillStyle = b.color;
+      ctx.fillText(b.text, cx, top - 8);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  private signSprite(font: string, text: string, color: string): SignSprite | null {
+    const key = `${text}|${color}`;
+    const cached = this.signSprites.get(key);
+    if (cached) return cached;
+    if (!document.fonts.check(font)) return null;
+
+    const canvas = document.createElement("canvas");
+    const sctx = canvas.getContext("2d")!;
+    sctx.font = font;
+    const metrics = sctx.measureText(text);
+    const ascent = Math.ceil(metrics.actualBoundingBoxAscent);
+    const descent = Math.ceil(metrics.actualBoundingBoxDescent);
+    const pad = SIGN_GLOW * 1.5;
+    const w = Math.ceil(metrics.width + pad * 2);
+    const h = ascent + descent + pad * 2;
+    canvas.width = w * SIGN_SPRITE_SCALE;
+    canvas.height = h * SIGN_SPRITE_SCALE;
+    sctx.scale(SIGN_SPRITE_SCALE, SIGN_SPRITE_SCALE);
+    sctx.font = font;
+    sctx.textAlign = "center";
+    sctx.textBaseline = "alphabetic";
+    sctx.shadowColor = color;
+    sctx.shadowBlur = SIGN_GLOW * SIGN_SPRITE_SCALE;
+    sctx.fillStyle = color;
+    sctx.fillText(text, w / 2, pad + ascent);
+
+    const sprite = { canvas, w, h, baseline: pad + ascent };
+    this.signSprites.set(key, sprite);
+    return sprite;
   }
 
   /** A thin mast with pulsing Wi-Fi arcs and a red beacon. */

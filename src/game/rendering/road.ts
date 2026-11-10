@@ -17,36 +17,50 @@ const CROSS_LINES = 6;
 /** >1 bunches cross lines toward the horizon, like a floor receding into the distance. */
 const PERSPECTIVE = 1.9;
 
+const TOP = WORLD.horizonY;
+const BOTTOM = WORLD.height;
+const DEPTH = BOTTOM - TOP;
+
+/** The gradients never change, so they're built once instead of every frame. */
+function makeGradients(ctx: CanvasRenderingContext2D) {
+  const gradient = (y0: number, y1: number, from: string, to: string) => {
+    const g = ctx.createLinearGradient(0, y0, 0, y1);
+    g.addColorStop(0, from);
+    g.addColorStop(1, to);
+    return g;
+  };
+  return {
+    floor: gradient(TOP, BOTTOM, "#1d0f3d", "#07051a"),
+    glow: gradient(TOP, TOP + 22, "rgba(34, 211, 238, 0.07)", "rgba(34, 211, 238, 0)"),
+    fade: gradient(TOP, BOTTOM, "rgba(232, 121, 249, 0.06)", "rgba(232, 121, 249, 0.42)"),
+    vignette: gradient(TOP + DEPTH * 0.5, BOTTOM, "rgba(5, 4, 15, 0)", "rgba(5, 4, 15, 0.6)"),
+  };
+}
+
 export class Road {
+  private gradients: ReturnType<typeof makeGradients> | null = null;
+
   draw(ctx: CanvasRenderingContext2D, width: number, distance: number) {
-    const top = WORLD.horizonY;
-    const bottom = WORLD.height;
-    const depth = bottom - top;
+    const top = TOP;
+    const bottom = BOTTOM;
+    const depth = DEPTH;
     // Grid scale at the player's depth, so the floor under their feet moves at world speed.
     const feetScale = 1 + (SPREAD - 1) * ((WORLD.groundY - top) / depth);
+    const g = (this.gradients ??= makeGradients(ctx));
 
     // Floor
-    const floor = ctx.createLinearGradient(0, top, 0, bottom);
-    floor.addColorStop(0, "#1d0f3d");
-    floor.addColorStop(1, "#07051a");
-    ctx.fillStyle = floor;
+    ctx.fillStyle = g.floor;
     ctx.fillRect(0, top, width, depth);
 
     // Glow spilling from the horizon onto the floor
-    const glow = ctx.createLinearGradient(0, top, 0, top + 22);
-    glow.addColorStop(0, "rgba(34, 211, 238, 0.07)");
-    glow.addColorStop(1, "rgba(34, 211, 238, 0)");
-    ctx.fillStyle = glow;
+    ctx.fillStyle = g.glow;
     ctx.fillRect(0, top, width, 22);
 
     // Depth lines: faint at the horizon, brighter close to the viewer.
     const vanishX = width / 2;
     const shift = (distance / feetScale) % LINE_SPACING;
     const reach = Math.ceil(vanishX / LINE_SPACING) + 2;
-    const fade = ctx.createLinearGradient(0, top, 0, bottom);
-    fade.addColorStop(0, "rgba(232, 121, 249, 0.06)");
-    fade.addColorStop(1, "rgba(232, 121, 249, 0.42)");
-    ctx.strokeStyle = fade;
+    ctx.strokeStyle = g.fade;
     ctx.lineWidth = 1;
     ctx.beginPath();
     for (let i = -reach; i <= reach; i++) {
@@ -68,18 +82,15 @@ export class Road {
     }
 
     // Darken toward the bottom edge
-    const vignette = ctx.createLinearGradient(0, top + depth * 0.5, 0, bottom);
-    vignette.addColorStop(0, "rgba(5, 4, 15, 0)");
-    vignette.addColorStop(1, "rgba(5, 4, 15, 0.6)");
-    ctx.fillStyle = vignette;
+    ctx.fillStyle = g.vignette;
     ctx.fillRect(0, top + depth * 0.5, width, depth * 0.5);
 
-    // Neon horizon at the road's far edge
-    ctx.save();
-    ctx.shadowColor = "rgba(34, 211, 238, 0.5)";
-    ctx.shadowBlur = 4;
+    // Neon horizon at the road's far edge, with a soft halo (layered rects: shadowBlur is slow on phones)
+    ctx.fillStyle = "rgba(34, 211, 238, 0.12)";
+    ctx.fillRect(0, top - 2, width, 5.5);
+    ctx.fillStyle = "rgba(34, 211, 238, 0.18)";
+    ctx.fillRect(0, top - 1, width, 3.5);
     ctx.fillStyle = "rgba(103, 232, 249, 0.45)";
     ctx.fillRect(0, top, width, 1.5);
-    ctx.restore();
   }
 }

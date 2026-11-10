@@ -175,8 +175,21 @@ body {
     --cut: 28px;
     clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
   }
+  /* The glow sits on its own static layer: a CSS filter on the console itself would be
+     re-run over the whole console on every canvas frame, which low-end phones can't keep up with. */
   .hud-glow {
-    filter: drop-shadow(0 0 14px rgb(168 85 247 / 0.45)) drop-shadow(0 0 40px rgb(34 211 238 / 0.15));
+    position: relative;
+  }
+  .hud-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 24px;
+    box-shadow:
+      0 0 14px rgb(168 85 247 / 0.45),
+      0 0 40px rgb(34 211 238 / 0.15);
+    pointer-events: none;
   }
 
   /* Translucent "hologram" panel used for start / pause prompts */
