@@ -4,7 +4,7 @@
  * matches the character in the game. Run: npx tsx scripts/generate-app-icon.mts
  */
 import { writeFileSync } from "node:fs";
-import { drawCharacter, runPose } from "../src/game/rendering/character.ts";
+import { drawCharacter, runPose } from "../src/game/rendering/character";
 
 type Matrix = [number, number, number, number, number, number];
 
