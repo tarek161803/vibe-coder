@@ -59,6 +59,17 @@ html {
   background-color: #05060d;
 }
 
+/* Installed to the iPhone home screen (viewport-fit=cover + black-translucent status bar),
+   iOS shifts the page up behind the status bar, so heights from 100%, dvh or lvh end ~59px
+   short and leave a "chin" gap at the bottom. Only 100vh covers the full screen there. */
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  html,
+  body,
+  .page-bg {
+    height: 100vh;
+  }
+}
+
 /* The game is a fixed, full-screen layout: nothing scrolls or rubber-bands. */
 html,
 body {
@@ -107,14 +118,6 @@ body {
       radial-gradient(800px 500px at 100% 100%, rgb(236 72 153 / 0.12), transparent 70%),
       radial-gradient(800px 500px at 0% 100%, rgb(34 211 238 / 0.1), transparent 70%),
       #05060d;
-  }
-  /* Installed to the iPhone home screen, lvh is short by the status bar height:
-     pin both edges to the screen instead. */
-  @media (display-mode: standalone), (display-mode: fullscreen) {
-    .page-bg {
-      bottom: 0;
-      height: auto;
-    }
   }
 
   /* Static neon perspective grid floor along the bottom of .page-bg. It keeps its

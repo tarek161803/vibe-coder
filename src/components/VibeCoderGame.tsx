@@ -319,10 +319,9 @@ export default function VibeCoderGame() {
     onRelease: () => gameRef.current?.slideRelease(),
   };
 
-  // Launched from the iPhone home screen, viewport units come up short by the status bar
-  // height, leaving a strip at the bottom; 100% of the full-height body doesn't.
+  // Installed to the iPhone home screen, only 100vh reaches the bottom edge (see globals.css).
   return (
-    <div className="relative isolate flex h-dvh flex-col [@media(display-mode:standalone),(display-mode:fullscreen)]:h-full items-center justify-center-safe gap-5 overflow-hidden safe-shell portrait:pointer-coarse:justify-start portrait:pointer-coarse:pt-[max(3.5rem,calc(var(--safe-top)+1.75rem))] [@media(max-height:560px)]:gap-2">
+    <div className="relative isolate flex h-dvh flex-col [@media(display-mode:standalone),(display-mode:fullscreen)]:h-screen items-center justify-center-safe gap-5 overflow-hidden safe-shell portrait:pointer-coarse:justify-start portrait:pointer-coarse:pt-[max(3.5rem,calc(var(--safe-top)+1.75rem))] [@media(max-height:560px)]:gap-2">
       <div aria-hidden className="page-bg">
         <div className="grid-floor" />
       </div>
