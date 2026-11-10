@@ -7,7 +7,7 @@ import { Game } from "@/game/engine";
 import type { GameOverResult, GamePhase } from "@/game/types";
 import { recordRun, useProgress, type RunRecord } from "@/lib/progress";
 import { formatTokens } from "@/lib/tokens";
-import { GameControls } from "./GameControls";
+import { GameControls, TouchButtons } from "./GameControls";
 import { LessonModal } from "./LessonModal";
 
 /** Ignore restart keys briefly after dying so a held jump doesn't skip the lesson. */
@@ -24,6 +24,9 @@ const RESERVED_HEIGHT = 250;
 /** On short screens (landscape phones) the logo and credits are hidden. */
 const SHORT_SCREEN = 560;
 const RESERVED_HEIGHT_SHORT = 110;
+/** Extra vertical space for the on-screen gamepad buttons on touch devices. */
+const TOUCH_BUTTONS_HEIGHT = 112;
+const TOUCH_BUTTONS_HEIGHT_SHORT = 86;
 
 type TouchGesture = {
   id: number;
@@ -95,7 +98,10 @@ export default function VibeCoderGame() {
 
     const resize = () => {
       const cssWidth = stage.clientWidth - CARD_CHROME;
-      const reserved = window.innerHeight <= SHORT_SCREEN ? RESERVED_HEIGHT_SHORT : RESERVED_HEIGHT;
+      const short = window.innerHeight <= SHORT_SCREEN;
+      const reserved =
+        (short ? RESERVED_HEIGHT_SHORT : RESERVED_HEIGHT) +
+        (window.matchMedia("(pointer: coarse)").matches ? (short ? TOUCH_BUTTONS_HEIGHT_SHORT : TOUCH_BUTTONS_HEIGHT) : 0);
       const maxCssHeight = Math.max(170, Math.min(window.innerHeight * 0.7, window.innerHeight - reserved));
       let worldWidth = Math.min(Math.max(cssWidth, WORLD.minWidth), PREFERRED_WIDTH);
       let scale = cssWidth / worldWidth;
@@ -236,6 +242,22 @@ export default function VibeCoderGame() {
     gestureRef.current = null;
   };
 
+  // ── On-screen buttons (touch devices) ─────────────────────────────────
+  const jumpButton = {
+    onPress: () => {
+      const game = gameRef.current;
+      const current = phaseRef.current;
+      if (current === "ready") game?.start();
+      else if (current === "paused") game?.resume();
+      else if (current === "playing") game?.jumpPress();
+    },
+    onRelease: () => gameRef.current?.jumpRelease(),
+  };
+  const slideButton = {
+    onPress: () => gameRef.current?.slidePress(),
+    onRelease: () => gameRef.current?.slideRelease(),
+  };
+
   return (
     <div className="relative flex min-h-dvh flex-col items-center justify-center gap-5 overflow-clip px-3 py-5 [@media(max-height:560px)]:gap-2 [@media(max-height:560px)]:py-2">
       <div aria-hidden className="grid-floor" />
@@ -315,12 +337,10 @@ export default function VibeCoderGame() {
         </div>
       </div>
 
+      <TouchButtons jump={jumpButton} slide={slideButton} />
+
       <p className="hidden rounded-lg bg-violet-500/10 px-3 py-2 text-center font-mono text-xs text-violet-200 portrait:pointer-coarse:block">
         Tip: rotate your phone to landscape for a bigger screen.
-      </p>
-
-      <p className="text-center font-mono text-[10px] text-slate-600 [@media(max-height:560px)]:hidden">
-        Logos from Simple Icons · trademarks of their respective owners
       </p>
 
       {phase === "over" && result && (

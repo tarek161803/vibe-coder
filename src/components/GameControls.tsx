@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /** Bottom strip of the console: control prompts. */
 export function GameControls() {
   return (
@@ -41,5 +43,58 @@ function Arrow({ direction }: { direction: "up" | "down" }) {
     <svg viewBox="0 0 7 7" className={`size-[7px] ${direction === "down" ? "rotate-180" : ""}`} aria-hidden>
       <path d="M3 0h1v1h1v1h1v1h1v1H5v3H2V4H0V3h1V2h1V1h1z" fill="currentColor" />
     </svg>
+  );
+}
+
+type HoldHandlers = { onPress: () => void; onRelease: () => void };
+
+/** On-screen gamepad buttons for touch devices, shown under the console. */
+export function TouchButtons({ jump, slide }: { jump: HoldHandlers; slide: HoldHandlers }) {
+  return (
+    <div data-ui className="hidden items-start justify-center gap-20 pointer-coarse:flex">
+      <HoldButton label="SLIDE" handlers={slide} tint="#e879f9" />
+      <HoldButton label="JUMP" handlers={jump} tint="#22d3ee" />
+    </div>
+  );
+}
+
+/** A button that stays "pressed" for as long as the finger is down, so jumps can be held for height. */
+function HoldButton({
+  label,
+  handlers,
+  tint,
+}: {
+  label: string;
+  handlers: HoldHandlers;
+  tint: string;
+}) {
+  const [pressed, setPressed] = useState(false);
+  const release = () => {
+    setPressed(false);
+    handlers.onRelease();
+  };
+
+  return (
+    <button
+      type="button"
+      data-pressed={pressed}
+      style={{ "--tint": tint } as React.CSSProperties}
+      className="pad-btn touch-none select-none outline-none"
+      onPointerDown={(e) => {
+        e.preventDefault();
+        e.currentTarget.setPointerCapture(e.pointerId);
+        setPressed(true);
+        handlers.onPress();
+      }}
+      onPointerUp={release}
+      onPointerCancel={release}
+      onContextMenu={(e) => e.preventDefault()}
+    >
+      <span className="pad-btn-housing size-16 [@media(max-height:560px)]:size-13">
+        <span className="pad-btn-cap">
+          <span className="pad-btn-text font-pixel text-[9px] tracking-wider [@media(max-height:560px)]:text-[8px]">{label}</span>
+        </span>
+      </span>
+    </button>
   );
 }
