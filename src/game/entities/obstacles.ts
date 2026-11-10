@@ -11,6 +11,13 @@ export interface Obstacle {
   airborne: boolean;
   bobPhase: number;
   hit: boolean;
+  /** Set once the obstacle has scrolled fully behind the player. */
+  passed: boolean;
+  /**
+   * Tiles that touch (stacks, doubles, triples) share one set of corner brackets.
+   * The group's top-left tile carries its size; the other tiles carry null and draw none.
+   */
+  bracket: { w: number; h: number; hazard: boolean; multi: boolean } | null;
 }
 
 export function obstacleTop(o: Obstacle, time: number): number {
@@ -59,6 +66,8 @@ const ground = (tech: TechInfo, x: number, row = 0): Obstacle => ({
   airborne: false,
   bobPhase: 0,
   hit: false,
+  passed: false,
+  bracket: null,
 });
 
 const flying = (tech: TechInfo, x: number): Obstacle => ({
@@ -69,7 +78,44 @@ const flying = (tech: TechInfo, x: number): Obstacle => ({
   airborne: true,
   bobPhase: Math.random() * Math.PI * 2,
   hit: false,
+  passed: false,
+  bracket: null,
 });
+
+const touches = (a: Obstacle, b: Obstacle) =>
+  !a.airborne &&
+  !b.airborne &&
+  a.x <= b.x + b.size &&
+  b.x <= a.x + a.size &&
+  a.y <= b.y + b.size &&
+  b.y <= a.y + a.size;
+
+/** Groups touching tiles and gives each group's top-left tile the bracket for the whole group. */
+function assignBrackets(obstacles: Obstacle[]) {
+  const unvisited = new Set(obstacles);
+  for (const start of obstacles) {
+    if (!unvisited.has(start)) continue;
+    unvisited.delete(start);
+    const group = [start];
+    for (let i = 0; i < group.length; i++) {
+      for (const o of unvisited) {
+        if (!touches(group[i], o)) continue;
+        unvisited.delete(o);
+        group.push(o);
+      }
+    }
+    const left = Math.min(...group.map((o) => o.x));
+    const top = Math.min(...group.map((o) => o.y));
+    const lead = group.find((o) => o.x === left && o.y === top) ?? group[0];
+    for (const o of group) o.bracket = null;
+    lead.bracket = {
+      w: Math.max(...group.map((o) => o.x + o.size)) - lead.x,
+      h: Math.max(...group.map((o) => o.y + o.size)) - lead.y,
+      hazard: group.some((o) => o.tech.kind === "hazard"),
+      multi: group.length > 1,
+    };
+  }
+}
 
 /** Obstacle formations. Add new ones here to vary gameplay. */
 const PATTERNS: Pattern[] = [
@@ -224,6 +270,7 @@ export class ObstacleSpawner {
     const maxGap = lerp(OBSTACLE.gapEasy[1], OBSTACLE.gapHard[1], difficulty);
     this.distanceToNext = patternWidth + speed * lerp(minGap, maxGap, Math.random());
 
+    assignBrackets(spawned);
     return spawned;
   }
 

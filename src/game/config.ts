@@ -60,6 +60,8 @@ export const SCORE = {
   milestone: 100,
   /** A "1.00M TOKENS BURNED!" toast appears every `release` points (1000K = 1M). */
   release: 1000,
+  /** A "25 SKILLS DODGED!" toast appears every `dodgeMilestone` skills the player clears. */
+  dodgeMilestone: 25,
 } as const;
 
 export const CRASH_FREEZE_SECONDS = 0.55;

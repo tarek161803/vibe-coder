@@ -46,7 +46,11 @@ export class Game {
   private hitObstacle: Obstacle | null = null;
   private shake = 0;
   private milestoneFlash = 0;
-  private toast: { text: string; t: number } | null = null;
+  private toast: { text: string; color: string; t: number } | null = null;
+  /** Toasts waiting for the current one to finish, so simultaneous milestones don't overwrite each other. */
+  private toastQueue: { text: string; color: string }[] = [];
+  /** Skills (non-hazard obstacles) that have scrolled safely past the player this run. */
+  private dodged = 0;
   private agents = 1;
   private trailTimer = 0;
   private slideDustTimer = 0;
@@ -164,11 +168,12 @@ export class Game {
     this.particles.clear();
     this.background.reset();
     this.obstacles = [];
-    this.elapsed = this.distance = this.score = 0;
+    this.elapsed = this.distance = this.score = this.dodged = 0;
     this.speed = SPEED.start;
     this.hitObstacle = null;
     this.shake = this.milestoneFlash = 0;
     this.toast = null;
+    this.toastQueue = [];
     this.setAgents(1);
     this.setPhase("playing");
   }
@@ -197,6 +202,7 @@ export class Game {
       this.toast.t -= dt;
       if (this.toast.t <= 0) this.toast = null;
     }
+    if (!this.toast && this.toastQueue.length > 0) this.toast = { ...this.toastQueue.shift()!, t: 2 };
   }
 
   private updatePlaying(dt: number) {
@@ -249,7 +255,15 @@ export class Game {
       this.milestoneFlash = 1;
     }
     if (Math.floor(this.score / SCORE.release) > Math.floor(previous / SCORE.release)) {
-      this.toast = { text: `${formatTokens(this.score)} TOKENS BURNED!`, t: 2 };
+      this.showToast(`${formatTokens(this.score)} TOKENS BURNED!`, "#facc15");
+    }
+
+    for (const o of this.obstacles) {
+      if (o.passed || o.x + o.size >= PLAYER.x) continue;
+      o.passed = true;
+      if (o.tech.kind === "hazard") continue;
+      this.dodged++;
+      if (this.dodged % SCORE.dodgeMilestone === 0) this.showToast(`${this.dodged} SKILLS DODGED!`, "#22d3ee");
     }
 
     const box = player.hitbox();
@@ -259,6 +273,11 @@ export class Game {
         break;
       }
     }
+  }
+
+  private showToast(text: string, color: string) {
+    if (this.toast) this.toastQueue.push({ text, color });
+    else this.toast = { text, color, t: 2 };
   }
 
   private crash(o: Obstacle) {
@@ -353,12 +372,8 @@ export class Game {
     const ctx = this.ctx;
     const y = obstacleTop(o, this.time);
     const { x, size } = o;
-    const hazard = o.tech.kind === "hazard";
     // Near-black brand colors would vanish on the dark scene; use a light accent instead.
     const accent = luminance(o.tech.color) < 0.06 ? "#cbd5e1" : o.tech.color;
-    const bracketColor = hazard ? "#f87171" : accent;
-    // Hazard brackets blink as a warning; everything else stays steady.
-    const warningBlink = 0.5 + 0.5 * Math.sin(this.time * 7 + x * 0.05);
 
     if (o.airborne) {
       // Ground shadow
@@ -402,14 +417,32 @@ export class Game {
     ctx.roundRect(x, y, size, size, radius);
     ctx.stroke();
 
-    // HUD target brackets at the corners
-    const g = 6; // gap outside the tile
+    if (o.bracket) this.drawBrackets(x, y, o.bracket, accent);
+
+    if (o.hit) {
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(x, y, size, size, radius);
+      ctx.stroke();
+    }
+  }
+
+
+  /** HUD target brackets at the corners of a tile, or of a whole group of touching tiles. */
+  private drawBrackets(x: number, y: number, bracket: NonNullable<Obstacle["bracket"]>, accent: string) {
+    const ctx = this.ctx;
+    // A group of several brands gets a neutral color rather than borrowing one tile's.
+    const color = bracket.hazard ? "#f87171" : bracket.multi ? "#cbd5e1" : accent;
+    // Hazard brackets blink as a warning; everything else stays steady.
+    const warningBlink = 0.5 + 0.5 * Math.sin(this.time * 7 + x * 0.05);
+    const g = 6; // gap outside the tiles
     const l = 7; // bracket arm length
     const left = x - g;
-    const right = x + size + g;
+    const right = x + bracket.w + g;
     const top = y - g;
-    const bottom = y + size + g;
-    ctx.strokeStyle = withAlpha(bracketColor, hazard ? 0.45 + 0.5 * warningBlink : 0.75);
+    const bottom = y + bracket.h + g;
+    ctx.strokeStyle = withAlpha(color, bracket.hazard ? 0.45 + 0.5 * warningBlink : 0.75);
     ctx.lineWidth = 1.5;
     ctx.lineCap = "square";
     ctx.beginPath();
@@ -426,16 +459,7 @@ export class Game {
     ctx.lineTo(left, bottom);
     ctx.lineTo(left, bottom - l);
     ctx.stroke();
-
-    if (o.hit) {
-      ctx.strokeStyle = "#ffffff";
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.roundRect(x, y, size, size, radius);
-      ctx.stroke();
-    }
   }
-
 
   private drawHud() {
     if (this.phase === "ready") return;
@@ -464,7 +488,7 @@ export class Game {
       ctx.font = `16px ${this.fonts.pixel}`;
       ctx.fillStyle = "#000000";
       ctx.fillText(this.toast.text, this.width / 2 + 2, 62 - rise + 2);
-      ctx.fillStyle = "#facc15";
+      ctx.fillStyle = this.toast.color;
       ctx.fillText(this.toast.text, this.width / 2, 62 - rise);
       ctx.globalAlpha = 1;
     }
