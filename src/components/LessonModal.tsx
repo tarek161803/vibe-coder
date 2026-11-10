@@ -64,8 +64,9 @@ export function LessonModal({
         <div className="space-y-5 p-5 sm:p-6">
           {/* Header */}
           <div className="flex items-center gap-4">
-            <div className="shrink-0 rounded-2xl p-1 shadow-[0_0_24px_-4px_var(--accent)] ring-2 ring-[var(--accent)]/60">
-              <TechLogo tech={tech} size={96} className="size-[88px] rounded-xl sm:size-24" />
+            {/* Logo tiles round their corners at 12/64 of their size; the frame adds its 4px padding so the curves stay concentric. */}
+            <div className="shrink-0 rounded-[20.5px] p-1 shadow-[0_0_24px_-4px_var(--accent)] ring-2 ring-[var(--accent)]/60 sm:rounded-[22px]">
+              <TechLogo tech={tech} size={96} className="size-[88px] rounded-[16.5px] sm:size-24 sm:rounded-[18px]" />
             </div>
             <div className="min-w-0">
               <p className="mb-1.5 font-pixel text-[9px] leading-[1.6] tracking-wider text-[var(--accent)] sm:text-[10px]">

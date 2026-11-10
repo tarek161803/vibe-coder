@@ -5,7 +5,10 @@ import { loadCatalog, STARTER_OBSTACLES } from "@/content";
 import { WORLD } from "@/game/config";
 import { Game } from "@/game/engine";
 import type { GameOverResult, GamePhase } from "@/game/types";
+import { playSfx, resetMusic, setMuted, setMusicTempo, startMusic, stopMusic, unlockAudio } from "@/lib/audio";
+import { vibrate } from "@/lib/haptics";
 import { recordRun, useProgress, type RunRecord } from "@/lib/progress";
+import { getSettings, updateSettings, useSettings } from "@/lib/settings";
 import { formatTokens } from "@/lib/tokens";
 import { GameControls, TouchButtons } from "./GameControls";
 import { LessonModal } from "./LessonModal";
@@ -44,6 +47,11 @@ type TouchGesture = {
 const isJumpKey = (code: string) => code === "Space" || code === "ArrowUp" || code === "KeyW";
 const isSlideKey = (code: string) => code === "ArrowDown" || code === "KeyS";
 
+const toggleMute = () => updateSettings({ muted: !getSettings().muted });
+
+/** Music tempo for the agents count: 1 agent = base tempo, rising gently to ~1.06× at top speed. */
+const musicTempo = (agents: number) => 1 + Math.min(1, Math.max(0, (agents - 1) / 16)) * 0.06;
+
 /** Extra vertical padding the shell grew by to clear a notch or home indicator. */
 function safeAreaExtra(shell: HTMLElement | null, basePadding: number) {
   if (!shell) return 0;
@@ -63,6 +71,7 @@ export default function VibeCoderGame() {
   const [agents, setAgents] = useState(1);
   const [result, setResult] = useState<(GameOverResult & RunRecord) | null>(null);
   const progress = useProgress();
+  const { muted } = useSettings();
   const [total, setTotal] = useState(STARTER_OBSTACLES.length);
 
   const retry = useCallback(() => {
@@ -80,6 +89,13 @@ export default function VibeCoderGame() {
       canvas,
       {
         onPhaseChange: (next) => {
+          if (next === "playing") {
+            // Resuming continues the tune; a new run starts it from the top.
+            if (phaseRef.current !== "paused") resetMusic();
+            startMusic();
+          } else {
+            stopMusic();
+          }
           phaseRef.current = next;
           if (next === "over") overAtRef.current = performance.now();
           setPhase(next);
@@ -87,7 +103,14 @@ export default function VibeCoderGame() {
         onGameOver: (run) => {
           setResult({ ...run, ...recordRun(run.score, run.tech.id) });
         },
-        onAgentsChange: setAgents,
+        onAgentsChange: (count) => {
+          setAgents(count);
+          setMusicTempo(musicTempo(count));
+        },
+        onEvent: (event) => {
+          playSfx(event);
+          if (!getSettings().muted) vibrate(event);
+        },
       },
       {
         pixel: css.getPropertyValue("--font-press-start").trim() || "monospace",
@@ -146,6 +169,7 @@ export default function VibeCoderGame() {
       observer.disconnect();
       window.removeEventListener("resize", resize);
       game.destroy();
+      stopMusic();
       gameRef.current = null;
     };
   }, []);
@@ -171,6 +195,8 @@ export default function VibeCoderGame() {
       } else if (isSlideKey(e.code)) {
         e.preventDefault();
         if (!e.repeat) game.slidePress();
+      } else if (e.code === "KeyM" && !e.repeat) {
+        toggleMute();
       } else if (e.code === "KeyP" || e.code === "Escape") {
         if (current === "playing") game.pause();
         else if (current === "paused") game.resume();
@@ -199,6 +225,18 @@ export default function VibeCoderGame() {
       document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [retry]);
+
+  useEffect(() => setMuted(muted), [muted]);
+
+  // Browsers only allow audio after a user gesture; capture runs before the game handlers start the music.
+  useEffect(() => {
+    window.addEventListener("pointerdown", unlockAudio, true);
+    window.addEventListener("keydown", unlockAudio, true);
+    return () => {
+      window.removeEventListener("pointerdown", unlockAudio, true);
+      window.removeEventListener("keydown", unlockAudio, true);
+    };
+  }, []);
 
   // ── Touch / mouse input on the stage ──────────────────────────────────
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -309,8 +347,20 @@ export default function VibeCoderGame() {
                     {agents} {agents === 1 ? "AGENT" : "AGENTS"} RUNNING
                   </span>
                 </span>
-                <span>
-                  MAX <span className="text-orange-300">{progress.highScore > 0 ? formatTokens(progress.highScore) : "--"}</span>
+                <span className="flex items-center gap-3">
+                  <span>
+                    MAX <span className="text-orange-300">{progress.highScore > 0 ? formatTokens(progress.highScore) : "--"}</span>
+                  </span>
+                  <button
+                    type="button"
+                    data-ui
+                    onClick={toggleMute}
+                    aria-label={muted ? "Unmute sound" : "Mute sound"}
+                    aria-pressed={muted}
+                    className="-m-1.5 p-1.5 text-cyan-300/80 hover:text-cyan-200"
+                  >
+                    <SpeakerIcon muted={muted} />
+                  </button>
                 </span>
               </div>
 
@@ -389,5 +439,19 @@ export default function VibeCoderGame() {
         />
       )}
     </div>
+  );
+}
+
+/** Pixel-style speaker; crossed out when muted. */
+function SpeakerIcon({ muted }: { muted: boolean }) {
+  return (
+    <svg viewBox="0 0 12 10" className="h-[10px] w-3" aria-hidden>
+      <path d="M0 3h2l3-3h1v10H5L2 7H0z" fill="currentColor" />
+      {muted ? (
+        <path d="M8 3l1 1 1-1 1 1-1 1 1 1-1 1-1-1-1 1-1-1 1-1-1-1z" fill="currentColor" />
+      ) : (
+        <path d="M8 3h1v4H8zM10 1h1v8h-1z" fill="currentColor" />
+      )}
+    </svg>
   );
 }

@@ -14,11 +14,15 @@ export interface GameOverResult {
   score: number;
 }
 
+/** Moments the UI reacts to with sound and vibration. */
+export type GameEvent = "jump" | "slide" | "crash" | "tokens" | "dodged" | "overdrive";
+
 export interface GameCallbacks {
   onPhaseChange: (phase: GamePhase) => void;
   onGameOver: (result: GameOverResult) => void;
   /** Fired when the number of "agents running" changes (it grows with the burn rate). */
   onAgentsChange: (agents: number) => void;
+  onEvent: (event: GameEvent) => void;
 }
 
 export interface GameFonts {

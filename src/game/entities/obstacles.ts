@@ -15,9 +15,9 @@ export interface Obstacle {
   passed: boolean;
   /**
    * Tiles that touch (stacks, doubles, triples) share one set of corner brackets.
-   * The group's top-left tile carries its size; the other tiles carry null and draw none.
+   * One tile carries the group's box (relative to itself); the others carry null and draw none.
    */
-  bracket: { w: number; h: number; hazard: boolean; multi: boolean } | null;
+  bracket: { dx: number; dy: number; w: number; h: number; hazard: boolean; multi: boolean } | null;
 }
 
 export function obstacleTop(o: Obstacle, time: number): number {
@@ -46,9 +46,11 @@ type PatternKind = "ground" | "air" | "combo";
 interface Pattern {
   id: string;
   kind: PatternKind;
-  /** Difficulty (0..1) at which the pattern starts appearing. */
+  /** Difficulty (0..1 while speeding up, 1..2 in overdrive) at which the pattern starts appearing. */
   minDifficulty: number;
   weight: number;
+  /** Weight at difficulty 2, blended in as difficulty rises, so easy formations thin out late in a run. */
+  lateWeight?: number;
   /** `speed` lets combos space their parts in time, so they stay fair at any pace. */
   build: (x: number, pick: PickTech, speed: number) => Obstacle[];
 }
@@ -57,6 +59,8 @@ const S = OBSTACLE.size;
 const A = OBSTACLE.airSize;
 /** Seconds of travel between the two halves of a combo (verified fair at min and max speed). */
 const COMBO_GAP = 0.7;
+/** Seconds of travel between two back-to-back gates. */
+const GATE_GAP = 0.3;
 
 const ground = (tech: TechInfo, x: number, row = 0): Obstacle => ({
   tech,
@@ -90,7 +94,7 @@ const touches = (a: Obstacle, b: Obstacle) =>
   a.y <= b.y + b.size &&
   b.y <= a.y + a.size;
 
-/** Groups touching tiles and gives each group's top-left tile the bracket for the whole group. */
+/** Groups touching tiles and gives one tile per group the bracket for the whole group. */
 function assignBrackets(obstacles: Obstacle[]) {
   const unvisited = new Set(obstacles);
   for (const start of obstacles) {
@@ -106,11 +110,13 @@ function assignBrackets(obstacles: Obstacle[]) {
     }
     const left = Math.min(...group.map((o) => o.x));
     const top = Math.min(...group.map((o) => o.y));
-    const lead = group.find((o) => o.x === left && o.y === top) ?? group[0];
+    const lead = group[0];
     for (const o of group) o.bracket = null;
     lead.bracket = {
-      w: Math.max(...group.map((o) => o.x + o.size)) - lead.x,
-      h: Math.max(...group.map((o) => o.y + o.size)) - lead.y,
+      dx: left - lead.x,
+      dy: top - lead.y,
+      w: Math.max(...group.map((o) => o.x + o.size)) - left,
+      h: Math.max(...group.map((o) => o.y + o.size)) - top,
       hazard: group.some((o) => o.tech.kind === "hazard"),
       multi: group.length > 1,
     };
@@ -120,8 +126,8 @@ function assignBrackets(obstacles: Obstacle[]) {
 /** Obstacle formations. Add new ones here to vary gameplay. */
 const PATTERNS: Pattern[] = [
   // Jump
-  { id: "single", kind: "ground", minDifficulty: 0, weight: 4, build: (x, pick) => [ground(pick(), x)] },
-  { id: "double", kind: "ground", minDifficulty: 0.1, weight: 2.5, build: (x, pick) => [ground(pick(), x), ground(pick(), x + S)] },
+  { id: "single", kind: "ground", minDifficulty: 0, weight: 4, lateWeight: 1, build: (x, pick) => [ground(pick(), x)] },
+  { id: "double", kind: "ground", minDifficulty: 0.1, weight: 2.5, lateWeight: 1, build: (x, pick) => [ground(pick(), x), ground(pick(), x + S)] },
   { id: "stack", kind: "ground", minDifficulty: 0.25, weight: 2, build: (x, pick) => [ground(pick(), x, 0), ground(pick(), x, 1)] },
   {
     id: "triple",
@@ -130,9 +136,31 @@ const PATTERNS: Pattern[] = [
     weight: 1.2,
     build: (x, pick) => [ground(pick(), x), ground(pick(), x + S), ground(pick(), x + S * 2)],
   },
+  {
+    id: "quad",
+    kind: "ground",
+    minDifficulty: 0.65,
+    weight: 1,
+    build: (x, pick) => [0, 1, 2, 3].map((i) => ground(pick(), x + S * i)),
+  },
+  {
+    id: "tower",
+    kind: "ground",
+    minDifficulty: 0.75,
+    weight: 1,
+    build: (x, pick) => [ground(pick(), x, 0), ground(pick(), x, 1), ground(pick(), x, 2)],
+  },
   // Slide
   // Always a single flying obstacle: two side by side would read as one odd block.
-  { id: "gate", kind: "air", minDifficulty: 0, weight: 5, build: (x, pick) => [flying(pick(), x)] },
+  { id: "gate", kind: "air", minDifficulty: 0, weight: 5, lateWeight: 1.5, build: (x, pick) => [flying(pick(), x)] },
+  // Two gates close together: a quick slide tap stands back up in between, so hold it.
+  {
+    id: "gate-gate",
+    kind: "air",
+    minDifficulty: 0.6,
+    weight: 1.2,
+    build: (x, pick, speed) => [flying(pick(), x), flying(pick(), x + A + speed * GATE_GAP)],
+  },
   // Jump then slide, and slide then jump
   {
     id: "jump-slide",
@@ -147,6 +175,27 @@ const PATTERNS: Pattern[] = [
     minDifficulty: 0.35,
     weight: 1.5,
     build: (x, pick, speed) => [flying(pick(), x), ground(pick(), x + A + speed * COMBO_GAP)],
+  },
+  // Overdrive only: three moves in a row.
+  {
+    id: "jump-slide-jump",
+    kind: "combo",
+    minDifficulty: 1.1,
+    weight: 1.2,
+    build: (x, pick, speed) => {
+      const gap = speed * COMBO_GAP;
+      return [ground(pick(), x), flying(pick(), x + S + gap), ground(pick(), x + S + A + gap * 2)];
+    },
+  },
+  {
+    id: "slide-jump-slide",
+    kind: "combo",
+    minDifficulty: 1.3,
+    weight: 1,
+    build: (x, pick, speed) => {
+      const gap = speed * COMBO_GAP;
+      return [flying(pick(), x), ground(pick(), x + A + gap), flying(pick(), x + A + S + gap * 2)];
+    },
   },
 ];
 
@@ -260,14 +309,23 @@ export class ObstacleSpawner {
     if (this.distanceToNext > 0) return [];
 
     const available = PATTERNS.filter((p) => difficulty >= p.minDifficulty);
-    const pattern = weightedPick(available, (p) => p.weight * varietyFactor(p, this.lastPatternId, this.recentKinds));
+    const lateness = Math.min(1, difficulty / 2);
+    const pattern = weightedPick(
+      available,
+      (p) => lerp(p.weight, p.lateWeight ?? p.weight, lateness) * varietyFactor(p, this.lastPatternId, this.recentKinds),
+    );
     this.lastPatternId = pattern.id;
     this.recentKinds = [...this.recentKinds, pattern.kind].slice(-2);
     const spawned = pattern.build(spawnX, () => this.pickTech(), speed);
 
     const patternWidth = Math.max(...spawned.map((o) => o.x + o.size)) - spawnX;
-    const minGap = lerp(OBSTACLE.gapEasy[0], OBSTACLE.gapHard[0], difficulty);
-    const maxGap = lerp(OBSTACLE.gapEasy[1], OBSTACLE.gapHard[1], difficulty);
+    // Gaps tighten from easy to hard while speeding up, then from hard to overdrive at top speed.
+    const [from, to, t] =
+      difficulty <= 1
+        ? [OBSTACLE.gapEasy, OBSTACLE.gapHard, difficulty]
+        : [OBSTACLE.gapHard, OBSTACLE.gapOverdrive, difficulty - 1];
+    const minGap = lerp(from[0], to[0], t);
+    const maxGap = lerp(from[1], to[1], t);
     this.distanceToNext = patternWidth + speed * lerp(minGap, maxGap, Math.random());
 
     assignBrackets(spawned);

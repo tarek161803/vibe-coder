@@ -32,10 +32,10 @@ export const PLAYER = {
 } as const;
 
 export const SPEED = {
-  start: 380,
-  max: 960,
+  start: 400,
+  max: 1040,
   /** Units per second gained every second. */
-  acceleration: 6.5,
+  acceleration: 9,
 } as const;
 
 export const OBSTACLE = {
@@ -46,8 +46,11 @@ export const OBSTACLE = {
   /** Forgiveness: shrinks every obstacle hitbox on all sides. */
   hitboxInset: 5,
   /** Gap between patterns, in seconds of travel, at difficulty 0 and 1. */
-  gapEasy: [0.95, 1.7],
-  gapHard: [0.62, 1.05],
+  gapEasy: [0.85, 1.45],
+  gapHard: [0.6, 0.95],
+  /** Once top speed is reached the pressure keeps building: gaps tighten to this over `overdriveSeconds`. */
+  gapOverdrive: [0.55, 0.75],
+  overdriveSeconds: 45,
   firstSpawnDelay: 1.1,
   /** Share of obstacles drawn from the hazard pool (bugs, merge conflicts…). Kept low: there are only a few hazards. */
   hazardChance: 0.05,

@@ -46,6 +46,9 @@ export class Game {
   private hitObstacle: Obstacle | null = null;
   private shake = 0;
   private milestoneFlash = 0;
+  /** 0 until top speed is reached, then ramps to 1 over OBSTACLE.overdriveSeconds. */
+  private overdrive = 0;
+  private overdriveFlash = 0;
   private toast: { text: string; color: string; t: number } | null = null;
   /** Toasts waiting for the current one to finish, so simultaneous milestones don't overwrite each other. */
   private toastQueue: { text: string; color: string }[] = [];
@@ -171,7 +174,7 @@ export class Game {
     this.elapsed = this.distance = this.score = this.dodged = 0;
     this.speed = SPEED.start;
     this.hitObstacle = null;
-    this.shake = this.milestoneFlash = 0;
+    this.shake = this.milestoneFlash = this.overdrive = this.overdriveFlash = 0;
     this.toast = null;
     this.toastQueue = [];
     this.setAgents(1);
@@ -198,6 +201,7 @@ export class Game {
 
     this.shake = Math.max(0, this.shake - dt * 3);
     this.milestoneFlash = Math.max(0, this.milestoneFlash - dt);
+    this.overdriveFlash = Math.max(0, this.overdriveFlash - dt);
     if (this.toast) {
       this.toast.t -= dt;
       if (this.toast.t <= 0) this.toast = null;
@@ -216,10 +220,16 @@ export class Game {
 
     const player = this.player;
     player.update(dt, this.speed);
-    if (player.jumped) this.dust(PLAYER.x + 20, 8);
+    if (player.jumped) {
+      this.dust(PLAYER.x + 20, 8);
+      this.callbacks.onEvent("jump");
+    }
     if (player.landed) this.dust(PLAYER.x + 24, 12);
     if (player.stepped) this.dust(PLAYER.x + 30, 3, 0.6);
-    if (player.slid) this.dust(PLAYER.x + 30, 12);
+    if (player.slid) {
+      this.dust(PLAYER.x + 30, 12);
+      this.callbacks.onEvent("slide");
+    }
     // Friction dust trails behind the body while sliding.
     this.slideDustTimer -= dt;
     if (player.sliding && this.slideDustTimer <= 0) {
@@ -233,7 +243,7 @@ export class Game {
       this.trailTimer = 0.03;
       this.particles.burst(PLAYER.x + 4, player.y - (player.sliding ? 18 : 34), {
         count: 1,
-        colors: ["#22d3ee", "#e879f9"],
+        colors: this.overdrive > 0 ? ["#f472b6", "#f87171"] : ["#22d3ee", "#e879f9"],
         speed: [40, 90],
         angle: [Math.PI * 0.9, Math.PI * 1.1],
         life: [0.2, 0.4],
@@ -246,7 +256,17 @@ export class Game {
     for (const o of this.obstacles) o.x -= dx;
     this.obstacles = this.obstacles.filter((o) => o.x + o.size > -60);
 
-    const difficulty = (this.speed - SPEED.start) / (SPEED.max - SPEED.start);
+    // 0..1 while speeding up, then 1..2 ("overdrive") over the first stretch at top speed.
+    const timeToMax = (SPEED.max - SPEED.start) / SPEED.acceleration;
+    const overdrive = Math.min(1, Math.max(0, (this.elapsed - timeToMax) / OBSTACLE.overdriveSeconds));
+    if (overdrive > 0 && this.overdrive === 0) {
+      this.overdriveFlash = 1;
+      this.shake = this.reducedMotion ? 0 : 0.6;
+      this.showToast("OVERDRIVE!", "#f472b6");
+      this.callbacks.onEvent("overdrive");
+    }
+    this.overdrive = overdrive;
+    const difficulty = (this.speed - SPEED.start) / (SPEED.max - SPEED.start) + overdrive;
     this.obstacles.push(...this.spawner.update(dx, this.speed, difficulty, this.width + 40));
 
     const previous = this.score;
@@ -256,6 +276,7 @@ export class Game {
     }
     if (Math.floor(this.score / SCORE.release) > Math.floor(previous / SCORE.release)) {
       this.showToast(`${formatTokens(this.score)} TOKENS BURNED!`, "#facc15");
+      this.callbacks.onEvent("tokens");
     }
 
     for (const o of this.obstacles) {
@@ -263,7 +284,10 @@ export class Game {
       o.passed = true;
       if (o.tech.kind === "hazard") continue;
       this.dodged++;
-      if (this.dodged % SCORE.dodgeMilestone === 0) this.showToast(`${this.dodged} SKILLS DODGED!`, "#22d3ee");
+      if (this.dodged % SCORE.dodgeMilestone === 0) {
+        this.showToast(`${this.dodged} SKILLS DODGED!`, "#22d3ee");
+        this.callbacks.onEvent("dodged");
+      }
     }
 
     const box = player.hitbox();
@@ -296,6 +320,7 @@ export class Game {
       life: [0.4, 0.9],
       size: [2, 5],
     });
+    this.callbacks.onEvent("crash");
     this.setPhase("crashed");
   }
 
@@ -325,6 +350,7 @@ export class Game {
     }
 
     this.background.draw(ctx, this.width, this.sceneTime);
+    if (this.overdrive > 0 || this.overdriveFlash > 0) this.drawOverdrive();
     for (const o of this.obstacles) this.drawObstacle(o);
 
     const flash = this.phase === "crashed" && Math.floor(this.time * 16) % 2 === 0;
@@ -333,6 +359,24 @@ export class Game {
 
     ctx.setTransform(k, 0, 0, k, 0, 0);
     this.drawHud();
+  }
+
+  /** Pulsing red edge glow while in overdrive, plus a flash the moment it starts. */
+  private drawOverdrive() {
+    const ctx = this.ctx;
+    const w = this.width;
+    const h = WORLD.height;
+    const pulse = this.reducedMotion ? 0.5 : 0.5 + 0.5 * Math.sin(this.time * 4);
+    const alpha = (0.1 + 0.08 * pulse) * Math.max(0.4, this.overdrive);
+    const glow = ctx.createRadialGradient(w / 2, h / 2, h * 0.35, w / 2, h / 2, Math.max(w, h) * 0.75);
+    glow.addColorStop(0, withAlpha("#f43f5e", 0));
+    glow.addColorStop(1, withAlpha("#f43f5e", alpha * 2.5));
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, w, h);
+    if (this.overdriveFlash > 0) {
+      ctx.fillStyle = withAlpha("#f472b6", this.overdriveFlash * 0.35);
+      ctx.fillRect(0, 0, w, h);
+    }
   }
 
   /** The energy pillar a flying obstacle hangs from (part of its hitbox, so it can't be jumped). */
@@ -438,10 +482,10 @@ export class Game {
     const warningBlink = 0.5 + 0.5 * Math.sin(this.time * 7 + x * 0.05);
     const g = 6; // gap outside the tiles
     const l = 7; // bracket arm length
-    const left = x - g;
-    const right = x + bracket.w + g;
-    const top = y - g;
-    const bottom = y + bracket.h + g;
+    const left = x + bracket.dx - g;
+    const right = x + bracket.dx + bracket.w + g;
+    const top = y + bracket.dy - g;
+    const bottom = y + bracket.dy + bracket.h + g;
     ctx.strokeStyle = withAlpha(color, bracket.hazard ? 0.45 + 0.5 * warningBlink : 0.75);
     ctx.lineWidth = 1.5;
     ctx.lineCap = "square";

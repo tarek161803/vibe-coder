@@ -18,6 +18,10 @@ export function GameControls() {
           <KeyCap>P</KeyCap>
           <Label>PAUSE</Label>
         </span>
+        <span className="flex items-center gap-1.5 pointer-coarse:hidden">
+          <KeyCap>M</KeyCap>
+          <Label>MUTE</Label>
+        </span>
         <span className="hidden pointer-coarse:inline">TAP: JUMP · SWIPE ↓: SLIDE</span>
       </div>
     </div>
