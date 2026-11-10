@@ -337,6 +337,9 @@ export default function VibeCoderGame() {
 
       <div ref={stageRef} className="flex w-full max-w-[1120px] justify-center">
         <div className="hud-glow">
+          <div aria-hidden className="hud-glow-layer">
+            <div className="hud-frame size-full bg-[#0b0d1f]" />
+          </div>
           {/* Neon gradient edge */}
           <div className="hud-frame bg-gradient-to-br from-cyan-400 via-violet-500 to-fuchsia-500 p-[1.5px]">
             <div className="hud-frame bg-[linear-gradient(180deg,#0b0d1f,#06070f)] px-5 py-2.5">
@@ -416,16 +419,19 @@ export default function VibeCoderGame() {
       <TouchButtons jump={jumpButton} slide={slideButton} />
 
       {/* Credit pinned to the bottom of the visible area; out of the layout flow so it never shrinks the game. */}
-      <p className="absolute inset-x-0 bottom-[max(0.5rem,var(--safe-bottom))] text-center font-pixel text-[8px] tracking-wider text-slate-500 [@media(max-height:560px)]:hidden">
-        vibe coded by{" "}
-        <a
-          href="https://github.com/itarek99"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-slate-400 underline decoration-slate-600 underline-offset-2 hover:text-cyan-300 hover:decoration-cyan-300"
-        >
-          itarek99
-        </a>
+      <p className="absolute inset-x-0 bottom-[max(0.5rem,var(--safe-bottom))] text-center font-pixel text-[8px] tracking-wider text-slate-400 [@media(max-height:560px)]:hidden">
+        {/* Solid backing in the console panel colour so the credit stays readable over the neon grid floor. */}
+        <span className="inline-block bg-[#0b0d1f] px-2 py-1">
+          vibe coded by{" "}
+          <a
+            href="https://github.com/itarek99"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 underline decoration-slate-500 underline-offset-2 hover:text-cyan-300 hover:decoration-cyan-300"
+          >
+            itarek99
+          </a>
+        </span>
       </p>
 
       {phase === "over" && result && (
