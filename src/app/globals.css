@@ -45,6 +45,16 @@
 
 :root {
   color-scheme: dark;
+  /* Safe-area insets for notched / edge-to-edge screens (zero elsewhere) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+/* Fill overscroll / rubber-band areas with the page colour */
+html {
+  background-color: #05060d;
 }
 
 body {
@@ -58,6 +68,22 @@ body {
 }
 
 @layer components {
+  /* Page shell: normal padding, grown to clear the notch, rounded corners and home indicator */
+  .safe-shell {
+    padding: max(1.25rem, var(--safe-top)) max(0.75rem, var(--safe-right)) max(1.25rem, var(--safe-bottom))
+      max(0.75rem, var(--safe-left));
+  }
+  @media (max-height: 560px) {
+    .safe-shell {
+      padding-top: max(0.5rem, var(--safe-top));
+      padding-bottom: max(0.5rem, var(--safe-bottom));
+    }
+  }
+  /* Same idea for full-screen overlays */
+  .safe-overlay {
+    padding: max(1rem, var(--safe-top)) max(1rem, var(--safe-right)) max(1rem, var(--safe-bottom)) max(1rem, var(--safe-left));
+  }
+
   /* Static neon perspective grid floor behind the game */
   .grid-floor {
     position: fixed;

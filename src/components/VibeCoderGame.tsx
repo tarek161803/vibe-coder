@@ -21,6 +21,9 @@ const PREFERRED_WIDTH = 1000;
 const CARD_CHROME = 44;
 /** Vertical space reserved for the logo, the console's status strips and the credits line. */
 const RESERVED_HEIGHT = 250;
+/** Shell padding the reserved heights above already account for (normal / short screens). */
+const SHELL_PADDING = 40;
+const SHELL_PADDING_SHORT = 16;
 /** On short screens (landscape phones) the logo and credits are hidden. */
 const SHORT_SCREEN = 560;
 const RESERVED_HEIGHT_SHORT = 110;
@@ -38,6 +41,13 @@ type TouchGesture = {
 
 const isJumpKey = (code: string) => code === "Space" || code === "ArrowUp" || code === "KeyW";
 const isSlideKey = (code: string) => code === "ArrowDown" || code === "KeyS";
+
+/** Extra vertical padding the shell grew by to clear a notch or home indicator. */
+function safeAreaExtra(shell: HTMLElement | null, basePadding: number) {
+  if (!shell) return 0;
+  const style = getComputedStyle(shell);
+  return Math.max(0, parseFloat(style.paddingTop) + parseFloat(style.paddingBottom) - basePadding);
+}
 
 export default function VibeCoderGame() {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -101,7 +111,8 @@ export default function VibeCoderGame() {
       const short = window.innerHeight <= SHORT_SCREEN;
       const reserved =
         (short ? RESERVED_HEIGHT_SHORT : RESERVED_HEIGHT) +
-        (window.matchMedia("(pointer: coarse)").matches ? (short ? TOUCH_BUTTONS_HEIGHT_SHORT : TOUCH_BUTTONS_HEIGHT) : 0);
+        (window.matchMedia("(pointer: coarse)").matches ? (short ? TOUCH_BUTTONS_HEIGHT_SHORT : TOUCH_BUTTONS_HEIGHT) : 0) +
+        safeAreaExtra(stage.parentElement, short ? SHELL_PADDING_SHORT : SHELL_PADDING);
       const maxCssHeight = Math.max(170, Math.min(window.innerHeight * 0.7, window.innerHeight - reserved));
       let worldWidth = Math.min(Math.max(cssWidth, WORLD.minWidth), PREFERRED_WIDTH);
       let scale = cssWidth / worldWidth;
@@ -259,7 +270,7 @@ export default function VibeCoderGame() {
   };
 
   return (
-    <div className="relative flex min-h-dvh flex-col items-center justify-center gap-5 overflow-clip px-3 py-5 [@media(max-height:560px)]:gap-2 [@media(max-height:560px)]:py-2">
+    <div className="relative flex min-h-dvh flex-col items-center justify-center gap-5 overflow-clip safe-shell [@media(max-height:560px)]:gap-2">
       <div aria-hidden className="grid-floor" />
 
       <header className="text-center [@media(max-height:560px)]:hidden">

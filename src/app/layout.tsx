@@ -17,12 +17,19 @@ export const metadata: Metadata = {
   title: "Vibe Coder — the endless runner where every crash teaches you something",
   description:
     "Jump and slide past React, Docker, Git and 1,100 more technologies. Crash into one and learn what it is.",
+  appleWebApp: {
+    capable: true,
+    title: "Vibe Coder",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: "#05060d",
   width: "device-width",
   initialScale: 1,
+  // Draw under the notch / home indicator; .safe-shell pads content back inside the safe area.
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

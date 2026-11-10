@@ -11,6 +11,10 @@ import { intersects, type GameCallbacks, type GameFonts, type GamePhase } from "
 
 /** Physics runs in sub-steps no longer than this to avoid tunneling at high speed. */
 const MAX_STEP = 1 / 120;
+/** CSS px the score keeps from the canvas's right edge: corner bracket (8px inset + 16px) plus a gap. */
+const HUD_CORNER_CLEARANCE = 32;
+/** Smallest on-screen (CSS px) size of the score text. */
+const HUD_SCORE_MIN_CSS = 10;
 
 /**
  * Owns the simulation and canvas rendering. React talks to it through the
@@ -436,9 +440,12 @@ export class Game {
   private drawHud() {
     if (this.phase === "ready") return;
     const ctx = this.ctx;
-    const right = this.width - 16;
+    // Keep clear of the targeting brackets drawn over the canvas corners (fixed CSS size),
+    // which cover more of the world when the canvas is scaled down on phones.
+    const right = this.width - Math.max(16, HUD_CORNER_CLEARANCE / this.scale);
 
-    ctx.font = `12px ${this.fonts.pixel}`;
+    // At least HUD_SCORE_MIN_CSS on screen, so it stays readable when the canvas is scaled down.
+    ctx.font = `${Math.max(14, HUD_SCORE_MIN_CSS / this.scale)}px ${this.fonts.pixel}`;
     ctx.textBaseline = "top";
     ctx.textAlign = "right";
 

@@ -37,10 +37,20 @@ export function LessonModal({
     dialogRef.current?.focus({ preventScroll: true });
   }, []);
 
+  // Lock the page behind the overlay so only the lesson card scrolls.
+  useEffect(() => {
+    const root = document.documentElement;
+    const previous = root.style.overflow;
+    root.style.overflow = "hidden";
+    return () => {
+      root.style.overflow = previous;
+    };
+  }, []);
+
   return (
     <div
       data-ui
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/75 p-4 backdrop-blur-sm animate-fade-in sm:items-center"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto overscroll-contain bg-black/75 safe-overlay backdrop-blur-sm animate-fade-in sm:items-center"
     >
       <div
         ref={dialogRef}
