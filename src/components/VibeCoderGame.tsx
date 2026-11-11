@@ -229,12 +229,13 @@ export default function VibeCoderGame() {
   useEffect(() => setMuted(muted), [muted]);
 
   // Browsers only allow audio after a user gesture; capture runs before the game handlers start the music.
+  // On touch devices pointerdown/touchstart don't count as activation (only pointerup/touchend/click do),
+  // so without those the context stays suspended until a second tap.
   useEffect(() => {
-    window.addEventListener("pointerdown", unlockAudio, true);
-    window.addEventListener("keydown", unlockAudio, true);
+    const events = ["pointerdown", "pointerup", "touchend", "click", "keydown"] as const;
+    for (const e of events) window.addEventListener(e, unlockAudio, true);
     return () => {
-      window.removeEventListener("pointerdown", unlockAudio, true);
-      window.removeEventListener("keydown", unlockAudio, true);
+      for (const e of events) window.removeEventListener(e, unlockAudio, true);
     };
   }, []);
 

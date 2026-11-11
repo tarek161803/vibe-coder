@@ -29,7 +29,15 @@ export function unlockAudio() {
     const data = noise.getChannelData(0);
     for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
   }
-  if (ctx.state === "suspended") void ctx.resume();
+  if (ctx.state !== "running") {
+    // A silent one-sample buffer played inside the gesture is what actually
+    // unlocks (and spins up) the output on iOS Safari.
+    const blip = ctx.createBufferSource();
+    blip.buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
+    blip.connect(ctx.destination);
+    blip.start();
+    void ctx.resume().catch(() => {});
+  }
 }
 
 export function setMuted(value: boolean) {
@@ -172,6 +180,9 @@ function playStep(s: number, t: number, length: number, out: AudioNode) {
 
 function schedule() {
   if (!ctx || !musicGain) return;
+  // If the context was suspended or still starting, its clock didn't move while
+  // we waited; re-anchor instead of firing a burst of overdue notes at once.
+  if (nextTime < ctx.currentTime) nextTime = ctx.currentTime + 0.05;
   while (nextTime < ctx.currentTime + LOOKAHEAD) {
     const length = BASE_STEP / tempo;
     playStep(step, nextTime, length, musicGain);
